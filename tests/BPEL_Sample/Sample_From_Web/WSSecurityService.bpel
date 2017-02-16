@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<process name="WSSecurityService"
+         targetNamespace="http://xmlns.oracle.com/WSSecurityService"
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:ns1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+         xmlns:client="http://xmlns.oracle.com/WSSecurityService"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:orcl="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc">
+  <partnerLinks>
+    <partnerLink name="client" partnerLinkType="client:WSSecurityService"
+                 myRole="WSSecurityServiceProvider"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable"
+              messageType="client:WSSecurityServiceRequestMessage"/>
+    <variable name="outputVariable"
+              messageType="client:WSSecurityServiceResponseMessage"/>
+    <variable name="header" element="ns1:Security"/>
+  </variables>
+  <sequence name="main">
+    <receive name="receiveInput" partnerLink="client"
+             portType="client:WSSecurityService" operation="process"
+             variable="inputVariable" createInstance="yes"
+             bpelx:headerVariable="header"/>
+    <empty name="Empty_1"/>
+    <assign name="Assign_1">
+      <copy>
+        <from variable="header"
+              query="/ns1:Security/ns1:UsernameToken/ns1:Username"/>
+        <to variable="outputVariable" part="payload"
+            query="/client:WSSecurityServiceProcessResponse/client:result"/>
+      </copy>
+    </assign>
+    <reply name="replyOutput" partnerLink="client"
+           portType="client:WSSecurityService" operation="process"
+           variable="outputVariable"/>
+  </sequence>
+</process>

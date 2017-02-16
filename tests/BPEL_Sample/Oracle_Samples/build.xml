@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="ArticleExample" default="all" basedir=".">
+<property name="deploy" value="default"/>
+<property name="rev" value="1.0"/>
+
+    <target name="Employee">
+        <ant dir="./Employee"/>
+    </target>
+
+    <target name="AmericanAirline">
+        <ant dir="./AmericanAirline"/>
+    </target>
+
+    <target name="DeltaAirline">
+        <ant dir="./DeltaAirline"/>
+    </target>
+
+    <target name="TravelProcess">
+        <ant dir="./TravelProcess"/>
+    </target>
+    
+    <target name="all" depends="Employee,AmericanAirline,DeltaAirline,TravelProcess" />
+
+</project>

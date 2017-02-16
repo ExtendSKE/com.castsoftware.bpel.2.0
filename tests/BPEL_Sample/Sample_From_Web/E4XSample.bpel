@@ -1,0 +1,51 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<process name="E4XSample" targetNamespace="http://xmlns.oracle.com/E4XSample"
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:client="http://xmlns.oracle.com/E4XSample"
+         xmlns:ora="http://schemas.oracle.com/xpath/extension"
+         xmlns:orcl="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc">
+  <bpelx:exec import="org.mozilla.javascript.*"/>
+  <bpelx:exec import="oleo.bpel.e4x.ExecletWrapper"/>
+  <partnerLinks>
+    <partnerLink name="client" partnerLinkType="client:E4XSample"
+                 myRole="E4XSampleProvider"/>
+  </partnerLinks>
+  <variables>
+    <variable name="inputVariable"
+              messageType="client:E4XSampleRequestMessage"/>
+    <variable name="outputVariable"
+              messageType="client:E4XSampleResponseMessage"/>
+  </variables>
+  <sequence name="main">
+    <receive name="receiveInput" partnerLink="client"
+             portType="client:E4XSample" operation="process"
+             variable="inputVariable" createInstance="yes"/>
+    <bpelx:exec name="calculate" language="java" version="1.5">
+      <![CDATA[String label = this.mWorkItem.getLabel();       
+Context cx = Context.enter();          
+try{         
+ 
+Scriptable scope = cx.initStandardObjects();      
+ScriptableObject.defineClass(scope, ExecletWrapper.class);         
+Scriptable wrappedContext = cx.newObject(scope, "ExecletContext", new Object[] {this.mWorkItem,this.mScope,this.mCubeContext, cx});         
+ScriptableObject.putProperty(scope, "ctx", wrappedContext);         
+  
+cx.evaluateString(scope,getPreference(label),this.getTitle()+label, 1,null);           
+  
+} catch (Exception e) {         
+	addAuditTrailEntry(e);        
+}         
+finally {         
+        Context.exit();   
+        this.mWorkItem.setLabel(label);   
+}]]>
+    </bpelx:exec>
+    <reply name="replyOutput" partnerLink="client" portType="client:E4XSample"
+           operation="process" variable="outputVariable"/>
+  </sequence>
+</process>

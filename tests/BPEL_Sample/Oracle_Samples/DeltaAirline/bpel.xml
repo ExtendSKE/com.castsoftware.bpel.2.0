@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPELSuitcase>
+  <BPELProcess src="DeltaAirline.bpel" id="DeltaAirline">
+    <partnerLinkBindings>
+      <partnerLinkBinding name="DeltaAirlines">
+        <property name="wsdlLocation">Airline.wsdl</property>
+      </partnerLinkBinding>
+    </partnerLinkBindings>
+  </BPELProcess>
+</BPELSuitcase>
