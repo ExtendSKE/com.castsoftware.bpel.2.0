@@ -86,6 +86,7 @@ class MyExtension(cast.analysers.ua.Extension):
                 if wsdl_data == bpel_data:
                     create_link('callLink',i,j,Bookmark(i.parent,1,1,-1,-1))
                     wsdl_obj_reference[j] = i 
+        count =0 
         for i in bpel_invoke_data:
             for j in bpel_invoke_data[i]:
                 port_type=""
@@ -117,7 +118,20 @@ class MyExtension(cast.analysers.ua.Extension):
                             X.debug(port_type+op_type)
                             X.debug(port_type_1+op_type_1)
                             '''
-                            create_link('callLink',i,wsdl_obj_reference[k],Bookmark(i.parent,1,1,-1,-1))
+                            file_name = wsdl_obj_reference[k].parent.get_path()
+                            tmp_obj =  CustomObject()
+                            bookmark =Bookmark(wsdl_obj_reference[k].parent,1,1,-1,-1)
+                            tmp_obj.set_name(op_type)
+                            tmp_obj.set_type("WSDL_Operation")
+                            tmp_obj.set_fullname(file_name+op_type)
+                            tmp_obj.set_parent(wsdl_obj_reference[k].parent)
+                            tmp_obj.set_guid(file_name+op_type+str(count))
+                            count = count + 1
+                            tmp_obj.save()
+                            tmp_obj.save_position(bookmark)
+                            create_link('callLink',i,tmp_obj,bookmark)
+                            create_link('callLink',tmp_obj,wsdl_obj_reference[k],bookmark)
+                            #X.debug('S')
                             flag = 1
                             break
                     if flag == 1:
