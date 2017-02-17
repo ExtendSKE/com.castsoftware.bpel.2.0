@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+             xmlns:emp="http://packtpub.com/service/employee/" 
+             xmlns:aln="http://packtpub.com/service/airline/" 
+             xmlns:tns="http://packtpub.com/bpel/travel/" 
+             targetNamespace="http://packtpub.com/bpel/travel/" 
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" >
+
+<import namespace="http://packtpub.com/service/employee/" 
+        location="./Employee.wsdl"/>
+
+<import namespace="http://packtpub.com/service/airline/" 
+        location="./Airline.wsdl"/>
+
+
+<message name="TravelRequestMessage">
+  <part name="employee" type="emp:EmployeeType" />
+  <part name="flightData" type="aln:FlightRequestType" /> 
+</message>
+
+<portType name="TravelApprovalPT">
+  <operation name="TravelApproval">
+    <input message="tns:TravelRequestMessage" /> 
+  </operation>
+</portType>
+
+<portType name="ClientCallbackPT">
+  <operation name="ClientCallback">
+    <input message="aln:TravelResponseMessage" /> 
+  </operation>
+</portType>
+
+<!-- Partner link type -->
+<plnk:partnerLinkType name="travelLT">
+  <plnk:role name="travelService">
+    <plnk:portType name="tns:TravelApprovalPT" />
+  </plnk:role>
+  <plnk:role name="travelServiceCustomer">
+    <plnk:portType name="tns:ClientCallbackPT" />
+  </plnk:role>
+</plnk:partnerLinkType>
+
+
+</definitions>

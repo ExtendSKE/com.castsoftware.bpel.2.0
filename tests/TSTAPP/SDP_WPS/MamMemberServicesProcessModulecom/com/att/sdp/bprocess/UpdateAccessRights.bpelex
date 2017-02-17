@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.bpel.ui/">
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:OnMessageExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:OnMessageExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.1/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.1/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.1/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension" displayName="No"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.4/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.5/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#/"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1291059687979" maxWpcId="274" minWpcId="0"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@variables/@children.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#//@activity/@messages.1/@activity/@activities.3/@activity/@activities.1/@cases.0/@activity/@activities.1/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="UpdateAccessRights.bpel#/"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

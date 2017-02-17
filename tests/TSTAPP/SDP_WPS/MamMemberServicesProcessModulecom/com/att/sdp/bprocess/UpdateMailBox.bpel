@@ -1,0 +1,2962 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:java="http://SdpCommonLibrary" xmlns:ns="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts" xmlns:ns0="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:ns1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:ns10="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ServiceCvoipSettings" xmlns:ns11="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Temp" xmlns:ns12="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface" xmlns:ns13="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:ns14="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface" xmlns:ns2="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface" xmlns:ns3="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns4="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface" xmlns:ns5="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message" xmlns:ns6="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Error" xmlns:ns7="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface" xmlns:ns8="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes" xmlns:ns9="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberTNS" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="UpdateMailBox" suppressJoinFailure="yes" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess" wpc:displayName="UpdateMailBox" wpc:executionMode="microflow" wpc:id="1" wpc:version="8.5.0">
+  <wpc:javaGlobals>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpHelper"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpLoggerHelper"/>
+    <wpc:import packages="commonj.sdo.DataObject"/>
+    <wpc:import packages="java.util.List"/>
+    <wpc:import packages="java.util.Iterator"/>
+    <wpc:import packages="com.att.sdp.utils.MamMemberServiceHelper"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpErrorHelper"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.Order"/>
+  </wpc:javaGlobals>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/bprocess/NewUpdateMailBoxArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/To_WESM.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/SDP_Order_to_UCDCL_ProvisioningService.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_ErrorObject_Message.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/BPCStandardFaultType.xsd" namespace="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Error.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Error"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_MemberTNS.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberTNS"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_AccountMailBoxes.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_ServiceCvoipSettings.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ServiceCvoipSettings"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateMailBox_CompensationArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateMailBox_CompensationArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateMailBoxArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Temp.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Temp"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_ServiceCvoipSettings.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ServiceCvoipSettings"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_MemberTNS.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberTNS"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/To_WESM.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_AccountMailBoxes.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_ErrorObject_Message.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../BPCStandardFaultType.xsd" namespace="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/SDP_Order_to_UCDCL_ProvisioningService.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Error.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Error"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Temp.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Temp"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UcdclOutputServiceWrapper_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../ServiceCallFault.xsd" namespace="http://SdpCommonLibrary"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UCDCLCompensableService_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="myRole" name="FromMam_UpdateMailBox_Interface" partnerLinkType="ns:PartnerPLT5" wpc:id="900"/>
+    <bpws:partnerLink name="UcdclCompensableService_Interface" partnerLinkType="ns:PartnerPLT6" partnerRole="partnerRole" wpc:id="901"/>
+    <bpws:partnerLink name="MPSCompensableService2_InterfacePartner" partnerLinkType="ns:PartnerPLT7" partnerRole="partnerRole" wpc:id="902"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="SDP_ORDER_Request" type="ns0:SDP_Order" wpc:id="2"/>
+    <bpws:variable name="SDP_ORDER_Prov" type="ns0:SDP_Order" wpc:id="3"/>
+    <bpws:variable name="EmptyTransaction_Detail" type="ns1:SDP_TransactionDetail" wpc:id="4"/>
+    <bpws:variable name="ucdclEmailOrPhone" type="xsd:string" wpc:id="14"/>
+    <bpws:variable name="ucdclDeviceNumber" type="xsd:string" wpc:id="15"/>
+    <bpws:variable name="ucdclDeviceType" type="xsd:string" wpc:id="16"/>
+    <bpws:variable name="ucdclDeviceCFN" type="xsd:string" wpc:id="17"/>
+    <bpws:variable name="ucdclAuthentication" type="xsd:string" wpc:id="18"/>
+    <bpws:variable name="ucdclTransportMWI" type="xsd:string" wpc:id="19"/>
+    <bpws:variable name="tmpSDP_ORDER" type="ns0:SDP_Order" wpc:id="171"/>
+    <bpws:variable name="intProvSubMBoxCounter" type="xsd:int" wpc:id="172"/>
+    <bpws:variable name="intReqSubMBoxCounter" type="xsd:int" wpc:id="173"/>
+    <bpws:variable name="mailBoxTN" type="ns9:SDP_MemberTNS" wpc:id="176"/>
+    <bpws:variable name="reqSubMailBox" type="ns8:SDP_AccountMailBoxes" wpc:id="182"/>
+    <bpws:variable name="SDP_ORDER_RequestProc" type="ns0:SDP_Order" wpc:id="193"/>
+    <bpws:variable name="SDP_ORDER_ProvProc" type="ns0:SDP_Order" wpc:id="194"/>
+    <bpws:variable name="Transaction_DetailPort" type="ns1:SDP_TransactionDetail" wpc:id="196"/>
+    <bpws:variable name="reqTN" type="ns9:SDP_MemberTNS" wpc:id="281"/>
+    <bpws:variable name="provTN" type="ns9:SDP_MemberTNS" wpc:id="282"/>
+    <bpws:variable name="intReqTNCounter" type="xsd:int" wpc:id="289"/>
+    <bpws:variable name="intProvTNCounter" type="xsd:int" wpc:id="290"/>
+    <bpws:variable name="SDP_ORDER_ForUpdate" type="ns0:SDP_Order" wpc:id="298"/>
+    <bpws:variable name="intMBoxLocInProv" type="xsd:int" wpc:id="327"/>
+    <bpws:variable name="SDP_ORDER_Prov_Temp" type="ns0:SDP_Order" wpc:id="340"/>
+    <bpws:variable name="tmpLoopCounter" type="xsd:int" wpc:id="349"/>
+    <bpws:variable name="RollBackReqMailBox" type="ns8:SDP_AccountMailBoxes" wpc:id="435"/>
+    <bpws:variable name="emptyMailBox" type="ns8:SDP_AccountMailBoxes" wpc:id="436"/>
+    <bpws:variable name="RollBack_Prov_ORDER" type="ns0:SDP_Order" wpc:id="437"/>
+    <bpws:variable name="RollBackProvMailBox" type="ns8:SDP_AccountMailBoxes" wpc:id="438"/>
+    <bpws:variable name="UMBState" type="xsd:int" wpc:id="439"/>
+    <bpws:variable name="TNCounter" type="xsd:int" wpc:id="464"/>
+    <bpws:variable name="MBCounter" type="xsd:int" wpc:id="467"/>
+    <bpws:variable name="booleanSatisfied" type="xsd:boolean" wpc:id="492"/>
+    <bpws:variable name="PROCESS_NAME" type="xsd:string" wpc:id="527"/>
+    <bpws:variable name="processID" type="xsd:string" wpc:id="528"/>
+    <bpws:variable name="tmpTN" type="ns9:SDP_MemberTNS" wpc:id="542"/>
+    <bpws:variable name="wesmAccountMailbox" type="ns8:SDP_AccountMailBoxes" wpc:id="574"/>
+    <bpws:variable name="accountMailboxForUpdate" type="ns8:SDP_AccountMailBoxes" wpc:id="588"/>
+    <bpws:variable name="primaryMailBox" type="ns8:SDP_AccountMailBoxes" wpc:id="666"/>
+    <bpws:variable name="intCounter" type="xsd:int" wpc:id="706"/>
+    <bpws:variable name="SDP_ORDER_Prov_Updated" type="ns0:SDP_Order" wpc:id="711"/>
+    <bpws:variable name="subsToBeRemovedMailbox" type="ns8:SDP_AccountMailBoxes" wpc:id="771"/>
+    <bpws:variable name="needUpdateOrderForTNName" type="xsd:boolean" wpc:id="780"/>
+    <bpws:variable name="tnNeedsToBeDeletedMailbox" type="ns8:SDP_AccountMailBoxes" wpc:id="809"/>
+    <bpws:variable name="needUpdateOrderForTNs" type="xsd:boolean" wpc:id="812"/>
+    <bpws:variable name="RollbackSdpOrder" type="ns0:SDP_Order" wpc:id="832"/>
+    <bpws:variable name="emptyTempStore" type="ns11:SDP_Temp" wpc:id="833"/>
+    <bpws:variable name="UMSessionID" type="xsd:string" wpc:id="846"/>
+    <bpws:variable name="processBO" type="ns0:SDP_Order" wpc:id="896"/>
+    <bpws:variable name="UMMessageCenterIP" type="xsd:string" wpc:id="897"/>
+    <bpws:variable name="isBusinessVoip" type="xsd:boolean" wpc:id="929"/>
+  </bpws:variables>
+  <bpws:faultHandlers>
+    <bpws:catchAll wpc:id="899">
+      <bpws:invoke name="LogErrorToFile" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log Error To File" wpc:id="506">
+        <wpc:script>
+          <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Unknown Failure Occured in MAM.UpdateMailBoxConfig",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+														
+											
+														
+														
+														]]></wpc:javaCode>
+        </wpc:script>
+      </bpws:invoke>
+    </bpws:catchAll>
+  </bpws:faultHandlers>
+  <bpws:sequence name="HiddenSequence2" wpc:id="1073742323">
+    <bpws:receive createInstance="yes" name="Receive" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Receive" wpc:id="483">
+      <wpc:output>
+        <wpc:parameter name="SDP_ORDER_Prov" variable="SDP_ORDER_Prov"/>
+        <wpc:parameter name="SDP_ORDER_Request" variable="SDP_ORDER_Request"/>
+        <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:invoke name="LogBeginProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [Begin Process]" wpc:id="508">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[processID = SDP_ORDER_Request.getString(SdpHelper.TEMPSTRING2_PATH.replace('.','/'));
+PROCESS_NAME = "UPDATE_MAILBOX";
+
+
+SdpLoggerHelper.logMessage("Begin SubFlow : UpdateMailBox",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Received the following GBO From MAM ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_ORDER_Request :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_Request,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:assign name="CopyTrigtoProc" wpc:displayName="Copy Trig to Proc" wpc:id="34">
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_Request"/>
+        <bpws:to variable="SDP_ORDER_RequestProc"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_Prov"/>
+        <bpws:to variable="SDP_ORDER_ProvProc"/>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:assign name="InitializeVariables" wpc:displayName="Initialize Variables" wpc:id="299">
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_RequestProc"/>
+        <bpws:to variable="SDP_ORDER_ForUpdate"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="intReqSubMBoxCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="intProvSubMBoxCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="intReqTNCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="intProvTNCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_Prov"/>
+        <bpws:to variable="SDP_ORDER_Prov_Temp"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="intMBoxLocInProv"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="tmpLoopCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>
+          <bpws:expression expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[bo:create('http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail','SDP_TransactionDetail')]]></bpws:expression>
+        </bpws:from>
+        <bpws:to variable="EmptyTransaction_Detail"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>false</bpws:from>
+        <bpws:to variable="EmptyTransaction_Detail">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorIndicator]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>
+          <bpws:expression expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[bo:create('http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes', 'SDP_AccountMailBoxes')]]></bpws:expression>
+        </bpws:from>
+        <bpws:to variable="emptyMailBox"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_ProvProc"/>
+        <bpws:to variable="RollBack_Prov_ORDER"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="TNCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="MBCounter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>null</bpws:from>
+        <bpws:to variable="EmptyTransaction_Detail">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/SdpCode]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="EmptyTransaction_Detail"/>
+        <bpws:to variable="Transaction_DetailPort"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>false</bpws:from>
+        <bpws:to variable="booleanSatisfied"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_Prov"/>
+        <bpws:to variable="RollbackSdpOrder"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="EmptyTransaction_Detail"/>
+        <bpws:to variable="RollbackSdpOrder">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>null</bpws:from>
+        <bpws:to variable="emptyTempStore">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/tempKey]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>null</bpws:from>
+        <bpws:to variable="RollbackSdpOrder">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/tempStoreNonArray/tempKey]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="EmptyTransaction_Detail"/>
+        <bpws:to variable="processBO">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="SDP_ORDER_Request">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail/UMMessageCenterIP]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="UMMessageCenterIP"/>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:invoke name="CheckifBusinessVoice" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Check if Business Voice" wpc:id="928">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[isBusinessVoip = SdpHelper.isBusinessCvoip(new Order(SDP_ORDER_ProvProc));]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:invoke name="GetprimaryMailBox" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get primaryMailBox" wpc:id="668">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[primaryMailBox = SdpHelper.getPrimaryMailBox(SDP_ORDER_ProvProc);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:invoke name="Clearrollbackorder" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="clear rollback order" wpc:id="441">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[RollBack_Prov_ORDER.getDataObject("order").getDataObject("ReqService").getDataObject("product").getDataObject("cvoipProduct").getList("accountMailBoxes").clear();
+RollbackSdpOrder.getDataObject("order").getDataObject("ReqService").getDataObject("product").getDataObject("cvoipProduct").getList("accountMailBoxes").clear();
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="RollBack_Prov_ORDER.order.ReqService.product.cvoipProduct.accountMailBoxes.clear()" assignable="false">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="void"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="RollbackSdpOrder.order.ReqService.product.cvoipProduct.accountMailBoxes.clear()" assignable="false">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="void"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0"/>
+//  <executableGroups executableElements="//@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:while name="ForeachMailBoxinRequest" wpc:displayName="For each MailBox in Request" wpc:id="91">
+      <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(intReqSubMBoxCounter, "intReqSubMBoxCounter") < com.ibm.wbiservers.brules.core.codegen.NillableUtility.getList(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(SDP_ORDER_RequestProc, "order", "SDP_ORDER_RequestProc"), "ReqService", "order"), "product", "ReqService"), "cvoipProduct", "product"), "accountMailBoxes", "SDP_ORDER_RequestProc.order.ReqService.product.cvoipProduct").size();
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="intReqSubMBoxCounter &lt; SDP_ORDER_RequestProc.order.ReqService.product.cvoipProduct.accountMailBoxes.size()" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+      <bpws:sequence name="HiddenSequence12" wpc:id="1073742324">
+        <bpws:invoke name="GetSubMailBoxinRequest" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get Sub MailBox in Request" wpc:id="170">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[byte __result__1 = 0;
+intProvSubMBoxCounter = new java.lang.Integer(__result__1);
+byte __result__3 = 0;
+intMBoxLocInProv = new java.lang.Integer(__result__3);
+byte __result__5 = 0;
+tmpLoopCounter = new java.lang.Integer(__result__5);
+commonj.sdo.DataObject __result__8;
+{// copy BO
+	com.ibm.websphere.bo.BOCopy _copyService = 
+	   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService("com/ibm/websphere/bo/BOCopy"); 
+	__result__8 = _copyService.copy(SDP_ORDER_RequestProc);
+}
+tmpSDP_ORDER = __result__8;
+java.lang.Object __result__10 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getList(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getDataObject(tmpSDP_ORDER, "order", "tmpSDP_ORDER"), "ReqService", "order"), "product", "ReqService"), "cvoipProduct", "product"), "accountMailBoxes", "tmpSDP_ORDER.order.ReqService.product.cvoipProduct").get(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(intReqSubMBoxCounter, "intReqSubMBoxCounter"));
+reqSubMailBox = (commonj.sdo.DataObject)__result__10;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="0" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="byte"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="intProvSubMBoxCounter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="0" assignable="false">
+//    <dataOutputs target="//@executableElements.3"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="byte"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.2/@dataOutputs.0" value="intMBoxLocInProv" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="0" assignable="false">
+//    <dataOutputs target="//@executableElements.5"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="byte"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.4/@dataOutputs.0" value="tmpLoopCounter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="SDP_ORDER_RequestProc" variable="true">
+//    <dataOutputs target="//@executableElements.7/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_Order" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="copy BO" description="Copy a Business Object" category="SCA services" template="com.ibm.websphere.bo.BOCopy _copyService = &#xA;   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService(&quot;com/ibm/websphere/bo/BOCopy&quot;); &#xA;&lt;%return%> _copyService.copy(&lt;%bo%>);">
+//    <parameters name="bo" dataInputs="//@executableElements.6/@dataOutputs.0" displayName="BO">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </parameters>
+//    <result name="copy" displayName="copy">
+//      <dataOutputs target="//@executableElements.8"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.7/@result/@dataOutputs.0" value="tmpSDP_ORDER" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_Order" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="tmpSDP_ORDER.order.ReqService.product.cvoipProduct.accountMailBoxes.get(intReqSubMBoxCounter)" assignable="false">
+//    <dataOutputs target="//@executableElements.10"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="java.lang.Object"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.9/@dataOutputs.0" value="reqSubMailBox" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_AccountMailBoxes" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//  <executableGroups executableElements="//@executableElements.2 //@executableElements.3"/>
+//  <executableGroups executableElements="//@executableElements.4 //@executableElements.5"/>
+//  <executableGroups executableElements="//@executableElements.6 //@executableElements.7 //@executableElements.8"/>
+//  <executableGroups executableElements="//@executableElements.9 //@executableElements.10"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!3:3,1
+//!SMAP!4:4,1
+//!SMAP!5:5,1
+//!SMAP!6:6,1
+//!SMAP!8:7,6
+//!SMAP!9:13,1
+//!SMAP!10:14,1
+//!SMAP!11:15,1
+//!SMAP!1000000:87,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:invoke name="GetwesmAccountMailboxandSETaccountMailboxForUpdate" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get wesmAccountMailbox and SET accountMailboxForUpdate" wpc:id="575">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[String strReqMboxInvId = null;
+
+strReqMboxInvId = reqSubMailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+SdpLoggerHelper.logMessage("Get Req Mailbox of MailboxInvariantId[" + strReqMboxInvId + "] from WESM",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+wesmAccountMailbox = SdpHelper.getMailBox(SDP_ORDER_ProvProc,strReqMboxInvId);
+
+SdpLoggerHelper.logMessage("wesmAccountMailbox: ",PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+SdpLoggerHelper.logBO(wesmAccountMailbox,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+accountMailboxForUpdate = SdpHelper.copySpecificBO(wesmAccountMailbox);]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:switch name="IsavailableinWESM" wpc:displayName="Is available in WESM?" wpc:id="543">
+          <bpws:case wpc:id="544">
+            <bpws:condition><![CDATA[List lstMailboxTns = null;
+List lstMailboxMembers = null;
+
+String strMailboxTn_tn = null;
+String strMailboxMembers_memberId = null;
+
+boolean tnAvailable = false;
+boolean memberIdAvailable = false;
+
+
+if (reqSubMailBox != null)
+{
+	lstMailboxTns = reqSubMailBox.getList("mailBoxTNs");
+	lstMailboxMembers = reqSubMailBox.getList("mailBoxMembers");
+	
+	strMailboxTn_tn = null;
+	strMailboxMembers_memberId = null;
+	
+	tnAvailable = false;
+	memberIdAvailable = false;
+
+	for (int counter = 0; counter < lstMailboxTns.size(); counter++)
+	{
+		strMailboxTn_tn = ((DataObject)lstMailboxTns.get(counter)).getString("tn");
+		
+		if ( strMailboxTn_tn.trim().length() > 0)
+		 {
+		 	tnAvailable = true;
+		 	SdpLoggerHelper.logMessage("MailboxTn is available in RequestMailbox",
+		 		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		 	break;
+		 }
+	}
+	
+	for (int counter = 0; counter < lstMailboxMembers.size(); counter++)
+	{
+		strMailboxMembers_memberId = ((DataObject)lstMailboxMembers.get(counter)).getString("memberId");
+		
+		if ( strMailboxMembers_memberId.trim().length() > 0)
+		 {
+		 	memberIdAvailable = true;
+		 	SdpLoggerHelper.logMessage("MailboxMember is available in RequestMailbox",
+		 		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		 	break;
+		 }
+	}	
+}
+
+return tnAvailable && memberIdAvailable && wesmAccountMailbox != null;]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence" wpc:id="1073742371">
+              <bpws:sequence name="GeniricPrivateConversion" wpc:displayName="Geniric &lt;-&gt; Private Conversion" wpc:id="820">
+                <bpws:assign name="IntReqTNCounter0needUpdateOrderForTNsfalse" wpc:displayName="intReqTNCounter = 0, needUpdateOrderForTNs = false" wpc:id="581">
+                  <bpws:copy>
+                    <bpws:from>0</bpws:from>
+                    <bpws:to variable="intReqTNCounter"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from>false</bpws:from>
+                    <bpws:to variable="needUpdateOrderForTNs"/>
+                  </bpws:copy>
+                </bpws:assign>
+                <bpws:invoke name="SettnNeedsToBeDeletedMailboxnull" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set tnNeedsToBeDeletedMailbox = null" wpc:id="822">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[tnNeedsToBeDeletedMailbox = null;]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:while name="LoopeachTNinreqMailbox" wpc:displayName="Loop each TN in req Mailbox" wpc:id="579">
+                  <bpws:condition><![CDATA[return intReqTNCounter.intValue() < reqSubMailBox.getList(SdpHelper.VOIP_MAILBOXTNS).size();]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence15" wpc:id="1073742407">
+                    <bpws:invoke name="GetreqTN" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get reqTN" wpc:id="585">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[DataObject tmpTN = null;
+
+tmpTN = (DataObject)reqSubMailBox.getList(SdpHelper.VOIP_MAILBOXTNS).get(intReqTNCounter.intValue());
+
+if (tmpTN != null)
+{
+	reqTN = SdpHelper.copySpecificBO(tmpTN);
+}]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:switch name="IsADLandNOTinWESMChecktoproceed" wpc:displayName="Is ADL and NOT in WESM? &amp; Check to proceed?" wpc:id="586">
+                      <bpws:case wpc:id="587">
+                        <bpws:condition><![CDATA[DataObject lineSubComponent = null;
+DataObject mboxTN = null;
+DataObject tnToBeRemovedMbox = null;
+DataObject tmpAccountMailbox = null;
+
+String strReqTN = null;
+String strLineType = null;
+String strInvariantId = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXTN_STR_SEARCHTYPE;
+String strMainMailboxInd = null;
+
+boolean isADL = false;
+boolean isNotAvailableInWesm = false;
+boolean proceed = false;
+
+strReqTN = reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+			
+SdpLoggerHelper.logMessage("Getting LineSubComponent for TN["+strReqTN+"]",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+lineSubComponent = SdpHelper.getTN(SDP_ORDER_ProvProc,strReqTN);
+
+if (lineSubComponent != null)
+{
+	strLineType = lineSubComponent.getString(SdpHelper.CVOIP_LINE_LINETYPE); 
+	
+	SdpLoggerHelper.logMessage("LineSubComponent lineType[" + strLineType + "]",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+	if (strLineType.equalsIgnoreCase(SdpHelper.LINETYPE_ADL))
+	{	
+		isADL = true;
+	}
+}
+
+mboxTN = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(wesmAccountMailbox,
+	strReqTN,strSearchType);
+
+if (mboxTN == null)
+{
+	isNotAvailableInWesm = true;
+}
+
+if (isADL && isNotAvailableInWesm)
+{
+	SdpLoggerHelper.logMessage("TN["+strReqTN+"] is ADL and not available in WesmMailbox",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+//	strMainMailboxInd = reqSubMailBox.getString(SdpHelper.CVOIP_MAILBOX_MAINMAILBOXIND); 
+//	if (strMainMailboxInd.equalsIgnoreCase(SdpHelper.YES)) //if reqSubMailbox is primary mailbox
+//	{
+		SdpLoggerHelper.logMessage("reqSubMailBox is PrimaryMailbox so checking tnToBeRemovedMbox in request",
+			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		
+		//Searching for the tnToBeRemovedMailbox is available in request.
+		tnToBeRemovedMbox = SdpHelper.getMailBox(SDP_ORDER_ProvProc,strReqTN,SdpHelper.SEARCH_TYPE_TN);
+		if (tnToBeRemovedMbox != null)
+		{		
+			strInvariantId = tnToBeRemovedMbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+			tmpAccountMailbox = SdpHelper.getMailBox(SDP_ORDER_RequestProc,strInvariantId);
+			if (tmpAccountMailbox != null)
+			{
+				SdpLoggerHelper.logMessage("tnToBeRemovedMbox is available in request",
+					PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+				proceed = true; 
+			}
+			else
+			{
+				SdpLoggerHelper.logMessage("tnToBeRemovedMbox is not available in request",
+					PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			}
+		}
+//	}
+//	else
+//	{
+//		SdpLoggerHelper.logMessage("reqSubMailBox is not a PrimaryMailbox",
+//			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+//		proceed = true;
+//	}
+}
+
+return proceed;
+]]></bpws:condition>
+                        <bpws:sequence name="HiddenSequence17" wpc:id="1073742487">
+                          <bpws:assign name="PreInvokeAssigns5" wpc:displayName="Pre-Invoke Assigns" wpc:id="589">
+                            <bpws:copy>
+                              <bpws:from variable="EmptyTransaction_Detail"/>
+                              <bpws:to variable="Transaction_DetailPort"/>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from>UCDCL.Login.Request</bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from>UCDCL</bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from>Login</bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from variable="UMMessageCenterIP"/>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[UMMessageCenterIP]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                          </bpws:assign>
+                          <bpws:invoke name="LogUCDCLLogin" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Login]" wpc:id="591">
+                            <wpc:script>
+                              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                            </wpc:script>
+                          </bpws:invoke>
+                          <bpws:invoke name="InvokeUCDCLLogin" operation="provisioningServiceLogin" partnerLink="UcdclCompensableService_Interface" portType="ns14:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.Login]" wpc:id="592">
+                            <wpc:input>
+                              <wpc:parameter name="transactionDetail" variable="Transaction_DetailPort"/>
+                            </wpc:input>
+                            <wpc:output>
+                              <wpc:parameter name="transactionDetail" variable="Transaction_DetailPort"/>
+                            </wpc:output>
+                            <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="905" wpc:variableId="593">
+                              <bpws:invoke name="Handleruntimefailures" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="595">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                            </bpws:catch>
+                            <bpws:catch faultName="ns14:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="906" wpc:variableId="847">
+                              <bpws:invoke name="SetErrorDetails4" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="849">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(Transaction_DetailPort).setSDPErrorMessage(scFault);
+
+Transaction_DetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +" UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+ ]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                            </bpws:catch>
+                            <bpws:catchAll wpc:id="904">
+                              <bpws:invoke name="Handleruntimefailures1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="603">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+" UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                            </bpws:catchAll>
+                          </bpws:invoke>
+                          <bpws:switch name="ErrorinUCDCLLogin" wpc:displayName="Error in UCDCL.Login?" wpc:id="604">
+                            <bpws:case wpc:id="605">
+                              <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(Transaction_DetailPort, "errorIndicator", "Transaction_DetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Transaction_DetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                              <bpws:sequence name="HiddenSequence4" wpc:id="606">
+                                <bpws:invoke name="LogUCDCLLoginError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Login - Error]" wpc:id="608">
+                                  <wpc:script>
+                                    <wpc:javaCode><![CDATA[String strSeverity =Transaction_DetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("UCDCL.Login - "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);]]></wpc:javaCode>
+                                  </wpc:script>
+                                </bpws:invoke>
+                                <bpws:reply name="Reply4" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="609">
+                                  <wpc:input>
+                                    <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                                    <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                                    <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                                    <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                                  </wpc:input>
+                                </bpws:reply>
+                                <bpws:terminate name="Terminate" wpc:displayName="Terminate" wpc:id="610"/>
+                              </bpws:sequence>
+                            </bpws:case>
+                            <bpws:otherwise wpc:id="907">
+                              <bpws:sequence name="HiddenSequence18" wpc:id="1073742488">
+                                <bpws:invoke name="LogUCDCLLoginSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Login -Success]" wpc:id="612">
+                                  <wpc:script>
+                                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("UCDCL.Login -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                  </wpc:script>
+                                </bpws:invoke>
+                                <bpws:invoke name="SetUMSessionIDUMMessageCenterIP" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMSessionID &amp; UMMessageCenterIP" wpc:id="893">
+                                  <wpc:script>
+                                    <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+String UMSessionID = null;
+//String UMMessageCenterIP = null;
+
+UMSessionID = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMSESSIONID);
+UMMessageCenterIP = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP);
+
+logger.debug("First UCDCL.Login called for this Transaction");
+logger.debug("UMSessionID from the Login Response: " + UMSessionID);
+logger.debug("UMMessageCenterIP from the Login Response: " + UMMessageCenterIP);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMSESSIONID_PATH),UMSessionID);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);
+]]></wpc:javaCode>
+                                  </wpc:script>
+                                </bpws:invoke>
+                                <bpws:invoke name="GetMailboxTNtobedeleted" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="get Mailbox TN to be deleted" wpc:id="808">
+                                  <wpc:script>
+                                    <wpc:javaCode><![CDATA[String strTN = null;
+String strInvariantId = null;
+DataObject tmpAccountMailbox = null;
+
+strTN = reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+
+tnNeedsToBeDeletedMailbox = SdpHelper.getMailBox(SDP_ORDER_ProvProc, strTN, 
+	SdpHelper.SEARCH_TYPE_TN);
+
+//Checking the tnNeedsToBeDeletedMailbox is in request
+//strInvariantId = tnNeedsToBeDeletedMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+//tmpAccountMailbox = SdpHelper.getMailBox(SDP_ORDER_RequestProc,strInvariantId);
+
+//if(tmpAccountMailbox == null)
+//{
+//	tnNeedsToBeDeletedMailbox = SdpHelper.getPrimaryMailBox(SDP_ORDER_ProvProc);
+//}
+
+SdpLoggerHelper.logMessage("TN has to be deleted from the following AccountMailbox",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+SdpLoggerHelper.logBO(tnNeedsToBeDeletedMailbox,PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);]]></wpc:javaCode>
+                                  </wpc:script>
+                                </bpws:invoke>
+                                <bpws:assign name="PreInvokeAssigns6" wpc:displayName="Pre Invoke Assigns" wpc:id="613">
+                                  <bpws:copy>
+                                    <bpws:from variable="tnNeedsToBeDeletedMailbox">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/mailBoxInvariantId]]></bpws:query>
+                                    </bpws:from>
+                                    <bpws:to variable="ucdclEmailOrPhone"/>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from variable="reqTN">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/tn]]></bpws:query>
+                                    </bpws:from>
+                                    <bpws:to variable="ucdclDeviceNumber"/>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from>null</bpws:from>
+                                    <bpws:to variable="ucdclAuthentication"/>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from variable="EmptyTransaction_Detail"/>
+                                    <bpws:to variable="Transaction_DetailPort"/>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from>UCDCL.DeleteDevice.Request</bpws:from>
+                                    <bpws:to variable="Transaction_DetailPort">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                                    </bpws:to>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from>UCDCL</bpws:from>
+                                    <bpws:to variable="Transaction_DetailPort">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                                    </bpws:to>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from>DeleteDevice</bpws:from>
+                                    <bpws:to variable="Transaction_DetailPort">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                                    </bpws:to>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from variable="tnNeedsToBeDeletedMailbox">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[mailBoxInvariantId]]></bpws:query>
+                                    </bpws:from>
+                                    <bpws:to variable="processBO">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/accountMailBoxes[1]/mailBoxInvariantId]]></bpws:query>
+                                    </bpws:to>
+                                  </bpws:copy>
+                                  <bpws:copy>
+                                    <bpws:from variable="reqTN">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[tn]]></bpws:query>
+                                    </bpws:from>
+                                    <bpws:to variable="processBO">
+                                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/cvoipLineSubComponent[1]/tnInfo/tn]]></bpws:query>
+                                    </bpws:to>
+                                  </bpws:copy>
+                                </bpws:assign>
+                                <bpws:invoke name="LogUCDCLDeleteDevice1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DeleteDevice ]" wpc:id="615">
+                                  <wpc:script>
+                                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.DeleteDevice",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("ucdclEmailOrPhone :"+ucdclEmailOrPhone,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("ucdclDeviceNumber :"+ucdclDeviceNumber,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("ucdclAuthentication :"+ucdclAuthentication,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                  </wpc:script>
+                                </bpws:invoke>
+                                <bpws:invoke name="InvokeUCDCLDeleteDevice" operation="deleteDevice" partnerLink="UcdclCompensableService_Interface" portType="ns14:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.DeleteDevice]" wpc:id="616">
+                                  <wpc:input>
+                                    <wpc:parameter name="order" variable="processBO"/>
+                                  </wpc:input>
+                                  <wpc:output>
+                                    <wpc:parameter name="transactionDetail" variable="Transaction_DetailPort"/>
+                                  </wpc:output>
+                                  <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="909" wpc:variableId="617">
+                                    <bpws:invoke name="Handleruntimefailures" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="619">
+                                      <wpc:script>
+                                        <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.DeleteDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                      </wpc:script>
+                                    </bpws:invoke>
+                                  </bpws:catch>
+                                  <bpws:catch faultName="ns14:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="910" wpc:variableId="853">
+                                    <bpws:invoke name="SetErrorDetails6" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="855">
+                                      <wpc:script>
+                                        <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(Transaction_DetailPort).setSDPErrorMessage(scFault);
+
+Transaction_DetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ 
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.DeleteDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+ ]]></wpc:javaCode>
+                                      </wpc:script>
+                                    </bpws:invoke>
+                                  </bpws:catch>
+                                  <bpws:catchAll wpc:id="908">
+                                    <bpws:invoke name="Handleruntimefailures1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="627">
+                                      <wpc:script>
+                                        <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"  UCDCL.DeleteDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                      </wpc:script>
+                                    </bpws:invoke>
+                                  </bpws:catchAll>
+                                </bpws:invoke>
+                                <bpws:switch name="ErrorinUCDCLDeleteDevice" wpc:displayName="Error in UCDCL.DeleteDevice?" wpc:id="628">
+                                  <bpws:case wpc:id="629">
+                                    <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(Transaction_DetailPort, "errorIndicator", "Transaction_DetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Transaction_DetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                                    <bpws:sequence name="HiddenSequence4" wpc:id="630">
+                                      <bpws:invoke name="LogUCDCLDeleteDeviceError1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DeleteDevice - Error]" wpc:id="632">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[String strSeverity =Transaction_DetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("UCDCL.DeleteDevice - "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:reply name="Reply4" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="633">
+                                        <wpc:input>
+                                          <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                                          <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                                          <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                                          <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                                        </wpc:input>
+                                      </bpws:reply>
+                                      <bpws:terminate name="Terminate" wpc:displayName="Terminate" wpc:id="634"/>
+                                    </bpws:sequence>
+                                  </bpws:case>
+                                  <bpws:otherwise wpc:id="911">
+                                    <bpws:sequence name="HiddenSequence19" wpc:id="1073742489">
+                                      <bpws:invoke name="LogUCDCLDeleteDeviceSuccess1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DeleteDevice -Success]" wpc:id="636">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("UCDCL.DeleteDevice -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:invoke name="SetUMSessionIDUMMessageCenterIP1" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMSessionID &amp; UMMessageCenterIP" wpc:id="894">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+String UMSessionID = null;
+//String UMMessageCenterIP = null;
+
+UMSessionID = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMSESSIONID);
+UMMessageCenterIP = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP);
+
+logger.debug("UMSessionID from the DeleteDevice Response: " + UMSessionID);
+logger.debug("UMMessageCenterIP from the DeleteDevice Response: " + UMMessageCenterIP);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMSESSIONID_PATH),UMSessionID);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:invoke name="SetRollbackDeleteDevice" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Rollback DeleteDevice" wpc:id="835">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject tmpTempStore = null;
+List lstTempStore = null;
+String strInvariantId = null;
+
+tmpTempStore = SdpHelper.copySpecificBO(emptyTempStore);
+tmpMailbox = SdpHelper.copySpecificBO(tnNeedsToBeDeletedMailbox);
+
+strInvariantId = tmpMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+tmpTempStore.setString(SdpHelper.TEMP1,strInvariantId);
+tmpTempStore.setString(SdpHelper.TEMP2,"DELETE_DEVICE");
+
+lstTempStore = RollbackSdpOrder.getList(SdpHelper.TEMP_STORE_LIST.replace('.','/'));
+lstTempStore.add(tmpTempStore);
+]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:invoke name="RemoveTNfromtnNeedsToBeRemovedMailbox" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Remove TN from tnNeedsToBeRemovedMailbox" wpc:id="675">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[String strTN = null;
+String strInvariantId = null;
+
+strTN = reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+
+strInvariantId = tnNeedsToBeDeletedMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+SdpHelper.removeTNFromMailBox(tnNeedsToBeDeletedMailbox,strTN);
+
+SdpLoggerHelper.logMessage("TN[" + strTN + "] deleted from AccountMailbox[" + strInvariantId + "]",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:invoke name="RemovereqTNfromMemberProfile" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Remove reqTN from MemberProfile" wpc:id="713">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[String strMemberId = null;
+String strTn = null;
+String keySelector = MamMemberServiceHelper.TN_KEY_SELECTOR;
+String operationSelector = MamMemberServiceHelper.DELETE_OPERATION_SELECTOR;
+String objectSelector = MamMemberServiceHelper.MEMBERPROFILE_OBJECT_SELECTOR;
+StringBuffer logMsg=new StringBuffer();
+StringBuffer loggerMsg=new StringBuffer();
+
+List lstMailboxMembers = null;
+Iterator itrMailboxMembers = null;
+
+DataObject mailboxMember = null;
+DataObject memberProfile = null;
+
+lstMailboxMembers = tnNeedsToBeDeletedMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+itrMailboxMembers = lstMailboxMembers.iterator(); 
+
+strTn = new String(reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN));
+
+while (itrMailboxMembers.hasNext())
+{
+	mailboxMember = (DataObject)itrMailboxMembers.next();
+	
+	if (mailboxMember != null)
+	{
+		strMemberId = mailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID);
+		
+		logMsg.append("Checking to remove the TN [");
+		logMsg.append(strTn);
+		logMsg.append("] from the MemberProfile of MemberId[");
+		logMsg.append(strMemberId);
+		logMsg.append("]");
+		
+		SdpLoggerHelper.logMessage(logMsg.toString(),PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+		logMsg.delete(0, logMsg.length());
+		memberProfile = SdpHelper.getMemberProfile(SDP_ORDER_Prov_Updated,strMemberId,SdpHelper.MEMBER_FILTER);
+		
+		if (memberProfile != null)
+		{				
+			loggerMsg.append("Deleting the TN [");
+			loggerMsg.append(strTn);
+			loggerMsg.append("] from the PrimaryMemberProfile of MemberId[");
+			loggerMsg.append(strMemberId);
+			
+			SdpLoggerHelper.logMessage(loggerMsg.toString(),PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+			loggerMsg.delete(0, loggerMsg.length());
+			MamMemberServiceHelper.modifyMemberProfileOrMailbox(SDP_ORDER_Prov_Updated,
+				strMemberId,keySelector,operationSelector,strTn,objectSelector);
+		}
+	}
+}]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:assign name="PreInvokeAssigns7" wpc:displayName="Pre Invoke Assigns" wpc:id="637">
+                                        <bpws:copy>
+                                          <bpws:from variable="reqSubMailBox">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/mailBoxInvariantId]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="ucdclEmailOrPhone"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="reqTN">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/tn]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="ucdclDeviceNumber"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from>Landline</bpws:from>
+                                          <bpws:to variable="ucdclDeviceType"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="EmptyTransaction_Detail"/>
+                                          <bpws:to variable="Transaction_DetailPort"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from>UCDCL.AddDevice.Request</bpws:from>
+                                          <bpws:to variable="Transaction_DetailPort">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from>UCDCL</bpws:from>
+                                          <bpws:to variable="Transaction_DetailPort">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from>AddDevice</bpws:from>
+                                          <bpws:to variable="Transaction_DetailPort">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from>SIP</bpws:from>
+                                          <bpws:to variable="ucdclTransportMWI"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="SDP_ORDER_ProvProc">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/order/ReqService/product/cvoipProduct/cfn]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="ucdclDeviceCFN"/>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="reqSubMailBox">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[mailBoxInvariantId]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="processBO">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/accountMailBoxes[1]/mailBoxInvariantId]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="reqTN">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[tn]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="processBO">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/cvoipLineSubComponent[1]/tnInfo/tn]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                        <bpws:copy>
+                                          <bpws:from variable="SDP_ORDER_ProvProc">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/cfn]]></bpws:query>
+                                          </bpws:from>
+                                          <bpws:to variable="processBO">
+                                            <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/cfn]]></bpws:query>
+                                          </bpws:to>
+                                        </bpws:copy>
+                                      </bpws:assign>
+                                      <bpws:invoke name="LogUCDCLAddDevice1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.AddDevice ]" wpc:id="639">
+                                        <wpc:script>
+                                          <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.AddDevice",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("ucdclEmailOrPhone:"+ucdclEmailOrPhone,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("ucdclDeviceNumber:"+ucdclDeviceNumber,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("ucdclDeviceType:"+ucdclDeviceType,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("ucdclDeviceCFN:"+ucdclDeviceCFN,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("ucdclAuthentication:"+ucdclAuthentication,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("ucdclTransportMWI:"+ucdclTransportMWI,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+																															]]></wpc:javaCode>
+                                        </wpc:script>
+                                      </bpws:invoke>
+                                      <bpws:invoke name="UCDCLAddDevice1" operation="addDevice" partnerLink="UcdclCompensableService_Interface" portType="ns14:UCDCLCompensableService_Interface" wpc:displayName="UCDCL Add Device" wpc:id="640">
+                                        <wpc:input>
+                                          <wpc:parameter name="order" variable="processBO"/>
+                                        </wpc:input>
+                                        <wpc:output>
+                                          <wpc:parameter name="transactionDetail" variable="Transaction_DetailPort"/>
+                                        </wpc:output>
+                                        <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="913" wpc:variableId="641">
+                                          <bpws:invoke name="Handleruntimefailures2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="643">
+                                            <wpc:script>
+                                              <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.AddDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                            </wpc:script>
+                                          </bpws:invoke>
+                                        </bpws:catch>
+                                        <bpws:catch faultName="ns14:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="914" wpc:variableId="859">
+                                          <bpws:invoke name="SetErrorDetails8" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="861">
+                                            <wpc:script>
+                                              <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(Transaction_DetailPort).setSDPErrorMessage(scFault);
+
+Transaction_DetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ 
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.AddDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+ ]]></wpc:javaCode>
+                                            </wpc:script>
+                                          </bpws:invoke>
+                                        </bpws:catch>
+                                        <bpws:catchAll wpc:id="912">
+                                          <bpws:invoke name="Handleruntimefailures3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="651">
+                                            <wpc:script>
+                                              <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.AddDevice",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                            </wpc:script>
+                                          </bpws:invoke>
+                                        </bpws:catchAll>
+                                      </bpws:invoke>
+                                      <bpws:switch name="CheckUCDCLError3" wpc:displayName="Check UCDCL Error" wpc:id="652">
+                                        <bpws:case wpc:id="653">
+                                          <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(Transaction_DetailPort, "errorIndicator", "Transaction_DetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Transaction_DetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                                          <bpws:sequence name="HiddenSequence5" wpc:id="654">
+                                            <bpws:invoke name="LogUCDCLAddDeviceError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.AddDevice  - Error]" wpc:id="656">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[String strSeverity =Transaction_DetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage(" UCDCL.AddDevice - "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:reply name="Reply" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="659">
+                                              <wpc:input>
+                                                <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                                                <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                                                <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                                                <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                                              </wpc:input>
+                                            </bpws:reply>
+                                            <bpws:terminate name="Terminate5" wpc:displayName="Terminate" wpc:id="660"/>
+                                          </bpws:sequence>
+                                        </bpws:case>
+                                        <bpws:otherwise wpc:id="915">
+                                          <bpws:sequence name="HiddenSequence20" wpc:id="1073742493">
+                                            <bpws:invoke name="LogUCDCLAddDeviceSuccess1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.AddDevice -Success]" wpc:id="662">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("UCDCL.AddDevice -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:invoke name="SetUMSessionIDUMMessageCenterIP2" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMSessionID &amp; UMMessageCenterIP" wpc:id="895">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+String UMSessionID = null;
+//String UMMessageCenterIP = null;
+
+UMSessionID = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMSESSIONID);
+UMMessageCenterIP = Transaction_DetailPort.getString(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP);
+
+logger.debug("UMSessionID from the AddDevice Response: " + UMSessionID);
+logger.debug("UMMessageCenterIP from the AddDevice Response: " + UMMessageCenterIP);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMSESSIONID_PATH),UMSessionID);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);
+]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:invoke name="SetRollbackAddDevice" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Rollback AddDevice" wpc:id="838">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject tmpTempStore = null;
+List lstTempStore = null;
+String strInvariantId = null;
+
+tmpTempStore = SdpHelper.copySpecificBO(emptyTempStore);
+tmpMailbox = SdpHelper.copySpecificBO(reqSubMailBox);
+
+strInvariantId = tmpMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+tmpTempStore.setString(SdpHelper.TEMP1,strInvariantId);
+tmpTempStore.setString(SdpHelper.TEMP2,"ADD_DEVICE");
+
+lstTempStore = RollbackSdpOrder.getList(SdpHelper.TEMP_STORE_LIST.replace('.','/'));
+lstTempStore.add(tmpTempStore);
+]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:invoke name="AddtheTNinaccountMailboxForUpdate" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Add the TN in accountMailboxForUpdate" wpc:id="671">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[DataObject tmpMboxTN = null;
+
+String strTN = null;
+String strInvariantId = null;
+
+tmpMboxTN = SdpHelper.copySpecificBO(reqTN);
+	
+SdpLoggerHelper.logBO(tmpMboxTN,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOXTNS).add(tmpMboxTN);
+
+strTN = tmpMboxTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+strInvariantId = accountMailboxForUpdate.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+SdpLoggerHelper.logMessage("TN["+strTN+"] is Added into AccountMailbox[" + strInvariantId + "]",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:invoke name="AddTNintoSecondaryMemberProfile" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Add TN into Secondary MemberProfile" wpc:id="716">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[List lstMailboxMembers = null;
+
+DataObject mailboxMember = null;
+
+Object memberTn = null;
+
+String strMemberId = null;
+String strTn = null;
+String keySelector = MamMemberServiceHelper.TN_KEY_SELECTOR;
+String operationSelector = MamMemberServiceHelper.ADD_OPERATION_SELECTOR;
+String objectSelector = MamMemberServiceHelper.MEMBERPROFILE_OBJECT_SELECTOR;
+StringBuffer logMsg=new StringBuffer();
+StringBuffer loggerMessage=new StringBuffer();
+
+lstMailboxMembers = reqSubMailBox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+
+for (int counter = 0; counter < lstMailboxMembers.size(); counter++)
+{
+	mailboxMember = SdpHelper.copySpecificBO((DataObject) lstMailboxMembers.get(counter));
+	strMemberId = mailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID);
+	memberTn = (Object) SdpHelper.copySpecificBO(reqTN);
+	strTn = reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+	
+	logMsg.append("Adding the TN[");
+	logMsg.append(strTn);
+	logMsg.append("to the MemberProfile");
+	
+	
+	SdpLoggerHelper.logMessage(logMsg.toString(), PROCESS_NAME, processID, SdpLoggerHelper.INFO);
+	logMsg.delete(0, logMsg.length());
+	loggerMessage.append("Secondary MemberProfile MemberId:");
+	loggerMessage.append(strMemberId);
+	
+	SdpLoggerHelper.logMessage(loggerMessage.toString(),PROCESS_NAME,processID, SdpLoggerHelper.INFO);
+	loggerMessage.delete(0, loggerMessage.length());
+	MamMemberServiceHelper.modifyMemberProfileOrMailbox(SDP_ORDER_Prov_Updated,
+		strMemberId,keySelector,operationSelector,memberTn,objectSelector);
+}]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:assign name="NeedUpdateOrderForTNstrue" wpc:displayName="needUpdateOrderForTNs = true" wpc:id="813">
+                                              <bpws:copy>
+                                                <bpws:from>true</bpws:from>
+                                                <bpws:to variable="needUpdateOrderForTNs"/>
+                                              </bpws:copy>
+                                            </bpws:assign>
+                                            <bpws:invoke name="LogUCDCLLogout" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout]" wpc:id="803">
+                                              <wpc:script>
+                                                <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                              </wpc:script>
+                                            </bpws:invoke>
+                                            <bpws:invoke name="InvokeUCDCLLogout" operation="provisioningServiceLogout" partnerLink="UcdclCompensableService_Interface" portType="ns14:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.Logout]" wpc:id="789">
+                                              <wpc:input>
+                                                <wpc:parameter name="transactionDetail" variable="Transaction_DetailPort"/>
+                                              </wpc:input>
+                                              <wpc:output/>
+                                              <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="917" wpc:variableId="790">
+                                                <bpws:invoke name="Handleruntimefailures" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="792">
+                                                  <wpc:script>
+                                                    <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                                  </wpc:script>
+                                                </bpws:invoke>
+                                              </bpws:catch>
+                                              <bpws:catch faultName="ns14:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="918" wpc:variableId="865">
+                                                <bpws:invoke name="SetErrorDetails10" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="867">
+                                                  <wpc:script>
+                                                    <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(Transaction_DetailPort).setSDPErrorMessage(scFault);
+
+Transaction_DetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +" UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+ ]]></wpc:javaCode>
+                                                  </wpc:script>
+                                                </bpws:invoke>
+                                              </bpws:catch>
+                                              <bpws:catchAll wpc:id="916">
+                                                <bpws:invoke name="Handleruntimefailures1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="handle runtime failures" wpc:id="800">
+                                                  <wpc:script>
+                                                    <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(Transaction_DetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+" UCDCL.Login",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                                                  </wpc:script>
+                                                </bpws:invoke>
+                                              </bpws:catchAll>
+                                            </bpws:invoke>
+                                            <bpws:switch name="ErrorinLogout" wpc:displayName="Error in Logout?" wpc:id="814">
+                                              <bpws:case wpc:id="815">
+                                                <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(Transaction_DetailPort, "errorIndicator", "Transaction_DetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Transaction_DetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                                                <bpws:sequence name="HiddenSequence22" wpc:id="1073742642">
+                                                  <bpws:invoke name="LogUCDCLError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL - Error]" wpc:id="817">
+                                                    <wpc:script>
+                                                      <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("UCDCL.Logout -"+SdpLoggerHelper.ERROR_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                                    </wpc:script>
+                                                  </bpws:invoke>
+                                                  <bpws:invoke name="SeterrorIndicatorfalse" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set errorIndicator = false" wpc:id="892">
+                                                    <wpc:script>
+                                                      <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean(SdpHelper.ERRORINDICATOR,false);]]></wpc:javaCode>
+                                                    </wpc:script>
+                                                  </bpws:invoke>
+                                                </bpws:sequence>
+                                              </bpws:case>
+                                              <bpws:otherwise wpc:id="919">
+                                                <bpws:invoke name="LogUCDCLSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL - Success]" wpc:id="806">
+                                                  <wpc:script>
+                                                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("UCDCL.Logout -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                                  </wpc:script>
+                                                </bpws:invoke>
+                                              </bpws:otherwise>
+                                            </bpws:switch>
+                                          </bpws:sequence>
+                                        </bpws:otherwise>
+                                      </bpws:switch>
+                                    </bpws:sequence>
+                                  </bpws:otherwise>
+                                </bpws:switch>
+                              </bpws:sequence>
+                            </bpws:otherwise>
+                          </bpws:switch>
+                        </bpws:sequence>
+                      </bpws:case>
+                      <bpws:case wpc:id="823">
+                        <bpws:condition><![CDATA[DataObject lineSubComponent = null;
+DataObject mboxTN = null;
+
+String strADLTN = null;
+String strReqTN = null;
+String strLineType = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXTN_STR_SEARCHTYPE;
+
+boolean isPTL = false;
+boolean isNotAvailableInWesm = false;
+boolean isADLInReqMbox = false;
+
+SdpLoggerHelper.logMessage("Checking to add the PTL TN["+strReqTN+"] in the Mailbox",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+strReqTN = reqTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+			
+SdpLoggerHelper.logMessage("Getting LineSubComponent for TN["+strReqTN+"]",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+lineSubComponent = SdpHelper.getTN(SDP_ORDER_ProvProc,strReqTN);
+
+if (lineSubComponent != null)
+{
+	strLineType = lineSubComponent.getString(SdpHelper.CVOIP_LINE_LINETYPE); 
+	
+	SdpLoggerHelper.logMessage("LineSubComponent lineType[" + strLineType + "]",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+	if (strLineType.equalsIgnoreCase(SdpHelper.LINETYPE_PTL))
+	{	
+		isPTL = true;
+	}
+}
+
+mboxTN = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(wesmAccountMailbox,
+	strReqTN,strSearchType);
+
+if (mboxTN == null)
+{
+	isNotAvailableInWesm = true;
+}
+
+// Added to chk the ADL is available in request mailbox or not. [64445]  
+if (isPTL && isNotAvailableInWesm)
+{
+	lineSubComponent = SdpHelper.getPrimaryOrSecondaryTN(SDP_ORDER_ProvProc,SdpHelper.NO);
+	
+	if (lineSubComponent != null)
+	{
+		strADLTN = lineSubComponent.getString(SdpHelper.CVOIP_TN_PATH.replace('.','/')); 
+		mboxTN = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(reqSubMailBox,
+			strADLTN,strSearchType);
+
+		if (mboxTN != null)
+		{
+			isADLInReqMbox = true;
+			SdpLoggerHelper.logMessage("ADL available in request mailbox",
+				PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		}
+	}
+}
+
+if (!(isPTL && isNotAvailableInWesm && isADLInReqMbox))
+{
+	SdpLoggerHelper.logMessage("PTL TN["+strReqTN+"] cannot added in to the request Mailbox",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+}
+
+return isPTL && isNotAvailableInWesm && isADLInReqMbox;
+]]></bpws:condition>
+                        <bpws:sequence name="HiddenSequence23" wpc:id="1073742648">
+                          <bpws:invoke name="AddthePTLintoaccountMailboxForUpdate" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Add the PTL into accountMailboxForUpdate" wpc:id="826">
+                            <wpc:script>
+                              <wpc:javaCode><![CDATA[DataObject tmpTN = null;
+
+String strTN = null;
+String strInvariantId = null;
+
+tmpTN = SdpHelper.copySpecificBO(reqTN);
+
+strTN = tmpTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+strInvariantId = reqSubMailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+SdpHelper.addTNToMailBox(accountMailboxForUpdate,tmpTN);
+
+SdpLoggerHelper.logMessage("Adding the TN[" + strTN + "] to the mailbox[" + strInvariantId + "]",
+	PROCESS_NAME, processID, SdpLoggerHelper.DEBUG);]]></wpc:javaCode>
+                            </wpc:script>
+                          </bpws:invoke>
+                          <bpws:invoke name="UpdateMemberProfiles" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Update MemberProfiles" wpc:id="828">
+                            <wpc:script>
+                              <wpc:javaCode><![CDATA[List lstMailboxMembers = null;
+Iterator itrMailboxMembers = null;
+
+DataObject mailboxMember = null;
+DataObject tmpTN = null;
+
+String strTN = null;
+String strMemberId = null;
+String keySelector = MamMemberServiceHelper.TN_KEY_SELECTOR;
+String operationSelector = MamMemberServiceHelper.ADD_OPERATION_SELECTOR;
+String objectSelector = MamMemberServiceHelper.MEMBERPROFILE_OBJECT_SELECTOR;
+String strSearchType = MamMemberServiceHelper.MAILBOXMEMBER_STR_SEARCHTYPE;
+StringBuffer logMsg=new StringBuffer();
+StringBuffer loggerMessage=new StringBuffer();
+tmpTN = SdpHelper.copySpecificBO(reqTN);
+
+strTN = tmpTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+
+lstMailboxMembers = accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+itrMailboxMembers = lstMailboxMembers.iterator();
+logMsg.append("Adding the TN[");
+logMsg.append(strTN);
+logMsg.append("to the MemberProfile[s]");
+SdpLoggerHelper.logMessage(logMsg.toString(),PROCESS_NAME, processID, SdpLoggerHelper.DEBUG);
+logMsg.delete(0, logMsg.length());
+
+
+while(itrMailboxMembers.hasNext())
+{
+	mailboxMember = (DataObject)itrMailboxMembers.next();
+	strMemberId = mailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID);
+	MamMemberServiceHelper.modifyMemberProfileOrMailbox(SDP_ORDER_Prov_Updated, strMemberId,
+		keySelector, operationSelector,tmpTN,objectSelector);
+		loggerMessage.append("TN[");
+		loggerMessage.append(strTN);
+		loggerMessage.append("added to the MemberProfile[");
+		loggerMessage.append(strMemberId);
+		loggerMessage.append("]");
+		SdpLoggerHelper.logMessage(loggerMessage.toString(), PROCESS_NAME, processID,SdpLoggerHelper.DEBUG);
+		loggerMessage.delete(0, loggerMessage.length());
+}
+]]></wpc:javaCode>
+                            </wpc:script>
+                          </bpws:invoke>
+                          <bpws:assign name="NeedUpdateOrderForTNstrue1" wpc:displayName="needUpdateOrderForTNs = true" wpc:id="830">
+                            <bpws:copy>
+                              <bpws:from>true</bpws:from>
+                              <bpws:to variable="needUpdateOrderForTNs"/>
+                            </bpws:copy>
+                          </bpws:assign>
+                        </bpws:sequence>
+                      </bpws:case>
+                    </bpws:switch>
+                    <bpws:invoke name="IntReqTNCounter1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="intReqTNCounter++" wpc:id="582">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[intReqTNCounter = new Integer(intReqTNCounter.intValue()+1);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                  </bpws:sequence>
+                </bpws:while>
+                <bpws:invoke name="CheckupdateTNsinMemberProfileMailbox" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Check &amp; update TNs in MemberProfile/Mailbox" wpc:id="811">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[List lstMailboxTNs = null;
+Iterator itrMailboxTNs = null;
+DataObject tmpMboxTN = null;
+DataObject tmpTN = null;
+
+List lstMemberProfile = null;
+Iterator itrMemberProfile = null;
+DataObject memberProfile = null;
+
+DataObject accountMailbox = null;
+DataObject tmpMailboxMember = null;
+List tmpLstMailboxTNs = null;
+
+DataObject lineSubComp = null;
+
+String strLineType = null;
+String strTN = null;
+String strMemberId = null;
+String strInvariantId = null;
+String tmpInvariantId = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXTN_STR_SEARCHTYPE;
+StringBuffer logMsg=new StringBuffer();
+StringBuffer logMessage=new StringBuffer();
+
+
+boolean tnUpdated = false;
+
+lstMailboxTNs = wesmAccountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS);
+itrMailboxTNs = lstMailboxTNs.iterator();
+
+strInvariantId = accountMailboxForUpdate.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+//updating MailboxTNs
+while (itrMailboxTNs.hasNext())
+{
+	tmpMboxTN = (DataObject) itrMailboxTNs.next();
+	
+	if (tmpMboxTN != null)
+	{
+		strTN = tmpMboxTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+		
+		tmpTN = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(reqSubMailBox,strTN,strSearchType);
+		
+		lineSubComp = SdpHelper.getTN(SDP_ORDER_ProvProc,strTN);
+		strLineType = lineSubComp.getString(SdpHelper.CVOIP_LINE_LINETYPE);
+		
+		if(tmpTN == null && strLineType.equalsIgnoreCase(SdpHelper.LINETYPE_PTL))
+		{
+			SdpHelper.removeTNFromMailBox(accountMailboxForUpdate,strTN);
+			logMsg.append("TN[");
+			logMsg.append(strTN);
+			logMsg.append("is Removed from AccountMailbox[");
+			logMsg.append(strInvariantId);
+			logMsg.append("]");
+			SdpLoggerHelper.logMessage(logMsg.toString(),PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			logMsg.delete(0, logMsg.length());
+			needUpdateOrderForTNs =  new Boolean(true);
+			tnUpdated = true;	
+		}
+	}	
+}
+
+if (tnNeedsToBeDeletedMailbox != null)
+{
+	tmpInvariantId = tnNeedsToBeDeletedMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID); 
+}
+// Added for the defect 178066
+if (needUpdateOrderForTNs)
+{
+	int reqMailboxTNCount = reqSubMailBox.getList(SdpHelper.VOIP_MAILBOXTNS).size();
+	int mpsMailBoxTNCount = accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOXTNS).size();
+	for(int reqCount =0; reqCount < reqMailboxTNCount; reqCount++) {
+		DataObject tmpTNBO = null;
+		String tmpReqTN = null;
+		DataObject mpsTN = null;
+		tmpTNBO = (DataObject)reqSubMailBox.getList(SdpHelper.VOIP_MAILBOXTNS).get(reqCount);
+		tmpReqTN = tmpTNBO.getString(SdpHelper.CVOIP_MAILBOX_TN);
+		mpsTN = SdpHelper.getTNFromMailBox(accountMailboxForUpdate,tmpReqTN);
+		if(mpsTN == null) {
+			SdpHelper.addTNToMailBox(accountMailboxForUpdate,tmpTNBO);
+		}		
+	}	
+}
+//updating MemberTNs
+if (tnUpdated && (tnNeedsToBeDeletedMailbox == null || 
+	(!tmpInvariantId.equalsIgnoreCase(strInvariantId))))
+{
+	lstMemberProfile = SDP_ORDER_Prov_Updated.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.','/'));
+	itrMemberProfile = lstMemberProfile.iterator();
+	
+	strSearchType = MamMemberServiceHelper.MAILBOXMEMBER_STR_SEARCHTYPE;
+	
+	while (itrMemberProfile.hasNext())
+	{
+		memberProfile = (DataObject)itrMemberProfile.next();
+		if(memberProfile != null)
+		{
+			strMemberId = memberProfile.getString(SdpHelper.MEMBERPROFILE_MEMBERID);
+			tmpMailboxMember = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(
+				accountMailboxForUpdate,strMemberId,strSearchType);
+			
+			if (tmpMailboxMember != null)
+			{
+				accountMailbox = SdpHelper.copySpecificBO(accountMailboxForUpdate);
+				tmpLstMailboxTNs = accountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS);
+				memberProfile.getList(SdpHelper.MEMBERPROFILE_MEMBER_TNS).clear();
+	 	 		memberProfile.setList(SdpHelper.MEMBERPROFILE_MEMBER_TNS,tmpLstMailboxTNs);
+	 	 		
+	 	 		logMessage.append("TNs has updated in memberProfile[");
+	 	 		logMessage.append(strMemberId);
+	 	 		logMessage.append("]");
+
+	 	 		SdpLoggerHelper.logMessage(logMessage.toString(),PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	 	 		logMessage.delete(0, logMessage.length());
+			}
+		}
+	}
+}
+]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:switch name="NeedUpdateOrderformailboxTNs" wpc:displayName="Need UpdateOrder for mailboxTNs?" wpc:id="678">
+                  <bpws:case wpc:id="679">
+                    <bpws:condition><![CDATA[return needUpdateOrderForTNs.booleanValue();]]></bpws:condition>
+                    <bpws:sequence name="HiddenSequence1" wpc:id="680">
+                      <bpws:assign name="IntCounter0" wpc:displayName="intCounter = 0" wpc:id="707">
+                        <bpws:copy>
+                          <bpws:from>0</bpws:from>
+                          <bpws:to variable="intCounter"/>
+                        </bpws:copy>
+                      </bpws:assign>
+                      <bpws:switch name="Choice" wpc:displayName="Not Business Voice?" wpc:id="931">
+                        <bpws:case wpc:displayName="Yes" wpc:id="932">
+                          <bpws:condition expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/"><![CDATA[return !isBusinessVoip;
+]]></bpws:condition>
+                          <bpws:while name="ChecktoLoopTwice" wpc:displayName="Check to Loop Twice" wpc:id="705">
+                            <bpws:condition><![CDATA[int maxIteration = 0;
+if (tnNeedsToBeDeletedMailbox != null && needUpdateOrderForTNs.booleanValue())
+{
+	maxIteration = 2;
+}
+else
+{
+	maxIteration = 1;
+}
+
+return intCounter.intValue() < maxIteration;]]></bpws:condition>
+                            <bpws:sequence name="HiddenSequence21" wpc:id="1073742534">
+                              <bpws:invoke name="SettmpSDP_ORDER" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set tmpSDP_ORDER" wpc:id="704">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[String strInvariantId = null;
+String strPTLTN = null;
+String strTmpTN = null;
+String strMemberId = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXTN_STR_SEARCHTYPE;
+
+DataObject tmpMailboxMember = null;
+DataObject accountMailbox = null;
+DataObject reqAccountMailbox = null;
+DataObject wesmMailbox = null;
+
+DataObject ptlTN = null;
+DataObject tmpTN = null;
+DataObject dataObjTN = null;
+DataObject TN = null;
+DataObject memberProfile = null;
+
+List tmpLstMailboxTNs = null;
+List lstMemberProfile = null;
+Iterator itrMemberProfile = null;
+
+List lstMailboxTNs = null;
+Iterator itrMailboxTNs = null;
+StringBuffer logMsg=new StringBuffer();
+StringBuffer loggerMsg=new StringBuffer();
+StringBuffer logMessage=new StringBuffer();
+
+
+
+boolean tnUpdated = false;
+
+tmpSDP_ORDER = SdpHelper.copySpecificBO(SDP_ORDER_ProvProc);
+
+tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).clear();
+
+if (intCounter.intValue() == 0)
+{
+	SdpLoggerHelper.logMessage("Preparing tmpSDP_ORDER for [TNs Added Mailbox] MPS.associateMailboxTNs",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+	tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).add(accountMailboxForUpdate);
+}
+else
+{
+	SdpLoggerHelper.logMessage("Preparing tmpSDP_ORDER for [TNs Removed Mailbox]MPS.associateMailboxTNs",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+	//While converting Private to Geniric mailbox
+	//check to add the PTL which is in the request mailbox and not in wesm -- begin
+	SdpLoggerHelper.logMessage("Checking to add the PTL is in Request and Not in MPS",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+	strInvariantId = tnNeedsToBeDeletedMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+	reqAccountMailbox = SdpHelper.getMailBox(SDP_ORDER_RequestProc, strInvariantId);
+	wesmMailbox = SdpHelper.getMailBox(SDP_ORDER_ProvProc, strInvariantId);
+	
+	if (reqAccountMailbox != null)
+	{
+		ptlTN = SdpHelper.getPrimaryOrSecondaryTN(SDP_ORDER_ProvProc, SdpHelper.YES);
+		if (ptlTN != null)
+		{
+			strPTLTN = ptlTN.getString(SdpHelper.CVOIP_TN_PATH.replace('.','/'));
+			
+			logMsg.append("PTL is in MPS [Order]:");
+			logMsg.append(strPTLTN);
+			SdpLoggerHelper.logMessage(logMsg.toString(),PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			logMsg.delete(0, logMsg.length());
+			
+			lstMailboxTNs = reqAccountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS);
+			itrMailboxTNs = lstMailboxTNs.iterator();
+			
+			while(itrMailboxTNs.hasNext())
+			{
+				tmpTN = (DataObject) itrMailboxTNs.next();
+				if (tmpTN != null)
+				{
+					strTmpTN = tmpTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+					SdpLoggerHelper.logMessage("Searching PTL in Current Request Mailbox",
+						PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+					TN = SdpHelper.getTNFromMailBox(wesmMailbox,strTmpTN);
+					if (strPTLTN.equalsIgnoreCase(strTmpTN) && TN == null)
+					{
+						dataObjTN = SdpHelper.copySpecificBO(tmpTN);
+						tnNeedsToBeDeletedMailbox.getList(SdpHelper.VOIP_MAILBOXTNS).add(dataObjTN);
+						SdpLoggerHelper.logMessage("Found PTL in current req mailbox and not in MPS and added",PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+						tnUpdated = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	//updating MemberTNs [TNs in MemberProfile]
+	if (tnUpdated)
+	{
+		lstMemberProfile = SDP_ORDER_Prov_Updated.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.','/'));
+		itrMemberProfile = lstMemberProfile.iterator();
+		
+		accountMailbox = SdpHelper.copySpecificBO(tnNeedsToBeDeletedMailbox);
+		
+		tmpLstMailboxTNs = accountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS);
+		
+		strSearchType = MamMemberServiceHelper.MAILBOXMEMBER_STR_SEARCHTYPE;
+		
+		SdpLoggerHelper.logMessage("Checking to update TNs in MemberProfile",
+			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		
+		while (itrMemberProfile.hasNext())
+		{
+			memberProfile = (DataObject)itrMemberProfile.next();
+			if(memberProfile != null)
+			{	
+				strMemberId = memberProfile.getString(SdpHelper.MEMBERPROFILE_MEMBERID);
+				loggerMsg.append("Searching Member[");
+				loggerMsg.append(strMemberId);
+				loggerMsg.append("] in Mailbox");
+				
+				SdpLoggerHelper.logMessage(loggerMsg.toString(),PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+				loggerMsg.delete(0, loggerMsg.length());	
+				tmpMailboxMember = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(
+					tnNeedsToBeDeletedMailbox,strMemberId,strSearchType);
+				
+				if (tmpMailboxMember != null)
+				{
+					memberProfile.getList(SdpHelper.MEMBERPROFILE_MEMBER_TNS).clear();
+		 	 		memberProfile.setList(SdpHelper.MEMBERPROFILE_MEMBER_TNS,tmpLstMailboxTNs);
+		 	 		logMessage.append("Member found and TNs has updated in memberProfile[");
+		 	 		logMessage.append(strMemberId);
+		 	 		logMessage.append("]");
+		 	 		SdpLoggerHelper.logMessage(logMessage.toString(),PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		 	 		logMessage.delete(0, logMessage.length());		
+				}
+			}
+		}
+	}
+	
+	//Check to add the PTL which is in the request mailbox and not in wesm -- begin
+	
+	tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).add(tnNeedsToBeDeletedMailbox);
+}]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:assign name="PreInvokeAssigns4" wpc:displayName="Pre-Invoke Assigns" wpc:id="681">
+                                <bpws:copy>
+                                  <bpws:from variable="EmptyTransaction_Detail"/>
+                                  <bpws:to variable="Transaction_DetailPort"/>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from>WESM.UpdateOrder.Request</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from>MPS</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from>UpdateOrder</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from>MAILBOX</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentProduct]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from variable="Transaction_DetailPort"/>
+                                  <bpws:to variable="tmpSDP_ORDER">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                              </bpws:assign>
+                              <bpws:invoke name="SetWESMFilters1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set WESM Filters" wpc:id="683">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[/*
+SdpLoggerHelper.logMessage("Setting up the Filters for WESM.updateOrder[MailBox]", PROCESS_NAME, processID,
+	SdpLoggerHelper.DEBUG);
+
+//Create WESM Content Filter 
+ContentFilterCreator filterCreator = new ContentFilterCreator();
+
+filterCreator.addSelectFilter(SdpHelper.PRODUCTTYPE, SdpHelper.CURRENT_PRODUCT_PATH);
+
+//Create WESM Select Filter
+filterCreator.addSelectFilter(SdpHelper.ACCT_OBJID, SdpHelper.ACCT_OBJID_PATH);
+
+//Set the Filter for the MailBoxInvarintID
+filterCreator.addSelectFilter(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID, 
+	SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID_PATH);
+		
+//Set the Content filter to the transaction detail object. 
+tmpSDP_ORDER.getDataObject("transactionDetail").setDataObject( "contentFilter", filterCreator.createFilters() );
+
+//Create WESM Update Filter for mailboxMembers
+
+DataObject accountMailbox = 
+	(DataObject)tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).get(0);
+
+SdpHelper.setUpMemberTNs(tmpSDP_ORDER.getDataObject("transactionDetail"),
+	accountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS).size(),SdpHelper.MAILBOX_TN_TYPE);
+	
+*/]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:invoke name="LogMPSassociateMailboxTNs" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs]" wpc:id="685">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO [tmpSDP_ORDER:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(tmpSDP_ORDER,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:invoke name="InvokeMPSassociateMailboxTNs" operation="associateMailboxTNs" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns13:MPSCompensableService2_Interface" wpc:displayName="Invoke - [MPS.associateMailboxTNs]" wpc:id="686">
+                                <wpc:input>
+                                  <wpc:parameter name="order" variable="tmpSDP_ORDER"/>
+                                </wpc:input>
+                                <wpc:output/>
+                                <bpws:catch faultName="ns13:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="903" wpc:variableId="883">
+                                  <bpws:sequence name="HiddenSequence25" wpc:id="1073742709">
+                                    <bpws:assign name="SetErrorDetails" wpc:displayName="Set Error Details" wpc:id="884">
+                                      <bpws:copy>
+                                        <bpws:from>11016</bpws:from>
+                                        <bpws:to variable="Transaction_DetailPort">
+                                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageCode]]></bpws:query>
+                                        </bpws:to>
+                                      </bpws:copy>
+                                      <bpws:copy>
+                                        <bpws:from><![CDATA[SDP_Downstream_System_Error]]></bpws:from>
+                                        <bpws:to variable="Transaction_DetailPort">
+                                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageText]]></bpws:query>
+                                        </bpws:to>
+                                      </bpws:copy>
+                                      <bpws:copy>
+                                        <bpws:from>FATAL</bpws:from>
+                                        <bpws:to variable="Transaction_DetailPort">
+                                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                                        </bpws:to>
+                                      </bpws:copy>
+                                      <bpws:copy>
+                                        <bpws:from variable="scFault">
+                                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[messageDetail]]></bpws:query>
+                                        </bpws:from>
+                                        <bpws:to variable="Transaction_DetailPort">
+                                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[errorDetails/Error/Message/MessageDetail]]></bpws:query>
+                                        </bpws:to>
+                                      </bpws:copy>
+                                    </bpws:assign>
+                                    <bpws:invoke name="Handleruntimefailure2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle runtime failure" wpc:id="689">
+                                      <wpc:script>
+                                        <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean("errorIndicator", true);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+" MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+SdpLoggerHelper.logBO(scFault,PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+]]></wpc:javaCode>
+                                      </wpc:script>
+                                    </bpws:invoke>
+                                    <bpws:reply name="Reply5" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="697">
+                                      <wpc:input>
+                                        <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                                        <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                                        <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                                        <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                                      </wpc:input>
+                                    </bpws:reply>
+                                    <bpws:terminate name="Terminate4" wpc:displayName="Terminate" wpc:id="698"/>
+                                  </bpws:sequence>
+                                </bpws:catch>
+                              </bpws:invoke>
+                              <bpws:invoke name="LogMPSassociateMailboxTNsSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs - Success]" wpc:id="701">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("MPS.associateMailboxTNs :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [Transaction_DetailPort:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+													
+SdpLoggerHelper.logBO(Transaction_DetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:invoke name="SetRollbackUpdateOrder" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Rollback UpdateOrder" wpc:id="841">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject mailBox = null;
+DataObject tmpTempStore = null;
+List lstTempStore = null;
+String strInvariantId = null;
+
+tmpTempStore = SdpHelper.copySpecificBO(emptyTempStore);
+tmpMailbox = (DataObject)tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).get(0);
+mailBox = SdpHelper.copySpecificBO(tmpMailbox);
+
+strInvariantId = mailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+tmpTempStore.setString(SdpHelper.TEMP1,strInvariantId);
+tmpTempStore.setString(SdpHelper.TEMP2,"ASSOCIATE_MAILBOXTNS");
+
+lstTempStore = RollbackSdpOrder.getList(SdpHelper.TEMP_STORE_LIST.replace('.','/'));
+lstTempStore.add(tmpTempStore);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:invoke name="IntCounter1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="intCounter++" wpc:id="709">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[intCounter = new Integer(intCounter.intValue()+1);]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                            </bpws:sequence>
+                          </bpws:while>
+                        </bpws:case>
+                      </bpws:switch>
+                    </bpws:sequence>
+                  </bpws:case>
+                </bpws:switch>
+              </bpws:sequence>
+              <bpws:invoke name="ChecktoremoveMailboxMembers" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Check to remove MailboxMembers" wpc:id="770">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[//Commented the code, hence the mailboxMembers is not used at mailbox level in R7
+/*DataObject wesmMailboxMember = null;
+DataObject mailboxMember = null;
+DataObject tmpMailboxMember = null;
+DataObject memberProfile = null;
+DataObject tmpAccountMailbox = null;
+DataObject accountMailbox = null;
+
+List lstWesmMboxMembers = null;
+List lstMemberProfile = null;
+List lstMailboxTNs = null;
+List tmpLstMboxMembers = null;
+
+Iterator tmpItrMboxMembers = null;
+Iterator itrWesmMboxMember = null;
+Iterator itrMemberProfile = null;
+
+String strWesmMboxMemId = null;
+String strInvariantId = null;
+String memberId = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXMEMBER_STR_SEARCHTYPE;
+
+int index;
+
+boolean subRemoved = false;
+
+SdpLoggerHelper.logMessage("Chcking to remove the subscriber Mailbox",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+tmpSDP_ORDER = SdpHelper.copySpecificBO(SDP_ORDER_ProvProc);
+	
+tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).clear();
+
+tmpAccountMailbox = SdpHelper.copySpecificBO(wesmAccountMailbox);
+subsToBeRemovedMailbox = SdpHelper.copySpecificBO(wesmAccountMailbox);
+
+lstWesmMboxMembers = tmpAccountMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+
+itrWesmMboxMember = lstWesmMboxMembers.iterator();
+
+while(itrWesmMboxMember.hasNext())
+{
+	wesmMailboxMember = (DataObject)itrWesmMboxMember.next();
+	
+	if (wesmMailboxMember != null)
+	{
+		strWesmMboxMemId = wesmMailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID);
+			
+		SdpLoggerHelper.logMessage("MailboxMemberId["+strWesmMboxMemId+ "] in wesmAccountMailbox",
+			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		
+		tmpMailboxMember = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(
+			reqSubMailBox,strWesmMboxMemId,strSearchType);
+		
+		if (tmpMailboxMember == null)
+		{		
+			strInvariantId =  subsToBeRemovedMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+			
+			SdpLoggerHelper.logMessage("Subscriber[" + strWesmMboxMemId + 
+				"] found to be deleted from Mailbox[" + strInvariantId + "]",
+				PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			
+			tmpLstMboxMembers = subsToBeRemovedMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+			tmpItrMboxMembers = tmpLstMboxMembers.iterator();
+			index = 0;
+			
+			while (tmpItrMboxMembers.hasNext())
+			{
+				tmpMailboxMember = SdpHelper.copySpecificBO(
+					(DataObject) tmpItrMboxMembers.next());
+				
+				if (tmpMailboxMember != null && 
+					tmpMailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID).equalsIgnoreCase(strWesmMboxMemId))
+				{
+					tmpLstMboxMembers.remove(index);
+					subRemoved = true;
+					
+					SdpLoggerHelper.logMessage("Subscriber[" + strWesmMboxMemId + 
+						"] is in WESM not in request found and removed from Mailbox[" + strInvariantId + "]",
+						PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+					
+					accountMailbox = SdpHelper.getMailBox(SDP_ORDER_RequestProc,
+						strWesmMboxMemId,SdpHelper.SEARCH_TYPE_MEMBER);
+					if (accountMailbox == null)
+					{
+						lstMemberProfile = SDP_ORDER_Prov_Updated.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.','/'));
+						itrMemberProfile = lstMemberProfile.iterator();
+						while (itrMemberProfile.hasNext())
+						{
+							memberProfile = (DataObject)itrMemberProfile.next();
+							if ( memberProfile != null)
+							{
+								memberId = memberProfile.getString(SdpHelper.MEMBERPROFILE_MEMBERID);
+								if (strWesmMboxMemId.equalsIgnoreCase(memberId))
+								{					
+									memberProfile.getList(SdpHelper.MEMBERPROFILE_MEMBER_TNS).clear();
+									SdpLoggerHelper.logMessage("memberTNs is removed from memberProfile[" + 
+										strWesmMboxMemId + "]",PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+									
+									memberProfile.setString(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID,"-1");
+									SdpLoggerHelper.logMessage("mailboxInvariantId is removed from memberProfile[" + 
+										strWesmMboxMemId +"]",PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+										
+									memberProfile.setString(SdpHelper.MEMBERPROFILE_MAILBOXINDEX,"");
+									SdpLoggerHelper.logMessage("mailboxIndex is removed from memberProfile[" + 
+										strWesmMboxMemId +"]",PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+									break;
+								}					
+							}
+						}
+					}
+ 					break;
+				}
+				index++;
+			}
+		}
+		else
+		{
+			SdpLoggerHelper.logMessage("MailboxMemberId["+strWesmMboxMemId+ "] is available in requst Mailbox",
+				PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		}
+	}
+}
+
+if (subRemoved)
+{
+	SdpLoggerHelper.logMessage("subsToBeRemovedMailbox[SDP_AccountMailboxes]: ",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	SdpLoggerHelper.logBO(subsToBeRemovedMailbox,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+}
+else
+{
+	subsToBeRemovedMailbox = null;
+	SdpLoggerHelper.logMessage("No Subscriber removed from Mailbox",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+}*/]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="ChecktoaddMailboxMembers" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Check to add MailboxMembers" wpc:id="546">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[//Commented the code, hence the mailboxMembers is not used at mailbox level in R7
+/*DataObject reqMailboxMember = null;
+DataObject mailboxMember = null;
+DataObject tmpMailboxMember = null;
+DataObject memberProfile = null;
+DataObject tmpAccountMailbox = null;
+DataObject accountMailbox = null;
+
+List lstReqMboxMembers = null;
+Iterator itrReqMboxMember = null;
+
+List lstMemberProfile = null;
+Iterator itrMemberProfile = null;
+
+List lstMailboxTNs = null;
+
+String strReqMboxMemId = null;
+String memberId = null;
+String componentId;
+String invariantId = null;
+String index = null;
+String strSearchType = MamMemberServiceHelper.MAILBOXMEMBER_STR_SEARCHTYPE;
+
+SdpLoggerHelper.logMessage("Chcking to add the subscriber in request to request Mailbox",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+tmpSDP_ORDER = SdpHelper.copySpecificBO(SDP_ORDER_ProvProc);
+	
+tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).clear();
+
+tmpAccountMailbox = SdpHelper.copySpecificBO(reqSubMailBox);
+
+componentId = tmpAccountMailbox.getString(SdpHelper.CVOIP_MAILBOX_COMPONENTID);
+
+invariantId = tmpAccountMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+index = new Integer(tmpAccountMailbox.getInt(SdpHelper.CVOIP_MAILBOX_INDEX)).toString();
+
+lstReqMboxMembers = tmpAccountMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS);
+
+itrReqMboxMember = lstReqMboxMembers.iterator();
+
+while(itrReqMboxMember.hasNext())
+{
+	reqMailboxMember = (DataObject)itrReqMboxMember.next();
+	
+	if (reqMailboxMember !=null)
+	{
+		strReqMboxMemId = reqMailboxMember.getString(SdpHelper.CVOIP_MAILBOX_MEMBERID);
+			
+		SdpLoggerHelper.logMessage("Requset Mailbox MailboxMemberId["+strReqMboxMemId+ "]",
+			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+		
+		tmpMailboxMember = MamMemberServiceHelper.getMailboxMemberOrMailboxTN(
+			wesmAccountMailbox,strReqMboxMemId,strSearchType);
+		
+		if (tmpMailboxMember == null)
+		{
+			mailboxMember = SdpHelper.copySpecificBO(reqMailboxMember);
+			SdpLoggerHelper.logMessage("Checking the new Subscriber in request is available in WESM",
+				PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			//Checking the new Subscriber in request is available in WESM
+			lstMemberProfile = SDP_ORDER_Prov_Updated.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.','/'));
+			itrMemberProfile = lstMemberProfile.iterator();
+			while (itrMemberProfile.hasNext())
+			{
+				memberProfile = (DataObject)itrMemberProfile.next();
+				if ( memberProfile != null)
+				{
+					memberId = memberProfile.getString(SdpHelper.MEMBERPROFILE_MEMBERID);
+					if (strReqMboxMemId.equalsIgnoreCase(memberId))
+					{					
+						accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).add(mailboxMember);
+						SdpLoggerHelper.logMessage("Following MailboxMember is Added into AccountMailbox",
+							PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+						SdpLoggerHelper.logBO(mailboxMember,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+						
+						accountMailbox = SdpHelper.copySpecificBO(tmpAccountMailbox);
+						lstMailboxTNs = accountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS);
+						memberProfile.setList(SdpHelper.MEMBERPROFILE_MEMBER_TNS,lstMailboxTNs);
+						SdpLoggerHelper.logMessage("Request mailboxTNs is Added into memberProfile/memberTNs",
+							PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+						
+						memberProfile.setString(SdpHelper.MEMBERPROFILE_MAILBOXCOMPONENTID,componentId);
+						SdpLoggerHelper.logMessage("Request mailboxComponentId is Added into memberProfile",
+							PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+							
+						memberProfile.setString(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID,invariantId);
+						SdpLoggerHelper.logMessage("Request mailboxInvariantId is Added into memberProfile",
+							PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+							
+						memberProfile.setString(SdpHelper.MEMBERPROFILE_MAILBOXINDEX,index);
+						SdpLoggerHelper.logMessage("Request mailboxIndex is Added into memberProfile",
+							PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+					}					
+				}
+			}			
+		}
+	}
+}*/]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="ChecktoupdateTNName" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Check to update TN Name" wpc:id="719">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[//Commented the code, hence the TNName is not used at MailboxTNS and MemberTNs in R7
+/*List lstReqMBoxTNs = null;
+List lstMBoxTNs = null;
+List lstMemberProfile = null;
+List lstMemberTNs = null;
+
+Iterator itrReqMBoxTNs = null;
+Iterator itrMemberProfile = null;
+Iterator itrMemberTNs = null;
+
+DataObject tempTN = null;
+DataObject tn = null;
+DataObject memberProfile = null;
+DataObject memberTN = null;
+
+String strTN = null;
+String strTNName = null;
+
+lstReqMBoxTNs = reqSubMailBox.getList(SdpHelper.VOIP_MAILBOXTNS);
+itrReqMBoxTNs = lstReqMBoxTNs.iterator();
+needUpdateOrderForTNName = new Boolean(false);
+
+if (accountMailboxForUpdate != null)
+{
+	lstMBoxTNs = accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOXTNS);
+	lstMBoxTNs.clear();
+	
+	SdpLoggerHelper.logMessage("Checking to update the TN Name for Mailbox[" + 
+		reqSubMailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID) + "]",
+		PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	
+	while(itrReqMBoxTNs.hasNext())
+	{
+		tempTN = (DataObject)itrReqMBoxTNs.next();
+		
+		if (tempTN != null)
+		{
+			strTN = tempTN.getString(SdpHelper.CVOIP_MAILBOX_TN);
+			strTNName = tempTN.getString(SdpHelper.CVOIP_MAILBOX_TNNAME);
+			
+			SdpLoggerHelper.logMessage("wesmAccountMailbox [Check to update TN]",
+				PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			SdpLoggerHelper.logBO(wesmAccountMailbox,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+			
+			tn = SdpHelper.getTNFromMailBox(wesmAccountMailbox, strTN); 
+			
+			if (tn != null && strTNName != null && 
+				(!strTNName.equalsIgnoreCase(tn.getString(SdpHelper.CVOIP_MAILBOX_TNNAME))))
+			{
+				lstMBoxTNs.add(SdpHelper.copySpecificBO(tempTN));
+				SdpLoggerHelper.logMessage("TNName for TN [" + strTN + ":" + strTNName + "] is updated",
+					PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+				needUpdateOrderForTNName = new Boolean(true);
+				
+				//Checking the Same TN is available in any Subscriber
+				SdpLoggerHelper.logMessage("Checking the TN [" + strTN + "] is available in any Subscriber",
+					PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+				lstMemberProfile = SDP_ORDER_Prov_Updated.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.','/'));
+				itrMemberProfile = lstMemberProfile.iterator(); 
+				while (itrMemberProfile.hasNext())
+				{
+					memberProfile = (DataObject)itrMemberProfile.next();
+					if (memberProfile != null)
+					{
+						lstMemberTNs = memberProfile.getList(SdpHelper.MEMBERPROFILE_MEMBER_TNS);
+						itrMemberTNs = lstMemberTNs.iterator();
+						
+						while(itrMemberTNs.hasNext())
+						{
+							memberTN = (DataObject)itrMemberTNs.next();
+							if (memberTN != null && 
+								memberTN.getString("tn").equalsIgnoreCase(strTN))
+							{
+								memberTN.setString(SdpHelper.CVOIP_MAILBOX_TNNAME,strTNName);
+								SdpLoggerHelper.logMessage("Subscriber found with TN [" + strTN 
+									+ "] and the TNName [" +strTNName + "] is updated",
+									PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				lstMBoxTNs.add(SdpHelper.copySpecificBO(tempTN));
+				SdpLoggerHelper.logMessage("TN [" +	strTN + 
+					"] is Not in Found in WESM Or No need to update the TNName",
+					PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+			}
+		}	
+	}
+	
+	if (needUpdateOrderForTNName.booleanValue())
+	{
+		SdpLoggerHelper.logMessage("TNs are in Found in WESM and send for WESM.updateOrder",
+			PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+	}
+}
+
+SdpLoggerHelper.logMessage("accountMailboxForUpdate[SDP_AccountMailboxes]: ",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+SdpLoggerHelper.logBO(accountMailboxForUpdate,PROCESS_NAME,processID,SdpLoggerHelper.INFO);*/]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:assign name="IntCounter2" wpc:displayName="intCounter = 0" wpc:id="773">
+                <bpws:copy>
+                  <bpws:from>0</bpws:from>
+                  <bpws:to variable="intCounter"/>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:while name="LoopTwice1" wpc:displayName="Loop Twice?" wpc:id="772">
+                <bpws:condition><![CDATA[//Commented the code, hence the TNName/Mailboxmembers is not used at mailbox level in R7
+//return intCounter.intValue() < 2;
+return false;]]></bpws:condition>
+                <bpws:sequence name="HiddenSequence9" wpc:id="1073742600">
+                  <bpws:switch name="NeedupdateOrder" wpc:displayName="Need updateOrder?" wpc:id="777">
+                    <bpws:case wpc:id="778">
+                      <bpws:condition><![CDATA[return (
+		intCounter.intValue() == 0 && 
+		( needUpdateOrderForTNName.booleanValue() || 
+		accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).size() > 
+		wesmAccountMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).size() )
+	) || 
+	(
+		intCounter.intValue() == 1 && 
+		subsToBeRemovedMailbox != null
+	);
+]]></bpws:condition>
+                      <bpws:sequence name="HiddenSequence10" wpc:id="1073742603">
+                        <bpws:invoke name="SettmpSDP_ORDER1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set tmpSDP_ORDER" wpc:id="762">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[List lstAccountMailboxes = null;
+
+tmpSDP_ORDER = SdpHelper.copySpecificBO(SDP_ORDER_ProvProc);
+
+lstAccountMailboxes = tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+
+lstAccountMailboxes.clear();
+
+SdpLoggerHelper.logMessage("Preparing tmpSDP_ORDER for MPS.associateMailboxTNs[mailboxMembers/mailboxTNs]",
+	PROCESS_NAME,processID,SdpLoggerHelper.DEBUG);
+
+if (intCounter.intValue() == 1 && subsToBeRemovedMailbox != null)
+{
+	lstAccountMailboxes.add(subsToBeRemovedMailbox);
+}
+else
+{
+	lstAccountMailboxes.add(accountMailboxForUpdate);
+}
+]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                        <bpws:assign name="PreInvokeAssigns8" wpc:displayName="Pre-Invoke Assigns" wpc:id="723">
+                          <bpws:copy>
+                            <bpws:from variable="EmptyTransaction_Detail"/>
+                            <bpws:to variable="Transaction_DetailPort"/>
+                          </bpws:copy>
+                          <bpws:copy>
+                            <bpws:from>WESM.UpdateOrder.Request</bpws:from>
+                            <bpws:to variable="Transaction_DetailPort">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                          <bpws:copy>
+                            <bpws:from>MPS</bpws:from>
+                            <bpws:to variable="Transaction_DetailPort">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                          <bpws:copy>
+                            <bpws:from>UpdateOrder</bpws:from>
+                            <bpws:to variable="Transaction_DetailPort">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                          <bpws:copy>
+                            <bpws:from>MAILBOX</bpws:from>
+                            <bpws:to variable="Transaction_DetailPort">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentProduct]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                          <bpws:copy>
+                            <bpws:from variable="Transaction_DetailPort"/>
+                            <bpws:to variable="tmpSDP_ORDER">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                        </bpws:assign>
+                        <bpws:invoke name="SetWESMFilters3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set WESM Filters" wpc:id="726">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[/*
+SdpLoggerHelper.logMessage("Setting up the Filters for WESM.updateOrder",
+	PROCESS_NAME, processID,SdpLoggerHelper.DEBUG);
+
+//Create WESM Content Filter 
+ContentFilterCreator filterCreator = new ContentFilterCreator();
+
+filterCreator.addSelectFilter(SdpHelper.PRODUCTTYPE, SdpHelper.CURRENT_PRODUCT_PATH);
+
+//Create WESM Select Filter
+filterCreator.addSelectFilter(SdpHelper.ACCT_OBJID, SdpHelper.ACCT_OBJID_PATH);
+
+//Set the Filter for the MailBoxInvarintID
+filterCreator.addSelectFilter(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID, 
+	SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID_PATH);
+		
+//Set the Content filter to the transaction detail object. 
+tmpSDP_ORDER.getDataObject("transactionDetail").setDataObject( "contentFilter", filterCreator.createFilters() );
+
+//Create WESM Update Filter for mailboxTNs
+
+DataObject accountMailbox = 
+	(DataObject)tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).get(0);
+
+if (needUpdateOrderForTNName.booleanValue())
+{
+	SdpHelper.setUpMemberTNs(tmpSDP_ORDER.getDataObject("transactionDetail"),
+		accountMailbox.getList(SdpHelper.VOIP_MAILBOXTNS).size(),SdpHelper.MAILBOX_TN_TYPE);
+	SdpLoggerHelper.logMessage("Setting the Filters for MailboxTNs",
+		PROCESS_NAME, processID,SdpLoggerHelper.DEBUG);
+}
+
+if (accountMailboxForUpdate.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).size() > 
+	wesmAccountMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).size() || intCounter.intValue() == 1)
+{
+	SdpHelper.setUpMailboxMembers(tmpSDP_ORDER.getDataObject("transactionDetail"),
+		accountMailbox.getList(SdpHelper.VOIP_MAILBOX_MEMBERS).size());
+	SdpLoggerHelper.logMessage("Setting the Filters for MailboxMembers",
+		PROCESS_NAME, processID,SdpLoggerHelper.DEBUG);
+}
+*/]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                        <bpws:invoke name="LogMPSassociateMailboxTNs1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs]" wpc:id="729">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO [tmpSDP_ORDER:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(tmpSDP_ORDER,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                        <bpws:invoke name="InvokeMPSassociateMailboxTNs1" operation="associateMailboxTNs" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns13:MPSCompensableService2_Interface" wpc:displayName="Invoke - [MPS.associateMailboxTNs]" wpc:id="734">
+                          <wpc:input>
+                            <wpc:parameter name="order" variable="tmpSDP_ORDER"/>
+                          </wpc:input>
+                          <wpc:output/>
+                          <bpws:catch faultName="ns13:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="920" wpc:variableId="886">
+                            <bpws:sequence name="HiddenSequence24" wpc:id="1073742712">
+                              <bpws:assign name="SetErrorDetails3" wpc:displayName="Set Error Details" wpc:id="887">
+                                <bpws:copy>
+                                  <bpws:from>11016</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageCode]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from><![CDATA[SDP_Downstream_System_Error]]></bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageText]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from>FATAL</bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                                <bpws:copy>
+                                  <bpws:from variable="scFault">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[messageDetail]]></bpws:query>
+                                  </bpws:from>
+                                  <bpws:to variable="Transaction_DetailPort">
+                                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[errorDetails/Error/Message/MessageDetail]]></bpws:query>
+                                  </bpws:to>
+                                </bpws:copy>
+                              </bpws:assign>
+                              <bpws:invoke name="Handleruntimefailure3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle runtime failure" wpc:id="890">
+                                <wpc:script>
+                                  <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean("errorIndicator", true);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+" MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+SdpLoggerHelper.logBO(scFault,PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+]]></wpc:javaCode>
+                                </wpc:script>
+                              </bpws:invoke>
+                              <bpws:reply name="Reply5" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="754">
+                                <wpc:input>
+                                  <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                                  <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                                  <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                                  <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                                </wpc:input>
+                              </bpws:reply>
+                              <bpws:terminate name="Terminate4" wpc:displayName="Terminate" wpc:id="755"/>
+                            </bpws:sequence>
+                          </bpws:catch>
+                        </bpws:invoke>
+                        <bpws:invoke name="LogMPSassociateMailboxTNsSuccess1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs - Success]" wpc:id="758">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("WESM.UpdateOrder :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [Transaction_DetailPort:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+													
+SdpLoggerHelper.logBO(Transaction_DetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                        <bpws:invoke name="SetRollbackUpdateOrder1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Rollback UpdateOrder" wpc:id="844">
+                          <wpc:script>
+                            <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject mailBox = null;
+DataObject tmpTempStore = null;
+List lstTempStore = null;
+String strInvariantId = null;
+
+tmpTempStore = SdpHelper.copySpecificBO(emptyTempStore);
+tmpMailbox = (DataObject)tmpSDP_ORDER.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).get(0);
+mailBox = SdpHelper.copySpecificBO(tmpMailbox);
+
+strInvariantId = mailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+tmpTempStore.setString(SdpHelper.TEMP1,strInvariantId);
+tmpTempStore.setString(SdpHelper.TEMP2,"UPDATE_ORDER");
+
+lstTempStore = RollbackSdpOrder.getList(SdpHelper.TEMP_STORE_LIST.replace('.','/'));
+lstTempStore.add(tmpTempStore);]]></wpc:javaCode>
+                          </wpc:script>
+                        </bpws:invoke>
+                        <bpws:assign name="PostInvokeAssign" wpc:displayName="Post-Invoke Assign" wpc:id="759">
+                          <bpws:copy>
+                            <bpws:from variable="tmpSDP_ORDER">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/order/ReqService/product/cvoipProduct/accountMailBoxes]]></bpws:query>
+                            </bpws:from>
+                            <bpws:to variable="RollBack_Prov_ORDER">
+                              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/order/ReqService/product/cvoipProduct/accountMailBoxes]]></bpws:query>
+                            </bpws:to>
+                          </bpws:copy>
+                        </bpws:assign>
+                        <bpws:assign name="SetneedUpdateOrderForTNNamefalse" wpc:displayName="Set needUpdateOrderForTNName = false" wpc:id="831">
+                          <bpws:copy>
+                            <bpws:from>false</bpws:from>
+                            <bpws:to variable="needUpdateOrderForTNName"/>
+                          </bpws:copy>
+                        </bpws:assign>
+                      </bpws:sequence>
+                    </bpws:case>
+                  </bpws:switch>
+                  <bpws:invoke name="IntCounter3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="intCounter++" wpc:id="775">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[intCounter = new Integer(intCounter.intValue()+1);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:sequence>
+              </bpws:while>
+              <bpws:switch name="Choice1" wpc:displayName="Business Voice Customer?" wpc:id="923">
+                <bpws:case wpc:displayName="Yes" wpc:id="924">
+                  <bpws:condition expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/"><![CDATA[return isBusinessVoip;
+]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence3" wpc:id="1073742750">
+                    <bpws:assign name="AssignIteratorStep" wpc:displayName="Assign Iterator Step &amp; currentProduct" wpc:id="925">
+                      <bpws:copy>
+                        <bpws:from variable="intReqSubMBoxCounter"/>
+                        <bpws:to variable="SDP_ORDER_Request">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail/iteratorStep]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from><![CDATA[MAILBOX]]></bpws:from>
+                        <bpws:to variable="SDP_ORDER_Request">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail/currentProduct]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="LogMPSassociateMailboxTNs2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs]" wpc:id="940">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO [tmpSDP_ORDER:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_Request,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="MPS.associateMailboxTNs" operation="associateMailboxTNs" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns13:MPSCompensableService2_Interface" wpc:continueOnError="inherit" wpc:displayName="MPS.associateMailboxTNs" wpc:id="927">
+                      <wpc:input>
+                        <wpc:parameter name="order" variable="SDP_ORDER_Request"/>
+                      </wpc:input>
+                      <wpc:output/>
+                      <bpws:catch faultMessageType="ns13:associateMailboxTNs_serviceCallFaultMsg" faultName="ns13:serviceCallFault" faultVariable="scFault" wpc:displayName="serviceCallFault" wpc:id="933" wpc:variableId="935">
+                        <bpws:sequence name="HiddenSequence6" wpc:id="1073742760">
+                          <bpws:assign name="SetErrorDetails1" wpc:displayName="Set Error Details" wpc:id="934">
+                            <bpws:copy>
+                              <bpws:from>11016</bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageCode]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from><![CDATA[SDP_Downstream_System_Error]]></bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/MessageText]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from>FATAL</bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                            <bpws:copy>
+                              <bpws:from variable="scFault">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[messageDetail]]></bpws:query>
+                              </bpws:from>
+                              <bpws:to variable="Transaction_DetailPort">
+                                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[errorDetails/Error/Message/MessageDetail]]></bpws:query>
+                              </bpws:to>
+                            </bpws:copy>
+                          </bpws:assign>
+                          <bpws:invoke name="Handleruntimefailure1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle runtime failure" wpc:id="937">
+                            <wpc:script>
+                              <wpc:javaCode><![CDATA[Transaction_DetailPort.setBoolean("errorIndicator", true);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+" MPS.associateMailboxTNs",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+SdpLoggerHelper.logBO(scFault,PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+]]></wpc:javaCode>
+                            </wpc:script>
+                          </bpws:invoke>
+                          <bpws:reply name="Reply1" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="938">
+                            <wpc:input>
+                              <wpc:parameter name="SDP_ORDER_ProvPort" variable="RollBack_Prov_ORDER"/>
+                              <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+                              <wpc:parameter name="SDP_ORDER_RequestPort" variable="RollbackSdpOrder"/>
+                              <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+                            </wpc:input>
+                          </bpws:reply>
+                          <bpws:terminate name="Terminate1" wpc:displayName="Terminate" wpc:id="939"/>
+                        </bpws:sequence>
+                      </bpws:catch>
+                    </bpws:invoke>
+                    <bpws:invoke name="LogMPSassociateMailboxTNsSuccess2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.associateMailboxTNs - Success]" wpc:id="941">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("WESM.UpdateOrder :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [Transaction_DetailPort:]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+													
+SdpLoggerHelper.logBO(Transaction_DetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                  </bpws:sequence>
+                </bpws:case>
+              </bpws:switch>
+            </bpws:sequence>
+          </bpws:case>
+        </bpws:switch>
+        <bpws:invoke name="GettheLocofMBinWESMequaltoMBinReq" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get the Loc of MB in WESM equal to MB in Req" wpc:id="421">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[String reqMailboxInvId = reqSubMailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+if (reqMailboxInvId != null)
+{
+	intMBoxLocInProv = new Integer(SdpHelper.getMailBoxLocInGBO(SDP_ORDER_ProvProc,reqMailboxInvId));
+}]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:invoke name="Emptyrollbackmailbox" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="empty rollback mailbox" wpc:id="443">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[byte __result__1 = 0;
+TNCounter = new java.lang.Integer(__result__1);
+commonj.sdo.DataObject __result__4;
+{// copy BO
+	com.ibm.websphere.bo.BOCopy _copyService = 
+	   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService("com/ibm/websphere/bo/BOCopy"); 
+	__result__4 = _copyService.copy(emptyMailBox);
+}
+RollBackReqMailBox = __result__4;
+commonj.sdo.DataObject __result__7;
+{// copy BO
+	com.ibm.websphere.bo.BOCopy _copyService = 
+	   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService("com/ibm/websphere/bo/BOCopy"); 
+	__result__7 = _copyService.copy(emptyMailBox);
+}
+RollBackProvMailBox = __result__7;
+com.ibm.wbiservers.brules.core.codegen.NillableUtility.getList(RollBackReqMailBox, "mailBoxTNs", "RollBackReqMailBox").clear();
+com.ibm.wbiservers.brules.core.codegen.NillableUtility.getList(RollBackProvMailBox, "mailBoxTNs", "RollBackProvMailBox").clear();
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="0" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="byte"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="TNCounter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="emptyMailBox" variable="true">
+//    <dataOutputs target="//@executableElements.3/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_AccountMailBoxes" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="copy BO" description="Copy a Business Object" category="SCA services" template="com.ibm.websphere.bo.BOCopy _copyService = &#xA;   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService(&quot;com/ibm/websphere/bo/BOCopy&quot;); &#xA;&lt;%return%> _copyService.copy(&lt;%bo%>);">
+//    <parameters name="bo" dataInputs="//@executableElements.2/@dataOutputs.0" displayName="BO">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </parameters>
+//    <result name="copy" displayName="copy">
+//      <dataOutputs target="//@executableElements.4"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.3/@result/@dataOutputs.0" value="RollBackReqMailBox" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_AccountMailBoxes" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="emptyMailBox" variable="true">
+//    <dataOutputs target="//@executableElements.6/@parameters.0"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_AccountMailBoxes" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:LibraryActivity" name="copy BO" description="Copy a Business Object" category="SCA services" template="com.ibm.websphere.bo.BOCopy _copyService = &#xA;   (com.ibm.websphere.bo.BOCopy) new com.ibm.websphere.sca.ServiceManager().locateService(&quot;com/ibm/websphere/bo/BOCopy&quot;); &#xA;&lt;%return%> _copyService.copy(&lt;%bo%>);">
+//    <parameters name="bo" dataInputs="//@executableElements.5/@dataOutputs.0" displayName="BO">
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </parameters>
+//    <result name="copy" displayName="copy">
+//      <dataOutputs target="//@executableElements.7"/>
+//      <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="commonj.sdo.DataObject"/>
+//    </result>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.6/@result/@dataOutputs.0" value="RollBackProvMailBox" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="SDP_AccountMailBoxes" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="RollBackReqMailBox.mailBoxTNs.clear()" assignable="false">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="void"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="RollBackProvMailBox.mailBoxTNs.clear()" assignable="false">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="void"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//  <executableGroups executableElements="//@executableElements.2 //@executableElements.3 //@executableElements.4"/>
+//  <executableGroups executableElements="//@executableElements.5 //@executableElements.6 //@executableElements.7"/>
+//  <executableGroups executableElements="//@executableElements.8"/>
+//  <executableGroups executableElements="//@executableElements.9"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!4:3,6
+//!SMAP!5:9,1
+//!SMAP!7:10,6
+//!SMAP!8:16,1
+//!SMAP!9:17,1
+//!SMAP!10:18,1
+//!SMAP!1000000:89,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:invoke name="ReIntializeProvMailBoxCounter" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Re Intialize Prov MailBox Counter" wpc:id="339">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[byte __result__1 = 0;
+intProvSubMBoxCounter = new java.lang.Integer(__result__1);
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="0" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="byte"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="intProvSubMBoxCounter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:invoke name="IncrementReqMailBoxCounter1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Increment Req MailBox Counter" wpc:id="280">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[java.lang.Integer __result__1 = new java.lang.Integer(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(intReqSubMBoxCounter, "intReqSubMBoxCounter") + 1);
+intReqSubMBoxCounter = __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="intReqSubMBoxCounter+ 1" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="intReqSubMBoxCounter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+      </bpws:sequence>
+    </bpws:while>
+    <bpws:assign name="Copyproctotrigg" wpc:displayName="copy proc to trigg" wpc:id="383">
+      <bpws:copy>
+        <bpws:from variable="RollbackSdpOrder"/>
+        <bpws:to variable="SDP_ORDER_Request"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="RollBack_Prov_ORDER"/>
+        <bpws:to variable="SDP_ORDER_Prov"/>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:invoke name="SetUMMessageCenterIPinreturnBO" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMMessageCenterIP in returnBO" wpc:id="898">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+logger.debug("UMMessageCenterIP from the DeleteMailbox flow: " + UMMessageCenterIP);
+SDP_ORDER_Request.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:invoke name="LogEndProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [End Process ] " wpc:id="526">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[
+SdpLoggerHelper.logMessage("Returning the following GBO To MAM ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("Transaction_DetailPort : ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(Transaction_DetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_ORDER_Request : ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_Request,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_ORDER_Prov : ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_Prov,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_ORDER_Prov_Temp : ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_Prov_Temp,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("End SubFlow: UpdateMailBox",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:reply name="Reply3" operation="UpdateMailBox" partnerLink="FromMam_UpdateMailBox_Interface" portType="ns2:FromMam_UpdateMailBox_Interface" wpc:displayName="Reply" wpc:id="488">
+      <wpc:input>
+        <wpc:parameter name="SDP_ORDER_ProvPort" variable="SDP_ORDER_Prov"/>
+        <wpc:parameter name="Transaction_Detail" variable="Transaction_DetailPort"/>
+        <wpc:parameter name="SDP_ORDER_RequestPort" variable="SDP_ORDER_Request"/>
+        <wpc:parameter name="SDP_ORDER_Prov_Updated" variable="SDP_ORDER_Prov_Updated"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="DeltaAirline" default="main" basedir=".">
+    <property name="deploy" value="default"/>
+    <property name="rev" value="1.0"/>
+       
+    <target name="main">
+        <bpelc home="${home}" rev="${rev}" deploy="${deploy}"/>        
+    </target>    
+
+
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="UpdateMailBox" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns0="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface" xmlns:ns1="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface" xmlns:ns2="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface" xmlns:ns3="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface" xmlns:ns4="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface" xmlns:ns5="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxArtifacts" xmlns:wsdl0="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface" xmlns:wsdl1="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <plnk:partnerLinkType name="FromMam_UpdateMailBox_InterfacePLT">
+    <plnk:role name="FromMam_UpdateMailBox_InterfaceRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="ToUCDCL_ProvisioningService_InterfaceLT">
+    <plnk:role name="ToUCDCL_ProvisioningService_InterfaceRole">
+      <plnk:portType name="ns0:ToUCDCL_ProvisioningService_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT1">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT2">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT3">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT4">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT5">
+    <plnk:role name="myRole">
+      <plnk:portType name="wsdl0:FromMam_UpdateMailBox_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT6">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns5:UCDCLCompensableService_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="MPSCompensableService2_InterfacePLT">
+    <plnk:role name="MPSCompensableService2_InterfaceRole">
+      <plnk:portType name="wsdl1:MPSCompensableService2_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT7">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="wsdl1:MPSCompensableService2_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <import location="../intf/FromMam_UpdateMailBox_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface"/>
+    <import location="../intf/SDP_Order_to_UCDCL_ProvisioningService.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface"/>
+    <import location="../intf/UCDCLCompensableService_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface"/>
+    <import location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+</definitions>

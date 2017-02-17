@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FromMam_UpdateMailBox_Interface" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface" xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_UpdateMailBox_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" schemaLocation="../../../../SDP_Order.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" schemaLocation="../../../../SDP_TransactionDetail.xsd"/>
+      <xsd:element name="UpdateMailBox">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SDP_ORDER_Request" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="SDP_ORDER_Prov" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="SDP_ORDER_Prov_Updated" nillable="true" type="bons1:SDP_Order"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateMailBoxResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Transaction_Detail" nillable="true" type="bons2:SDP_TransactionDetail"/>
+            <xsd:element name="SDP_ORDER_RequestPort" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="SDP_ORDER_ProvPort" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="SDP_ORDER_Prov_Updated" nillable="true" type="bons1:SDP_Order"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="UpdateMailBoxRequestMsg">
+    <wsdl:part element="tns:UpdateMailBox" name="UpdateMailBoxParameters"/>
+  </wsdl:message>
+    <wsdl:message name="UpdateMailBoxResponseMsg">
+    <wsdl:part element="tns:UpdateMailBoxResponse" name="UpdateMailBoxResult"/>
+  </wsdl:message>
+    <wsdl:portType name="FromMam_UpdateMailBox_Interface">
+    <wsdl:operation name="UpdateMailBox">
+            <wsdl:input message="tns:UpdateMailBoxRequestMsg" name="UpdateMailBoxRequest"/><wsdl:output message="tns:UpdateMailBoxResponseMsg" name="UpdateMailBoxResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

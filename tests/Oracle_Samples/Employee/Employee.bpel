@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+
+<!-- Employee -->
+
+<process name="Employee" 
+         targetNamespace="http://packtpub.com/service/employee/" 
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:emp="http://packtpub.com/service/employee/" >
+   
+   <partnerLinks>
+      <partnerLink name="employeeTravelStatus" 
+                   partnerLinkType="emp:employeeLT"
+                   myRole="employeeTravelStatusService"/>
+
+   </partnerLinks>
+
+   <variables>
+      <!-- input for this process -->      
+      <variable name="EmployeeTravelStatusRequest" messageType="emp:EmployeeTravelStatusRequestMessage"/>
+      <!-- output from the Employee Travel Status web service -->
+      <variable name="EmployeeTravelStatusResponse" messageType="emp:EmployeeTravelStatusResponseMessage"/>
+   </variables>
+
+   <sequence>
+
+      <!-- Receive the initial request for business travel from client -->
+      <receive partnerLink="employeeTravelStatus" 
+               portType="emp:EmployeeTravelStatusPT" 
+               operation="EmployeeTravelStatus" 
+               variable="EmployeeTravelStatusRequest"
+               createInstance="yes" />
+
+      <!-- Prepare the output -->
+      <assign>
+        <copy>
+          <from>
+            <travelClass xmlns="http://packtpub.com/service/employee/">Economy</travelClass>
+          </from>
+          <to variable="EmployeeTravelStatusResponse" part="travelClass"/>
+        </copy>
+      </assign>
+      
+      <!-- Send a response -->
+      <reply partnerLink="employeeTravelStatus" 
+             portType="emp:EmployeeTravelStatusPT" 
+             operation="EmployeeTravelStatus" 
+             variable="EmployeeTravelStatusResponse"/>
+   </sequence>
+
+</process>

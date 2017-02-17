@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+             xmlns:tns="http://packtpub.com/service/employee/" 
+             targetNamespace="http://packtpub.com/service/employee/" 
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" >
+             
+<types>
+  <xs:schema elementFormDefault="qualified" 
+             targetNamespace="http://packtpub.com/service/employee/">
+
+    <xs:complexType name="EmployeeType">
+      <xs:sequence>
+        <xs:element name="FirstName" type="xs:string" /> 
+        <xs:element name="LastName" type="xs:string" /> 
+        <xs:element name="Departement" type="xs:string" /> 
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="TravelClassType">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Economy"/>
+        <xs:enumeration value="Business"/>
+        <xs:enumeration value="First"/>
+      </xs:restriction>
+    </xs:simpleType>
+
+  </xs:schema>
+</types>
+
+<message name="EmployeeTravelStatusRequestMessage">
+  <part name="employee" type="tns:EmployeeType" /> 
+</message>
+
+<message name="EmployeeTravelStatusResponseMessage">
+  <part name="travelClass" type="tns:TravelClassType" />
+</message>
+
+<portType name="EmployeeTravelStatusPT">
+  <operation name="EmployeeTravelStatus">
+    <input message="tns:EmployeeTravelStatusRequestMessage" /> 
+    <output message="tns:EmployeeTravelStatusResponseMessage" /> 
+  </operation>
+</portType>
+
+<!-- Partner link type -->
+<plnk:partnerLinkType name="employeeLT">
+  <plnk:role name="employeeTravelStatusService">
+    <plnk:portType name="tns:EmployeeTravelStatusPT" />
+  </plnk:role>
+</plnk:partnerLinkType>
+
+</definitions>

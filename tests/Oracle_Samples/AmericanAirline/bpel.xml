@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPELSuitcase>
+  <BPELProcess src="AmericanAirline.bpel" id="AmericanAirline">
+    <partnerLinkBindings>
+      <partnerLinkBinding name="AmericanAirlines">
+        <property name="wsdlLocation">Airline.wsdl</property>
+      </partnerLinkBinding>
+    </partnerLinkBindings>
+  </BPELProcess>
+</BPELSuitcase>

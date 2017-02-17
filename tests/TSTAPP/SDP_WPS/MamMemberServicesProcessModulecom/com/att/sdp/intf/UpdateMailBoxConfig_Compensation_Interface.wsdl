@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UpdateMailBoxConfig_Compensation_Interface" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface" xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" schemaLocation="../../../../SDP_Order.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" schemaLocation="../../../../SDP_TransactionDetail.xsd"/>
+      <xsd:element name="compensateUpdateMailBoxConfig">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="CreateRequestState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="CreateProvState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="DeleteRequestState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="DeleteProvState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="UpdateRequestState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="UpdateProvState" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="TransactionDetailPort" nillable="true" type="bons2:SDP_TransactionDetail"/>
+                        <xsd:element name="SDP_ORDER_GrpMBoxInfoPort" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="IndexChangeUpdateState" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="SetSubscriberSettingsBySub" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="PinChangeUpdateState" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="TnChangeUpdateState" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="AddServiceState" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="RemoveServiceState" nillable="true" type="bons1:SDP_Order"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+            <xsd:element name="compensateUpdateMailBoxConfigResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TransactionDetailPort" nillable="true" type="bons2:SDP_TransactionDetail"/>
+                        <xsd:element name="SdpOrderPort" nillable="true" type="bons1:SDP_Order"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+        </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="compensateUpdateMailBoxConfigRequestMsg">
+    <wsdl:part element="tns:compensateUpdateMailBoxConfig" name="compensateUpdateMailBoxConfigParameters"/>
+  </wsdl:message>
+    <wsdl:message name="compensateUpdateMailBoxConfigResponseMsg">
+    <wsdl:part element="tns:compensateUpdateMailBoxConfigResponse" name="compensateUpdateMailBoxConfigResult"/>
+  </wsdl:message>
+    <wsdl:portType name="UpdateMailBoxConfig_Compensation_Interface">
+    <wsdl:operation name="compensateUpdateMailBoxConfig">
+      <wsdl:input message="tns:compensateUpdateMailBoxConfigRequestMsg" name="compensateUpdateMailBoxConfigRequest"/>
+      <wsdl:output message="tns:compensateUpdateMailBoxConfigResponseMsg" name="compensateUpdateMailBoxConfigResponse"/>    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

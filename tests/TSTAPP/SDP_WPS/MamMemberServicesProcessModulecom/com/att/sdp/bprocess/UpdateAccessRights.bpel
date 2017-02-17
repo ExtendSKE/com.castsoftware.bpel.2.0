@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:java="http://SdpCommonLibrary" xmlns:ns="http://UpdateAccessRightsModule/com/att/sdp/bprocess/UpdateAccessRightsArtifacts" xmlns:ns0="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TelcoServiceOrder" xmlns:ns1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:ns10="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message" xmlns:ns11="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface" xmlns:ns12="http://CommonErrorLoggerModule/com/att/sdp/intf/CommonErrorLogger_Interface" xmlns:ns13="http://SdpCommonLibrary/com/att/sdp/intf/CommonErrorLogger_Interface" xmlns:ns14="http://UpdateAccessRightsModule/com/att/sdp/bprocess" xmlns:ns15="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface" xmlns:ns16="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:ns2="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface" xmlns:ns3="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberProfile" xmlns:ns4="http://SdpCommonLibrary/com/att/sdp/intf/ToWesm_WebServices_Interface" xmlns:ns5="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns6="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:ns7="http://SdpCommonLibrary/com/att/sdp/intf/ToSdp_ErrorLogger_Interface" xmlns:ns8="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Error" xmlns:ns9="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="UpdateAccessRights" suppressJoinFailure="yes" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess" wpc:autoDelete="no" wpc:displayName="UpdateAccessRights" wpc:executionMode="microflow" wpc:id="1" wpc:version="IBM_7.0.300">
+  <wpc:javaGlobals>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpErrorHelper"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpHelper"/>
+    <wpc:import packages="commonj.sdo.DataObject"/>
+    <wpc:import packages="java.util.List"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.Order"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.WpsLogger"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.MpsHelper"/>
+  </wpc:javaGlobals>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../../../resource/SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateAccessRightsArtifacts.wsdl" namespace="http://UpdateAccessRightsModule/com/att/sdp/bprocess/UpdateAccessRightsArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_TelcoServiceOrder.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TelcoServiceOrder"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_MemberProfile.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberProfile"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/ToWesm_WebServices_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToWesm_WebServices_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/To_WESM.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/BPCStandardFaultType.xsd" namespace="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/ToSdp_ErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToSdp_ErrorLogger_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Error.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Error"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_ErrorObject.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_ErrorObject_Message.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/FromSdp_CommonErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_ErrorObject_Message.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/To_WESM.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../FromSdp_CommonErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_MemberProfile.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberProfile"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../BPCStandardFaultType.xsd" namespace="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../ServiceCallFault.xsd" namespace="http://SdpCommonLibrary"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="FromMam_FeaturePermissionMailboxUpdate_InterfaceRole" name="FromMam_FeaturePermissionMailboxUpdate_Interface" partnerLinkType="ns:FromMam_FeaturePermissionMailboxUpdate_InterfacePLT" wpc:id="269"/>
+    <bpws:partnerLink name="CommonError_Logger" partnerLinkType="ns:PartnerPLT2" partnerRole="partnerRole" wpc:id="270"/>
+    <bpws:partnerLink name="MPSCompensableService2_InterfacePartner" partnerLinkType="ns:MPSCompensableService2_InterfacePLT" partnerRole="MPSCompensableService2_InterfaceRole" wpc:id="271"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="counter" type="xsd:int" wpc:id="15"/>
+    <bpws:variable name="transactionDetailOut" type="ns1:SDP_TransactionDetail" wpc:id="111"/>
+    <bpws:variable name="tempMemberProfile" type="ns3:SDP_MemberProfile" wpc:id="130"/>
+    <bpws:variable name="sdpOrder" type="ns6:SDP_Order" wpc:id="186"/>
+    <bpws:variable name="noOfMembers" type="xsd:int" wpc:id="195"/>
+    <bpws:variable name="PROCESS_NAME" type="xsd:string" wpc:id="210"/>
+    <bpws:variable name="mamResponseCode" type="xsd:string" wpc:id="267"/>
+    <bpws:variable name="mamResponseText" type="xsd:string" wpc:id="268"/>
+  </bpws:variables>
+  <bpws:pick createInstance="yes" name="UpdateAccessRights" wpc:displayName="UpdateAccessRights" wpc:id="125">
+    <bpws:onMessage operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:id="272">
+      <wpc:output>
+        <wpc:parameter name="mailboxConfigRequest" variable="sdpOrder"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741952">
+        <bpws:empty name="EmptyAction" wpc:displayName="EmptyAction" wpc:id="127"/>
+        <bpws:reply name="Reply1" operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply" wpc:id="129">
+          <wpc:input>
+            <wpc:parameter name="mailboxConfigResponse" variable="sdpOrder"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="UpdateAccessRights" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:id="273">
+      <wpc:output>
+        <wpc:parameter name="accessRightsRequest" variable="sdpOrder"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence10" wpc:id="1073741950">
+        <bpws:invoke name="LogBeginProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [Begin Process]" wpc:id="243">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+PROCESS_NAME = "UpdateAccessRights";
+logger.info("Begin " + PROCESS_NAME);
+if (logger.isDebugEnabled()) {
+	logger.debug("Request BO From MAM ");
+	logger.debug("[Sdp_Order] ");
+	logger.debug(sdpOrder);
+}
+
+
+]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:assign name="IntializeConstantsandVariables" wpc:displayName="Intialize Constants and Variables" wpc:id="213">
+          <bpws:copy>
+            <bpws:from variable="PROCESS_NAME"/>
+            <bpws:to variable="sdpOrder">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/processName]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+          <bpws:copy>
+            <bpws:from>MAM</bpws:from>
+            <bpws:to variable="sdpOrder">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/SourceSystem]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+          <bpws:copy>
+            <bpws:from variable="PROCESS_NAME"/>
+            <bpws:to variable="sdpOrder">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/parentProcessName]]></bpws:query>
+            </bpws:to>
+          </bpws:copy>
+        </bpws:assign>
+        <bpws:invoke name="Getthenoofusers" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get the no of users" wpc:id="196">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[Order order = new Order(sdpOrder);
+List members = order.getMemberProfileList();
+counter = new Integer(0);
+noOfMembers = members != null ? new Integer(members.size()) : counter;
+
+WpsLogger logger = WpsLogger.getLogger(processInstance());
+if (logger.isDebugEnabled()) {
+	logger.debug("No of memberProfiles Received for Update [" + (noOfMembers.intValue() - 1) + "]");
+}
+]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:while name="WhileLoop" wpc:displayName="WhileLoop" wpc:id="134">
+          <bpws:condition><![CDATA[return counter.intValue() < noOfMembers.intValue();]]></bpws:condition>
+          <bpws:sequence name="HiddenSequence2" wpc:id="1073742090">
+            <bpws:invoke name="GettheUser" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get the User" wpc:id="193">
+              <wpc:script>
+                <wpc:javaCode><![CDATA[Order order = new Order(sdpOrder);
+order.getTransactionDetail().setIteratorStep(counter.intValue());
+tempMemberProfile = order.getCurrentMemberProfile();
+
+mamResponseCode = "0";
+mamResponseText = SdpErrorHelper.SUCCESS_STR;]]></wpc:javaCode>
+              </wpc:script>
+            </bpws:invoke>
+            <bpws:switch name="CheckforPrimaryUser" wpc:displayName="Check for Primary User" wpc:id="187">
+              <bpws:case wpc:id="188">
+                <bpws:condition><![CDATA[return !SdpHelper.YES.equals(tempMemberProfile.getString(SdpHelper.MEMBERPROFILE_PRIMARYMEMBERIND));
+]]></bpws:condition>
+                <bpws:sequence name="HiddenSequence3" wpc:id="1073742089">
+                  <bpws:invoke name="LogMPSupdateUser" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.updateUser]" wpc:id="245">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+if (logger.isDebugEnabled()) {
+	logger.debug("MPS.updateUser - Invoke");
+	logger.debug("iteratorStep = " + counter);
+}
+]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                  <bpws:invoke name="MPSupdateUser" operation="updateUser" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns16:MPSCompensableService2_Interface" wpc:displayName="MPS.updateUser" wpc:id="156">
+                    <wpc:input>
+                      <wpc:parameter name="order" variable="sdpOrder"/>
+                    </wpc:input>
+                    <wpc:output/>
+                    <bpws:catch faultName="ns16:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="274" wpc:variableId="157">
+                      <bpws:invoke name="SetErrorDetails" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="160">
+                        <wpc:script>
+                          <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+logger.error("Error invoking MPS.updateUser");
+logger.error(scFault);
+
+if (MpsHelper.MPS_ERR_USER_NOT_FOUND.equals(scFault.getString("messageCode"))) {
+	mamResponseCode = SdpErrorHelper.MAM_SUB_MEMBER_NOT_FOUND_ERROR;
+	mamResponseText = SdpErrorHelper.SUBACCOUNT_MEMBER_NOT_FOUND;
+} else {
+	mamResponseCode = SdpErrorHelper.MAM_SDP_DOWNSTREAM_SYSTEM_PROVISIONING_ERROR;
+	mamResponseText = SdpErrorHelper.SDP_DOWNSTREAM_SYSTEM_PROVISIONING_ERROR_STR;
+}
+]]></wpc:javaCode>
+                        </wpc:script>
+                      </bpws:invoke>
+                    </bpws:catch>
+                  </bpws:invoke>
+                  <bpws:invoke name="Settheresponsedetails" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set the response details" wpc:id="175">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[DataObject td = new Order(sdpOrder).getTransactionDetail().getDataObject();
+List tempList = td.getList(SdpHelper.TEMP_STORE);
+int tempIndex = counter.intValue() - 1;
+if (tempList != null && tempList.size() > tempIndex) {
+	DataObject temp = (DataObject) tempList.get(tempIndex);
+	temp.setString(SdpHelper.TEMP1, mamResponseCode);
+	temp.setString(SdpHelper.TEMP2, mamResponseText);
+}
+															]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:sequence>
+              </bpws:case>
+            </bpws:switch>
+            <bpws:invoke name="LoopIterator" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Loop Iterator" wpc:id="168">
+              <wpc:script>
+                <wpc:javaCode><![CDATA[counter = new Integer(counter.intValue()+1);
+
+WpsLogger logger = WpsLogger.getLogger(processInstance());
+if (logger.isDebugEnabled()) {
+	logger.debug("Fetching next User");
+}
+]]></wpc:javaCode>
+              </wpc:script>
+            </bpws:invoke>
+          </bpws:sequence>
+        </bpws:while>
+        <bpws:assign name="PreparetheResponse" wpc:displayName="Prepare the Response" wpc:id="207">
+          <bpws:copy>
+            <bpws:from variable="sdpOrder">
+              <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+            </bpws:from>
+            <bpws:to variable="transactionDetailOut"/>
+          </bpws:copy>
+        </bpws:assign>
+        <bpws:invoke name="LogEndProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [End Process]" wpc:id="254">
+          <wpc:script>
+            <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+if (logger.isDebugEnabled()) {
+	logger.debug("Response BO To MAM ");
+	logger.debug("[Sdp_TransactionDetail] ");
+	logger.debug(transactionDetailOut);
+}
+logger.info("End " + PROCESS_NAME);
+]]></wpc:javaCode>
+          </wpc:script>
+        </bpws:invoke>
+        <bpws:reply name="Reply" operation="UpdateAccessRights" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply" wpc:id="7">
+          <wpc:input>
+            <wpc:parameter name="accessRightsResponse" variable="transactionDetailOut"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>

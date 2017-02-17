@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_CreateNewMailBox_Interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FromMam_CreateNewMailBox_Interface" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_CreateNewMailBox_Interface">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_CreateNewMailBox_Interface" xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/FromMam_CreateNewMailBox_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" schemaLocation="../../../../SDP_Order.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" schemaLocation="../../../../SDP_TransactionDetail.xsd"/>
+      <xsd:element name="CreateNewMailBox">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SDP_ORDER_Request" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="SDP_ORDER_Prov" nillable="true" type="bons1:SDP_Order"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateNewMailBoxResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Transaction_Detail" nillable="true" type="bons2:SDP_TransactionDetail"/>
+                        <xsd:element name="SDP_ORDER_RequestPort" nillable="true" type="bons1:SDP_Order"/>
+                        <xsd:element name="SDP_ORDER_ProvPort" nillable="true" type="bons1:SDP_Order"/>
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="CreateNewMailBoxRequestMsg">
+    <wsdl:part element="tns:CreateNewMailBox" name="CreateNewMailBoxParameters"/>
+  </wsdl:message>
+    <wsdl:message name="CreateNewMailBoxResponseMsg">
+    <wsdl:part element="tns:CreateNewMailBoxResponse" name="CreateNewMailBoxResult"/>
+  </wsdl:message>
+    <wsdl:portType name="FromMam_CreateNewMailBox_Interface">
+    <wsdl:operation name="CreateNewMailBox">
+            <wsdl:input message="tns:CreateNewMailBoxRequestMsg" name="CreateNewMailBoxRequest"/><wsdl:output message="tns:CreateNewMailBoxResponseMsg" name="CreateNewMailBoxResponse"/>    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

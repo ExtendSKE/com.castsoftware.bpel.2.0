@@ -7,11 +7,11 @@ class Test(unittest.TestCase):
         # create a DotNet analysis
         analysis = cast.analysers.test.UATestAnalysis('BPEL')
         # DotNet need a selection of a csproj or sln
-        analysis.add_selection('BPEL_Sample\Oracle_Samples')
+        analysis.add_selection("TSTAPP")
         #analysis.result_file_path = 'C:\\Users\\ako\\Documents\\My Received Files\\com.castsoftware.bpel.1.0\\' + '_temp.uax'
         # analysis.add_database_table()
         analysis.set_verbose()
         analysis.run()
-        
+
 if __name__ == "__main__":
     unittest.main()
