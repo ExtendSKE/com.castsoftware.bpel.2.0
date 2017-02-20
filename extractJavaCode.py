@@ -1,20 +1,18 @@
 import xml.etree.ElementTree as ET
 import re
 
-def parse_xml(root, list1):
+def parse_xml(root, invokeJavaCodeList):
 	for k in list(root.iter()) :
 		data1 =re.sub('{.*?}', '',str(k.tag)) 
 		if data1 == "invoke" :
-			l = k
+			invokeTag = k
 		if data1 == "javaCode" :
-			print (l.attrib["name"])
-			print (k.text)
-			dict = { l.attrib["name"] : k.text}		
-			list1.append(dict)
+			dict = { invokeTag.attrib["name"] : k.text}		
+			invokeJavaCodeList.append(dict)
             
 def getInvokeJavaCode(file) : 
 	tree = ET.parse(file)
 	root =tree.getroot()
-	list1 = []
-	parse_xml(root, list1)
-	return list1
+	invokeJavaCodeList = []
+	parse_xml(root, invokeJavaCodeList)
+	return invokeJavaCodeList
