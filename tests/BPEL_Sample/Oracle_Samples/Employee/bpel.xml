@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPELSuitcase>
+  <BPELProcess src="Employee.bpel" id="Employee">
+    <partnerLinkBindings>
+      <partnerLinkBinding name="employeeTravelStatus">
+        <property name="wsdlLocation">Employee.wsdl</property>
+      </partnerLinkBinding>
+    </partnerLinkBindings>
+  </BPELProcess>
+</BPELSuitcase>

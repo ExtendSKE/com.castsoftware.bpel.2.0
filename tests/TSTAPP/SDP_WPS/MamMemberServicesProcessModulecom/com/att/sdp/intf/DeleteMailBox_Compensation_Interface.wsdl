@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DeleteMailBox_Compensation_Interface" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface" xmlns:bons1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:bons2="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" schemaLocation="../../../../SDP_Order.xsd"/>
+      <xsd:import namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" schemaLocation="../../../../SDP_TransactionDetail.xsd"/>
+      <xsd:element name="compensateDeleteMailBox">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="SDP_ORDER_Request" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="SDP_ORDER_Prov" nillable="true" type="bons1:SDP_Order"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="compensateDeleteMailBoxResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Transaction_Detail" nillable="true" type="bons2:SDP_TransactionDetail"/>
+            <xsd:element name="SDP_ORDER_RequestPort" nillable="true" type="bons1:SDP_Order"/>
+            <xsd:element name="SDP_ORDER_ProvPort" nillable="true" type="bons1:SDP_Order"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="compensateDeleteMailBoxRequestMsg">
+    <wsdl:part element="tns:compensateDeleteMailBox" name="compensateDeleteMailBoxParameters"/>
+  </wsdl:message>
+    <wsdl:message name="compensateDeleteMailBoxResponseMsg">
+    <wsdl:part element="tns:compensateDeleteMailBoxResponse" name="compensateDeleteMailBoxResult"/>
+  </wsdl:message>
+    <wsdl:portType name="DeleteMailBox_Compensation_Interface">
+    <wsdl:operation name="compensateDeleteMailBox">
+      <wsdl:input message="tns:compensateDeleteMailBoxRequestMsg" name="compensateDeleteMailBoxRequest"/>
+      <wsdl:output message="tns:compensateDeleteMailBoxResponseMsg" name="compensateDeleteMailBoxResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

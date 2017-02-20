@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<metaModel file_level="builtin" file_no="187">
+
+    <!-- 'common' matory manpart for all Universal Analysers meteamodel -->
+    <category name="APM BPEL Module" rid="0">
+        <description>BPEL</description>
+        <inheritedCategory name="APM Client Modules" />
+    </category>
+    <category name="APM BPEL Artifacts" rid="1">
+        <description>BPEL Artifacts</description>
+       <inheritedCategory name="APM Client Language Artifacts"/>
+    </category>
+    <type name="BPEL Subset" rid="9">
+      <description>BPEL Subset</description>
+      <inheritedCategory name="PROJECT_SUBSET" />
+      <inheritedCategory name="BPEL" />
+      <inheritedCategory name="APM BPEL Module" />
+   </type>
+   <type name="EnlightenBPEL" rid="10">
+        <description>BPEL</description>
+        <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+    </type>
+   
+    <!-- BPEL group for enlighten -->
+     <!-- <type name="EnlightenBPEL" rid="3">
+        <description>BPEL Enlighten</description>
+         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+    </type> -->
+
+    <!-- Define the new UA 'language'
+            for all the platform (cms analyzer)
+    -->
+     <category name = "File_Data" rid="2">
+       <description>File Data</description>
+       <property name="line_Code" type="integer" rid="6" merge="sum">
+		  <description>File line Code</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008210"/>
+		  <attribute name="INF_SUB_TYPE" intValue="0"/>
+	   </property>
+	   <property name="commented_Line_Code" type="integer" rid="16" merge="sum">
+		  <description>File commented Line Code</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008210"/>
+		  <attribute name="INF_SUB_TYPE" intValue="1"/>
+	   </property>
+    </category>
+    <category name="BPEL" rid="3">
+        <description>BPEL</description>
+        <attribute name="extensions" stringValue="*.bpel;*.wsdl" />
+        <inheritedCategory name="UniversalLanguage" />
+        <inheritedCategory name="CsvLanguage" />
+    </category>
+    <!-- BPEL project -->
+    <type name="BPEL Activity" rid="4">
+        <description>BPEL Analyzer Project</description>
+        <inheritedCategory name="UAProject" />
+        <inheritedCategory name="BPEL" />
+        <inheritedCategory name="APM BPEL Module" />
+    </type>
+    <type name="BPEL_Process" rid="7">
+         <description>BPEL Process</description>
+         <inheritedCategory name="BPEL"/>
+         <inheritedCategory name="File_Data" />
+         <inheritedCategory name="UAObject"/>
+         <inheritedCategory name="APM All Artifacts"/>
+         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+   </type>
+   <type name="BPEL_Invoke" rid="17">
+         <description>BPEL Invoke</description>
+         <inheritedCategory name="BPEL"/>
+         <inheritedCategory name="UAObject"/>
+         <inheritedCategory name="APM All Artifacts"/>
+         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+   </type>
+   <type name="WSDL_Process" rid="8">
+         <description>WSDL Process</description>
+         <inheritedCategory name="BPEL"/>
+         <inheritedCategory name="File_Data" />
+         <inheritedCategory name="UAObject"/>
+         <inheritedCategory name="APM All Artifacts"/>
+         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+   </type> 
+   <type name="WSDL_Operation" rid="15">
+         <description>WSDL Operation</description>
+         <inheritedCategory name="BPEL"/>
+         <inheritedCategory name="UAObject"/>
+         <inheritedCategory name="APM All Artifacts"/>
+         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
+   </type>  
+    <!-- Put your object  Types/categories bellow -->
+</metaModel>

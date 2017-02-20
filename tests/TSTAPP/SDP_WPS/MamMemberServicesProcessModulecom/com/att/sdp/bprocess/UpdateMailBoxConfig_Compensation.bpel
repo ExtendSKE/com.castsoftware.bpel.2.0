@@ -1,0 +1,2557 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:java="http://SdpCommonLibrary" xmlns:ns="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationArtifacts" xmlns:ns0="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationInterface" xmlns:ns1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:ns10="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_SubscriberService_Interface" xmlns:ns11="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface" xmlns:ns12="http://SdpCommonLibrary/com/att/sdp/intf/ToMps_MemberServices_Interface" xmlns:ns13="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns14="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes" xmlns:ns15="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_PersonName" xmlns:ns16="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberProfile" xmlns:ns17="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface" xmlns:ns18="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:ns19="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface" xmlns:ns2="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface" xmlns:ns3="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface" xmlns:ns4="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface" xmlns:ns5="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface" xmlns:ns6="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:ns7="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message" xmlns:ns8="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface" xmlns:ns9="http://MamMemberServicesProcessModule/com/att/sdp/bprocess" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="UpdateMailBoxConfig_Compensation" suppressJoinFailure="yes" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess" wpc:displayName="UpdateMailBoxConfig_Compensation" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2006-09-15T15:08:18" wpc:version="IBM_8.5.0">
+  <wpc:javaGlobals>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpErrorHelper"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpHelper"/>
+    <wpc:import packages="sbc.lightspeed.sdp.wps.SdpLoggerHelper"/>
+    <wpc:import packages="commonj.sdo.DataObject"/>
+    <wpc:import packages="java.util.List"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.Product"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.Order"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.SDO"/>
+  </wpc:javaGlobals>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/bprocess/UpdateMailBoxConfig_Compensation.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationInterface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="UpdateMailBoxConfig_CompensationArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationArtifacts"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/UpdateMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/DeleteMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_ErrorObject_Message.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_ErrorObject_Message"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../FromSdp_CommonErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../BPCStandardFaultType.xsd" namespace="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/SDP_Order_to_UCDCL_ProvisioningService.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/ToMps_MemberServices_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToMps_MemberServices_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/To_WESM.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/SDP_Order_to_UCDCL_SubscriberService.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_SubscriberService_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_AccountMailBoxes.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_AccountMailBoxes"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_PersonName.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_PersonName"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/DeleteMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/DeleteMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../../../../../MamMemberServicesProcessModule_Old/com/att/sdp/intf/UpdateMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UpdateMailBoxConfig_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UpdateMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/CreateNewMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/DeleteMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_MemberProfile.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberProfile"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UcdclOutputServiceWrapper_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../ServiceCallFault.xsd" namespace="http://SdpCommonLibrary"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/UCDCLCompensableService_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink name="CreateNewMailBox_Compensation_Interface" partnerLinkType="ns:PartnerPLT" partnerRole="partnerRole" wpc:id="685"/>
+    <bpws:partnerLink myRole="myRole" name="UpdateMailBoxConfig_Compensation_Interface" partnerLinkType="ns:Partner1PLT" wpc:id="686"/>
+    <bpws:partnerLink name="DeleteMailBox_Compensation_Interface" partnerLinkType="ns:Partner1PLT1" partnerRole="partnerRole" wpc:id="687"/>
+    <bpws:partnerLink name="FromSdp_CommonErrorLogger_Interface" partnerLinkType="ns:PartnerPLT1" partnerRole="partnerRole" wpc:id="688"/>
+    <bpws:partnerLink name="UpdateMailBox_Compensation_Interface" partnerLinkType="ns:PartnerPLT5" partnerRole="partnerRole" wpc:id="689"/>
+    <bpws:partnerLink name="UcdclCompensableService_Interface" partnerLinkType="ns:PartnerPLT7" partnerRole="partnerRole" wpc:id="690"/>
+    <bpws:partnerLink name="MPSCompensableService2_InterfacePartner" partnerLinkType="ns:MPSCompensableService2_InterfacePLT" partnerRole="MPSCompensableService2_InterfaceRole" wpc:id="691"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="CreateRequestState" type="ns1:SDP_Order" wpc:id="6"/>
+    <bpws:variable name="CreateProvState" type="ns1:SDP_Order" wpc:id="7"/>
+    <bpws:variable name="DeleteRequestState" type="ns1:SDP_Order" wpc:id="8"/>
+    <bpws:variable name="DeleteProvState" type="ns1:SDP_Order" wpc:id="9"/>
+    <bpws:variable name="UpdateRequestState" type="ns1:SDP_Order" wpc:id="10"/>
+    <bpws:variable name="UpdateProvState" type="ns1:SDP_Order" wpc:id="11"/>
+    <bpws:variable name="TransactionDetailPort" type="ns6:SDP_TransactionDetail" wpc:id="12"/>
+    <bpws:variable name="SDP_ORDER_RequestPort" type="ns1:SDP_Order" wpc:id="22"/>
+    <bpws:variable name="SDP_ORDER_ProvPort" type="ns1:SDP_Order" wpc:id="23"/>
+    <bpws:variable name="PARENT_PROCESS_NAME" type="xsd:string" wpc:id="25"/>
+    <bpws:variable name="PROCESS_NAME" type="xsd:string" wpc:id="26"/>
+    <bpws:variable name="SOURCE_SYSTEM" type="xsd:string" wpc:id="27"/>
+    <bpws:variable name="SDP_ERROR_OBJECT_MESSAGE" type="ns7:SDP_ErrorObject_Message" wpc:id="38"/>
+    <bpws:variable name="MANUAL_INTERVENTION_FLAG" type="xsd:boolean" wpc:id="39"/>
+    <bpws:variable name="TARGET_OPERATION_NAME" type="xsd:string" wpc:id="41"/>
+    <bpws:variable name="TARGET_SYSTEM_NAME" type="xsd:string" wpc:id="42"/>
+    <bpws:variable name="SEVERITY" type="xsd:string" wpc:id="43"/>
+    <bpws:variable name="STATE" type="xsd:string" wpc:id="44"/>
+    <bpws:variable name="Transaction_Error" type="ns6:SDP_TransactionDetail" wpc:id="45"/>
+    <bpws:variable name="sdpOrder" type="ns1:SDP_Order" wpc:id="49"/>
+    <bpws:variable name="IndexChangeUpdateState" type="ns1:SDP_Order" wpc:id="65"/>
+    <bpws:variable name="SetSubscriberSettingsBySub" type="ns1:SDP_Order" wpc:id="66"/>
+    <bpws:variable name="PinChangeUpdateState" type="ns1:SDP_Order" wpc:id="67"/>
+    <bpws:variable name="TnChangeUpdateState" type="ns1:SDP_Order" wpc:id="68"/>
+    <bpws:variable name="AddServiceState" type="ns1:SDP_Order" wpc:id="69"/>
+    <bpws:variable name="RemoveServiceState" type="ns1:SDP_Order" wpc:id="70"/>
+    <bpws:variable name="SDP_ORDER_GrpMBoxInfoPort" type="ns1:SDP_Order" wpc:id="71"/>
+    <bpws:variable name="Counter" type="xsd:int" wpc:id="78"/>
+    <bpws:variable name="SDPOrderPort" type="ns1:SDP_Order" wpc:id="217"/>
+    <bpws:variable name="EmptyTransactionDetail" type="ns6:SDP_TransactionDetail" wpc:id="220"/>
+    <bpws:variable name="InvariantId" type="xsd:string" wpc:id="355"/>
+    <bpws:variable name="Name" type="ns15:SDP_PersonName" wpc:id="356"/>
+    <bpws:variable name="processID" type="xsd:string" wpc:id="458"/>
+    <bpws:variable name="tmpMemProf" type="ns16:SDP_MemberProfile" wpc:id="493"/>
+    <bpws:variable name="sdpOrderForUpdate" type="ns1:SDP_Order" wpc:id="494"/>
+    <bpws:variable name="loginId" type="xsd:string" wpc:id="615"/>
+    <bpws:variable name="MailBox" type="ns14:SDP_AccountMailBoxes" wpc:id="631"/>
+    <bpws:variable name="UMSessionID" type="xsd:string" wpc:id="645"/>
+    <bpws:variable name="maxCount" type="xsd:int" wpc:id="653"/>
+    <bpws:variable name="processBO" type="ns1:SDP_Order" wpc:id="678"/>
+    <bpws:variable name="processTransDetail" type="ns6:SDP_TransactionDetail" wpc:id="679"/>
+    <bpws:variable name="emptyOrder" type="ns1:SDP_Order" wpc:id="682"/>
+    <bpws:variable name="umMessageCenterIP" type="xsd:string" wpc:id="683"/>
+  </bpws:variables>
+  <bpws:faultHandlers>
+    <bpws:catchAll wpc:id="684">
+      <bpws:invoke name="LogErrorToFile" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log Error To File" wpc:id="460">
+        <wpc:script>
+          <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Unknown Failure Occured in MAM.UpdateMailBoxConfig",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);
+														
+											
+														
+														
+														]]></wpc:javaCode>
+        </wpc:script>
+      </bpws:invoke>
+    </bpws:catchAll>
+  </bpws:faultHandlers>
+  <bpws:sequence name="HiddenSequence" wpc:id="1073741827">
+    <bpws:receive createInstance="yes" name="Receive" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Receive" wpc:id="4">
+      <wpc:output>
+        <wpc:parameter name="CreateProvState" variable="CreateProvState"/>
+        <wpc:parameter name="CreateRequestState" variable="CreateRequestState"/>
+        <wpc:parameter name="UpdateProvState" variable="UpdateProvState"/>
+        <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+        <wpc:parameter name="DeleteProvState" variable="DeleteProvState"/>
+        <wpc:parameter name="DeleteRequestState" variable="DeleteRequestState"/>
+        <wpc:parameter name="UpdateRequestState" variable="UpdateRequestState"/>
+        <wpc:parameter name="SDP_ORDER_GrpMBoxInfoPort" variable="SDP_ORDER_GrpMBoxInfoPort"/>
+        <wpc:parameter name="IndexChangeUpdateState" variable="IndexChangeUpdateState"/>
+        <wpc:parameter name="SetSubscriberSettingsBySub" variable="SetSubscriberSettingsBySub"/>
+        <wpc:parameter name="PinChangeUpdateState" variable="PinChangeUpdateState"/>
+        <wpc:parameter name="TnChangeUpdateState" variable="TnChangeUpdateState"/>
+        <wpc:parameter name="AddServiceState" variable="AddServiceState"/>
+        <wpc:parameter name="RemoveServiceState" variable="RemoveServiceState"/>
+      </wpc:output>
+    </bpws:receive>
+    <bpws:invoke name="LogBeginProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [Begin Process]" wpc:id="366">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[processID = CreateRequestState.getString(SdpHelper.TEMPSTRING2_PATH.replace('.','/'));
+PROCESS_NAME = "UPDATE_MAILBOX_CONFIG_Compensation";
+
+SdpLoggerHelper.logMessage("Begin SubFlow : UpdateMailBoxConfigCompensation",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+//SdpLoggerHelper.logMessage("Received the following GBO From MAM ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("CreateRequestState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(CreateRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("CreateProvState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(CreateProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("DeleteRequestState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(DeleteRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("DeleteProvState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(DeleteProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("UpdateRequestState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(UpdateRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("UpdateProvState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(UpdateProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("TransactionDetailPort :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(TransactionDetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_ORDER_GrpMBoxInfoPort :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SDP_ORDER_GrpMBoxInfoPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("IndexChangeUpdateState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(IndexChangeUpdateState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SetSubscriberSettingsBySub :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(SetSubscriberSettingsBySub,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("PinChangeUpdateState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(PinChangeUpdateState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("TnChangeUpdateState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(TnChangeUpdateState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("AddServiceState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(AddServiceState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("RemoveServiceState :",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(RemoveServiceState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:assign name="Initializeconstants" wpc:displayName="initialize constants" wpc:id="24">
+      <bpws:copy>
+        <bpws:from>UpdateMailBoxConfig</bpws:from>
+        <bpws:to variable="PARENT_PROCESS_NAME"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>MAM</bpws:from>
+        <bpws:to variable="SOURCE_SYSTEM"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="Counter"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>
+          <bpws:expression expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[bo:create('http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail', 'SDP_TransactionDetail')]]></bpws:expression>
+        </bpws:from>
+        <bpws:to variable="EmptyTransactionDetail"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>false</bpws:from>
+        <bpws:to variable="EmptyTransactionDetail">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorIndicator]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>null</bpws:from>
+        <bpws:to variable="EmptyTransactionDetail">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message/SdpCode]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>
+          <bpws:expression expressionLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[bo:create('http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order', 'SDP_Order')]]></bpws:expression>
+        </bpws:from>
+        <bpws:to variable="emptyOrder"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="EmptyTransactionDetail"/>
+        <bpws:to variable="processBO">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[UMMessageCenterIP]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="umMessageCenterIP"/>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:invoke name="InitialisesdpOrderForUpdate" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Initialise sdpOrderForUpdate" wpc:id="677">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[sdpOrderForUpdate = SDO.copy(CreateProvState);]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:invoke name="SetsdpOrderforCommonErrorLogger" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrder for CommonErrorLogger" wpc:id="48">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[DataObject tmpTransactionDeatils = null;
+
+sdpOrder = SdpHelper.copySpecificBO(CreateProvState);
+tmpTransactionDeatils = SdpHelper.copySpecificBO(TransactionDetailPort);
+sdpOrder.setDataObject(SdpHelper.TRANSACTION_DETAIL,tmpTransactionDeatils);
+
+sdpOrder.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).clear();]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:assign name="PrepareGBOforLogging" wpc:displayName="Prepare GBO for Logging" wpc:id="37">
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="STATE"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="SEVERITY"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="SDP_ERROR_OBJECT_MESSAGE"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="TARGET_SYSTEM_NAME"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="TransactionDetailPort">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+        </bpws:from>
+        <bpws:to variable="TARGET_OPERATION_NAME"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from>false</bpws:from>
+        <bpws:to variable="MANUAL_INTERVENTION_FLAG"/>
+      </bpws:copy>
+      <bpws:copy>
+        <bpws:from variable="processID"/>
+        <bpws:to variable="sdpOrder">
+          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/tempStoreNonArray/temp1]]></bpws:query>
+        </bpws:to>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:invoke name="LogCommonErrorLogger" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ CommonErrorLogger]" wpc:id="368">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Invoking CommonErrorLogger:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:assign name="Initializecounter" wpc:displayName="initialize counter" wpc:id="79">
+      <bpws:copy>
+        <bpws:from>0</bpws:from>
+        <bpws:to variable="Counter"/>
+      </bpws:copy>
+    </bpws:assign>
+    <bpws:switch name="IfMailBoxTNChanged" wpc:displayName="If MailBox/TN Changed" wpc:id="62">
+      <bpws:case wpc:id="63">
+        <bpws:condition><![CDATA[try {
+	return new Order(TnChangeUpdateState).getMemberProfileList().size() > 0;
+} catch(NullPointerException e) {
+	SdpLoggerHelper.logMessage("MemberProfile list not found in TnChangeUpdateState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+}]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence7" wpc:id="1073741906">
+          <bpws:invoke name="SetCountermaxCount" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Counter, maxCount" wpc:id="652">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[Counter = new Integer(0);
+maxCount = new Integer(new Order(TnChangeUpdateState).getMemberProfileList().size());]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:while name="ForeachUpdationFinished" wpc:displayName="For each Updation Finished " wpc:id="89">
+            <bpws:condition><![CDATA[return Counter.intValue() < maxCount.intValue();
+]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence11" wpc:id="1073742047">
+              <bpws:invoke name="SetsdpOrderForUpdate2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrderForUpdate" wpc:id="490">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[DataObject tmpMemberProfile = null;
+DataObject memberProfile = null;
+
+List lstMemberProfList = null;
+
+String strMemberID = null;
+
+memberProfile = (DataObject) new Order(TnChangeUpdateState).getMemberProfileList().get(Counter.intValue());
+strMemberID = memberProfile.getString(SdpHelper.MEMBERPROFILE_MEMBERID);
+
+tmpMemberProfile = SdpHelper.getMemberProfile(CreateProvState,strMemberID,SdpHelper.MEMBER_FILTER); 
+
+Order orderBO = new Order(sdpOrderForUpdate);
+
+lstMemberProfList = orderBO.getMemberProfileList();
+lstMemberProfList.clear();
+lstMemberProfList.add(tmpMemberProfile);
+orderBO.getTransactionDetail().setIteratorStep(0);
+
+
+
+/*List lstMemberProfList = null;
+DataObject MemProf = null;
+///commonj.sdo.DataObject memberTN = null;
+//com.ibm.websphere.bo.BOFactory factory = null;
+
+//String memberTNs_NameSpace = "http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_MemberTNS";
+//String memberTNs_Name = "SDP_MemberTNS"; 
+//String BOFactory = "com/ibm/websphere/bo/BOFactory"; 
+String strInvariantId = null;
+
+//List lstMemberTNs = null;
+
+lstMemberProfList = Sdp_Order_For_UpdateSubScriber.getList(SdpHelper.MEMBERPROFILE_LIST_PATH.replace('.', '/'));
+
+if (Counter.intValue() < lstMemberProfList.size())
+{
+	MemProf = (DataObject)lstMemberProfList.get(Counter.intValue());
+
+	SdpLoggerHelper.logMessage("MemberProfile for UpdateSubscriber [tmpMemProf]",PROCESS_NAME,
+		processID,SdpLoggerHelper.INFO);
+	SdpLoggerHelper.logBO(MemProf,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	
+	
+	if(MemProf != null)
+	{
+		tmpMemProf = SdpHelper.copySpecificBO(MemProf);
+		lstMemberTNs = tmpMemProf.getList(SdpHelper.MEMBERPROFILE_MEMBER_TNS);
+		
+		//Adding an empty TN if the TN list is empty
+		if(lstMemberTNs.size() == 0)
+		{
+			factory = (com.ibm.websphere.bo.BOFactory) 
+				new com.ibm.websphere.sca.ServiceManager().locateService(BOFactory);
+				
+			memberTN = factory.create(memberTNs_NameSpace, memberTNs_Name);
+			memberTN.setString("tn","");
+			lstMemberTNs.add(memberTN);
+		}
+		
+		
+		//Updating the invariantId = "-1", if the invariantId is empty
+		strInvariantId = tmpMemProf.getString(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID);
+		if (strInvariantId == null)
+		{
+			tmpMemProf.setString(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID,"-1");
+		}
+		else if(strInvariantId.trim().length() == 0)
+		{
+			tmpMemProf.setString(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID,"-1");
+		}
+		lstMemberProfList.clear();
+		lstMemberProfList.add(tmpMemProf);
+	}
+}*/]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="SetMPSValuesNotused" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set MPS Values- Not used" wpc:id="492">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[/*
+SdpLoggerHelper.logMessage("Setting up the Filters for WESM.updateSubscriber", PROCESS_NAME, processID,
+	SdpLoggerHelper.DEBUG);
+// R7 Filter setting not required
+//Create WESM Content Filter 
+ContentFilterCreator filterCreator = new ContentFilterCreator();
+
+//Create WESM Select Filter
+if(tmpMemProf.getString(SdpHelper.MEMBERPROFILE_PRIMARYMEMBERIND).equalsIgnoreCase(SdpHelper.YES))
+	filterCreator.addSelectFilter(SdpHelper.ACCT_OBJID, SdpHelper.ACCT_OBJID_PATH);
+else
+	filterCreator.addSelectFilter(SdpHelper.MEMBERPROFILE_MEMBERID, SdpHelper.MEMBERPROFILE_MEMBERID_PATH);
+	
+//Set the Filter for the MailBoxInvarintID
+filterCreator.addUpdateFilter(SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID, SdpHelper.MEMBERPROFILE_MAILBOXINVARIANTID_PATH);
+filterCreator.addUpdateFilter(SdpHelper.MEMBERPROFILE_MAINMAILBOXIND, SdpHelper.MEMBERPROFILE_MAINMAILBOXIND_PATH);
+filterCreator.addUpdateFilter(SdpHelper.MEMBERPROFILE_MAILBOXCFN, SdpHelper.MEMBERPROFILE_MAILBOXCFN_PATH);
+filterCreator.addUpdateFilter(SdpHelper.MEMBERPROFILE_MAILBOXINDEX, SdpHelper.MEMBERPROFILE_MAILBOXINDEX_PATH);
+		
+//Set the Content filter to the transaction detail object. 
+Sdp_Order_For_UpdateSubScriber.getDataObject("transactionDetail").setDataObject( "contentFilter", filterCreator.createFilters() );
+
+//Create WESM Update Filter for MemberTNs
+SdpHelper.setUpMemberTNs(Sdp_Order_For_UpdateSubScriber.getDataObject("transactionDetail"),
+	tmpMemProf.getList(SdpHelper.MEMBERPROFILE_MAILBOX_TNS).size(),SdpHelper.MEMBER_TN_TYPE);
+*/
+
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPSUpdateUser" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.UpdateUser ]" wpc:id="388">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.compensateUpdateUser",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("Request BO [sdpOrderForUpdate]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(sdpOrderForUpdate,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeMPScompensateUpdateUser" operation="compensateUpdateUser" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns18:MPSCompensableService2_Interface" wpc:displayName="Invoke MPS.compensateUpdateUser" wpc:id="64">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="sdpOrderForUpdate"/>
+                </wpc:input>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeMPScompensateAssociateUserMailbox" operation="compensateAssociateUserMailbox" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns18:MPSCompensableService2_Interface" wpc:displayName="Invoke MPS.compensateAssociateUserMailbox" wpc:id="650">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="sdpOrderForUpdate"/>
+                </wpc:input>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPScompensateUpdateSubscriberSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log -[MPS.compensateUpdateSubscriber -Success]" wpc:id="469">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("MPS.compensateUpdateUser :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="Counter6" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Counter ++" wpc:id="244">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[Counter = new Integer(Counter.intValue() + 1);
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:while>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="TNNameUpdated" wpc:displayName="TNName Updated?" wpc:id="654">
+      <bpws:case wpc:id="655">
+        <bpws:condition><![CDATA[try {
+	return new Order(TnChangeUpdateState).getProductList(Product.CVOIPLINE).size() > 0;
+} catch(NullPointerException e) {
+	SdpLoggerHelper.logMessage("CVOIPLINE product list not found in TnChangeUpdateState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+}
+]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence7" wpc:id="1073742480">
+          <bpws:invoke name="SetCountermaxCount" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Counter, maxCount" wpc:id="658">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[Counter = new Integer(0);
+maxCount = new Integer(new Order(TnChangeUpdateState).getProductList(Product.CVOIPLINE).size());]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:while name="ForeachUpdationFinished" wpc:displayName="For each Updation Finished " wpc:id="659">
+            <bpws:condition><![CDATA[return Counter.intValue() < maxCount.intValue();
+]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence11" wpc:id="1073742484">
+              <bpws:invoke name="SetsdpOrderForUpdate2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrderForUpdate" wpc:id="663">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[DataObject tmpLine = null;
+DataObject lineSubComponent = null;
+
+List lstLines = null;
+
+String strTN = null;
+
+lineSubComponent = (DataObject) new Order(TnChangeUpdateState).getProduct(Product.CVOIPLINE,Counter.intValue());
+strTN = lineSubComponent.getString(SdpHelper.xPathify(SdpHelper.CVOIP_TN_PATH));
+
+tmpLine = SdpHelper.getTN(CreateProvState,strTN); 
+
+Order orderBO = new Order(sdpOrderForUpdate);
+
+lstLines = orderBO.getProductList(Product.CVOIPLINE);
+lstLines.clear();
+lstLines.add(tmpLine);
+
+orderBO.getTransactionDetail().setCurrentProduct(Product.CVOIPLINE);
+orderBO.getTransactionDetail().setIteratorStep(0);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPScompensateUpdateComponent2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.compensateUpdateComponent]" wpc:id="667">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.compensateUpdateComponent",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("Request BO [sdpOrderForUpdate]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(sdpOrderForUpdate,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeMPScompensateUpdateComponent2" operation="compensateUpdateComponent" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns18:MPSCompensableService2_Interface" wpc:displayName="Invoke MPS.compensateUpdateComponent" wpc:id="668">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="sdpOrderForUpdate"/>
+                </wpc:input>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPScompensateUpdateComponentSuccess2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log -[MPS.compensateUpdateComponent - Success]" wpc:id="671">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("MPS.compensateUpdateComponent :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="Counter6" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Counter ++" wpc:id="673">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[Counter = new Integer(Counter.intValue() + 1);
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:while>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="NeedRollBackforPINchanged" wpc:displayName="Need RollBack for PIN changed?" wpc:id="55">
+      <bpws:case wpc:id="56">
+        <bpws:condition><![CDATA[try
+{
+	List lstMailboxes = null;
+	List lstAccountMailboxes = null;
+	
+	lstMailboxes = SetSubscriberSettingsBySub.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+	lstAccountMailboxes = PinChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+	
+	return lstAccountMailboxes.size() > 0 || lstMailboxes.size() > 0;
+}
+catch(NullPointerException e)
+{
+	SdpLoggerHelper.logMessage("AccountMailBox not found in SetSubscriberSettingsBySub or PinChangeUpdateState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+}]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence5" wpc:id="1073741882">
+          <bpws:assign name="Counter2" wpc:displayName="Counter = 0" wpc:id="83">
+            <bpws:copy>
+              <bpws:from>0</bpws:from>
+              <bpws:to variable="Counter"/>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:while name="LoopeachPINchangedMailboxupdateOrder" wpc:displayName="Loop each PIN changed Mailbox [updateOrder]" wpc:id="90">
+            <bpws:condition><![CDATA[List lstMailboxes = null;
+
+lstMailboxes = PinChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+
+if (lstMailboxes.size() > 0 && Counter.intValue() < lstMailboxes.size())
+{
+	return true;
+}
+else
+{
+	return false;
+}]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence9" wpc:id="1073741915">
+              <bpws:assign name="PreInvokeAssigns11" wpc:displayName="Pre Invoke Assigns" wpc:id="624">
+                <bpws:copy>
+                  <bpws:from variable="EmptyTransactionDetail"/>
+                  <bpws:to variable="TransactionDetailPort"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>MPS.UpdateOrder.request</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>MPS</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UpdateComponent</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>MAILBOX</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentProduct]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="PinChangeUpdateState"/>
+                  <bpws:to variable="sdpOrderForUpdate"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="TransactionDetailPort"/>
+                  <bpws:to variable="sdpOrderForUpdate">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:invoke name="SetsdpOrderForUpdate1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrderForUpdate" wpc:id="626">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject mailbox = null;
+List lstMailboxes = null;
+List lstAccountMailboxes = null;
+String strInvariantId = null;
+
+lstMailboxes = PinChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')); 
+tmpMailbox = (DataObject)lstMailboxes.get(Counter.intValue());
+strInvariantId = tmpMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+mailbox = SdpHelper.getMailBox(CreateProvState,strInvariantId);
+
+lstAccountMailboxes = sdpOrderForUpdate.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+lstAccountMailboxes.clear();
+lstAccountMailboxes.add(mailbox);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="SetMPSValues1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set MPS Values" wpc:id="628">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[/*
+SdpLoggerHelper.logMessage("Setting Values for MPS.compensateUpdateComponent[PIN/RollBack]", PROCESS_NAME, processID,
+	SdpLoggerHelper.DEBUG);
+// R7 Filter Settings not required
+//Create WESM Content Filter 
+ContentFilterCreator filterCreator = new ContentFilterCreator();
+
+filterCreator.addSelectFilter(SdpHelper.PRODUCTTYPE, SdpHelper.CURRENT_PRODUCT_PATH);
+
+filterCreator.addSelectFilter(SdpHelper.ACCT_OBJID, SdpHelper.ACCT_OBJID_PATH);
+
+filterCreator.addSelectFilter(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID, 
+	SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID_PATH);
+
+filterCreator.addUpdateFilter(SdpHelper.CVOIP_MAILBOX_PIN, SdpHelper.CVOIP_MAILBOX_PIN_PATH);
+		
+//Set the Content filter to the transaction detail object. 
+sdpOrderForUpdate.getDataObject("transactionDetail").setDataObject( "contentFilter", filterCreator.createFilters() );
+
+*/
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPScompensateUpdateComponent" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ MPS.compensateUpdateComponent]" wpc:id="396">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.compensateUpdateComponent",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[sdpOrderForUpdate]",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(sdpOrderForUpdate,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeMPScompensateUpdateComponent" operation="compensateUpdateComponent" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns18:MPSCompensableService2_Interface" wpc:displayName="Invoke MPS compensateUpdateComponent" wpc:id="57">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="sdpOrderForUpdate"/>
+                </wpc:input>
+              </bpws:invoke>
+              <bpws:invoke name="LogMPScompensateUpdateComponentSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.compensateUpdateComponent -Success]" wpc:id="472">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("MPS.compensateUpdateComponent :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="Counter5" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Counter++" wpc:id="98">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[java.lang.Integer __result__1 = new java.lang.Integer(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(Counter, "Counter") + 1);
+Counter = __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Counter+1" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="Counter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:while>
+          <bpws:assign name="Counter3" wpc:displayName="Counter = 0" wpc:id="621">
+            <bpws:copy>
+              <bpws:from>0</bpws:from>
+              <bpws:to variable="Counter"/>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:while name="LoopeachPINchangedMailboxSetSubscriberSettingsBySub" wpc:displayName="Loop each PIN changed Mailbox [SetSubscriberSettingsBySub]" wpc:id="618">
+            <bpws:condition><![CDATA[List lstMailboxes = null;
+
+lstMailboxes = SetSubscriberSettingsBySub.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+
+if (lstMailboxes.size() > 0 && Counter.intValue() < lstMailboxes.size())
+{
+	return true;
+}
+else
+{
+	return false;
+}]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence17" wpc:id="1073742443">
+              <bpws:invoke name="GetMailboxInvariantId" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Get Mailbox / InvariantId" wpc:id="630">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+List lstAccountMailboxes = null;
+
+lstAccountMailboxes = SetSubscriberSettingsBySub.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')); 
+tmpMailbox = (DataObject)lstAccountMailboxes.get(Counter.intValue());
+
+MailBox = SdpHelper.copySpecificBO(tmpMailbox);
+
+InvariantId = MailBox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:assign name="PreInvokeAssigns2" wpc:displayName="Pre Invoke Assigns" wpc:id="227">
+                <bpws:copy>
+                  <bpws:from variable="EmptyTransactionDetail"/>
+                  <bpws:to variable="TransactionDetailPort"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL.DelegatedLogin.request</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>DelegatedLogin</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="InvariantId"/>
+                  <bpws:to variable="processBO">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/accountMailBoxes[1]/mailBoxInvariantId]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:invoke name="LogUCDCLDelegatedLogin" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DelegatedLogin ]" wpc:id="404">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.DelegatedLogin",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("InvariantId : " + InvariantId,
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);						
+
+
+
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeUCDCLDelegatedLogin" operation="delegatedLogin" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.DelegatedLogin]" wpc:id="59">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="processBO"/>
+                </wpc:input>
+                <wpc:output>
+                  <wpc:parameter name="transactionDetail" variable="processTransDetail"/>
+                </wpc:output>
+                <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="696" wpc:variableId="103">
+                  <bpws:invoke name="SetErrordetails" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="201">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+ 
+ 
+]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="697" wpc:variableId="105">
+                  <bpws:invoke name="HandleRuntimeFailure1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="157">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"   UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catchAll wpc:id="695">
+                  <bpws:invoke name="HandleOtherFailures4" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="187">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"   UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catchAll>
+              </bpws:invoke>
+              <bpws:switch name="UCDCLError4" wpc:displayName="UCDCL Error?" wpc:id="301">
+                <bpws:case wpc:id="302">
+                  <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence15" wpc:id="303">
+                    <bpws:invoke name="LogUCDCLDelegatedLoginError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DelegatedLogin   - Error]" wpc:id="406">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("Returning : UCDCL.DelegatedLogin- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);
+														
+
+
+
+																		]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:assign name="PrepareGBOforlogging1" wpc:displayName="prepare GBO for logging" wpc:id="304">
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="STATE"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="SEVERITY"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="TARGET_SYSTEM_NAME"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="TARGET_OPERATION_NAME"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>true</bpws:from>
+                        <bpws:to variable="MANUAL_INTERVENTION_FLAG"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="PinChangeUpdateState">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="LogCommonErrorLogger10" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ CommonErrorLogger]" wpc:id="408">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Invoking CommonErrorLogger:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+PinChangeUpdateState.setString(SdpHelper.TEMPSTRING1_PATH.replace('.','/'),processID);
+																		]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="InvokeErrorLogger1" operation="logErrorDetails" partnerLink="FromSdp_CommonErrorLogger_Interface" portType="ns8:FromSdp_CommonErrorLogger_Interface" wpc:displayName="Invoke Error Logger" wpc:id="305">
+                      <wpc:input>
+                        <wpc:parameter name="transactionState" variable="STATE"/>
+                        <wpc:parameter name="targetOperation" variable="TARGET_OPERATION_NAME"/>
+                        <wpc:parameter name="parentProcessName" variable="PARENT_PROCESS_NAME"/>
+                        <wpc:parameter name="sdpOrder" variable="PinChangeUpdateState"/>
+                        <wpc:parameter name="manualInterventionInd" variable="MANUAL_INTERVENTION_FLAG"/>
+                        <wpc:parameter name="severity" variable="SEVERITY"/>
+                        <wpc:parameter name="targetSystem" variable="TARGET_SYSTEM_NAME"/>
+                        <wpc:parameter name="sdpErrorObjectMessage" variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="response" variable="Transaction_Error"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                    <bpws:invoke name="LogCommonErrorLogger11" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger ]" wpc:id="410">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" CommonErrorLogger",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:reply name="Reply6" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Reply" wpc:id="306">
+                      <wpc:input>
+                        <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+                        <wpc:parameter name="SdpOrderPort" variable="sdpOrder"/>
+                      </wpc:input>
+                    </bpws:reply>
+                  </bpws:sequence>
+                </bpws:case>
+              </bpws:switch>
+              <bpws:invoke name="LogUCDCLDelegatedLoginSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ UCDCL.DelegatedLogin -Success]" wpc:id="475">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Returning : UCDCL.DelegatedLogin -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+
+
+
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="SetUMSessionIDUMMessageCenterIP" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMSessionID &amp; UMMessageCenterIP" wpc:id="680">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+String UMSessionID = null;
+String UMMessageCenterIP = null;
+
+UMSessionID = processTransDetail.getString(SdpHelper.TRANSDETAIL_UMSESSIONID);
+UMMessageCenterIP = processTransDetail.getString(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP);
+
+logger.debug("UMSessionID from the DelegatedLogin Response: " + UMSessionID);
+logger.debug("UMMessageCenterIP from the DelegatedLogin Response: " + UMMessageCenterIP);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMSESSIONID_PATH),UMSessionID);
+
+processBO.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:assign name="PreInvokeAssigns3" wpc:displayName="Pre Invoke Assigns" wpc:id="229">
+                <bpws:copy>
+                  <bpws:from variable="EmptyTransactionDetail"/>
+                  <bpws:to variable="TransactionDetailPort"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL.setSubscriberSettingsBySub.request</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>setSubscriberSettingsBySub</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="SetSubscriberSettingsBySub">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/order/ReqService/Account/Customer/Person/customerName]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="Name"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="SetSubscriberSettingsBySub">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/Account/Customer/Person/customerName]]></bpws:query>
+                  </bpws:from>
+                  <bpws:to variable="processBO">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/Account/Customer/Person/customerName]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from variable="MailBox"/>
+                  <bpws:to variable="processBO">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/accountMailBoxes[1]]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:invoke name="LogUCDCLsetSubscriberSettingsBySub1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.setSubscriberSettingsBySub]" wpc:id="412">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.setSubscriberSettingsBySub",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[SDP_PERSONNAME]",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	
+SdpLoggerHelper.logBO(Name,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("SDP_AccountMailbox [MailBox]:",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(MailBox,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="InvokeUCDCLsetSubscriberSettingsBySub" operation="setSubscriberSettingsBySub" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.setSubscriberSettingsBySub]" wpc:id="60">
+                <wpc:input>
+                  <wpc:parameter name="order" variable="processBO"/>
+                </wpc:input>
+                <wpc:output/>
+                <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="699" wpc:variableId="106">
+                  <bpws:invoke name="SetErrordetails2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="207">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.setSubscriberSettingsBySub",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+ 
+]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="700" wpc:variableId="107">
+                  <bpws:invoke name="HandleRuntimeFailure2" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="160">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.setSubscriberSettingsBySub",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catchAll wpc:id="698">
+                  <bpws:invoke name="HandleOtherFailures5" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="190">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"  UCDCL.setSubscriberSettingsBySub",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catchAll>
+              </bpws:invoke>
+              <bpws:switch name="UCDCLError5" wpc:displayName="UCDCL Error?" wpc:id="313">
+                <bpws:case wpc:id="314">
+                  <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence15" wpc:id="315">
+                    <bpws:invoke name="LogUCDCLsetSubscriberSettingsBySubError1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.setSubscriberSettingsBySub - Error]" wpc:id="414">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage(" UCDCL.setSubscriberSettingsBySub- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);
+														]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:assign name="PrepareGBOforlogging4" wpc:displayName="prepare GBO for logging" wpc:id="316">
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="STATE"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="SEVERITY"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="TARGET_SYSTEM_NAME"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="TARGET_OPERATION_NAME"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>true</bpws:from>
+                        <bpws:to variable="MANUAL_INTERVENTION_FLAG"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:from>
+                        <bpws:to variable="SetSubscriberSettingsBySub">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="LogCommonErrorLogger12" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger ]" wpc:id="416">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Invoking CommonErrorLogger:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+DataObject tmpStoreNonArray = SetSubscriberSettingsBySub.getDataObject(SdpHelper.TRANSACTION_DETAIL).createDataObject("tempStoreNonArray");
+tmpStoreNonArray.setString(SdpHelper.TEMP1,processID);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="InvokeErrorLogger1" operation="logErrorDetails" partnerLink="FromSdp_CommonErrorLogger_Interface" portType="ns8:FromSdp_CommonErrorLogger_Interface" wpc:displayName="Invoke Error Logger" wpc:id="317">
+                      <wpc:input>
+                        <wpc:parameter name="transactionState" variable="STATE"/>
+                        <wpc:parameter name="targetOperation" variable="TARGET_OPERATION_NAME"/>
+                        <wpc:parameter name="parentProcessName" variable="PARENT_PROCESS_NAME"/>
+                        <wpc:parameter name="sdpOrder" variable="SetSubscriberSettingsBySub"/>
+                        <wpc:parameter name="manualInterventionInd" variable="MANUAL_INTERVENTION_FLAG"/>
+                        <wpc:parameter name="severity" variable="SEVERITY"/>
+                        <wpc:parameter name="targetSystem" variable="TARGET_SYSTEM_NAME"/>
+                        <wpc:parameter name="sdpErrorObjectMessage" variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                      </wpc:input>
+                      <wpc:output>
+                        <wpc:parameter name="response" variable="Transaction_Error"/>
+                      </wpc:output>
+                    </bpws:invoke>
+                    <bpws:invoke name="LogCommonErrorLogger14" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger]" wpc:id="418">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" CommonErrorLogger",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:reply name="Reply7" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Reply" wpc:id="318">
+                      <wpc:input>
+                        <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+                        <wpc:parameter name="SdpOrderPort" variable="sdpOrder"/>
+                      </wpc:input>
+                    </bpws:reply>
+                  </bpws:sequence>
+                </bpws:case>
+              </bpws:switch>
+              <bpws:invoke name="LogUCDCLsetSubscriberSettingsBySubSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.setSubscriberSettingsBySub -Success ]" wpc:id="478">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" UCDCL.setSubscriberSettingsBySub -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:assign name="PreInvokeAssigns5" wpc:displayName="Pre Invoke Assigns" wpc:id="231">
+                <bpws:copy>
+                  <bpws:from variable="EmptyTransactionDetail"/>
+                  <bpws:to variable="TransactionDetailPort"/>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL.Logout.Request</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>UCDCL</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+                <bpws:copy>
+                  <bpws:from>Logout</bpws:from>
+                  <bpws:to variable="TransactionDetailPort">
+                    <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                  </bpws:to>
+                </bpws:copy>
+              </bpws:assign>
+              <bpws:invoke name="LogUCDCLLogout" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout ]" wpc:id="420">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.Logout",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+
+
+
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="Logout" operation="subscriberServiceLogout" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Logout" wpc:id="61">
+                <wpc:input>
+                  <wpc:parameter name="transactionDetail" variable="processTransDetail"/>
+                </wpc:input>
+                <wpc:output/>
+                <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="693" wpc:variableId="108">
+                  <bpws:invoke name="SetErrordetails3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="210">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="694" wpc:variableId="109">
+                  <bpws:invoke name="HandleRuntimeFailure3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="163">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catch>
+                <bpws:catchAll wpc:id="692">
+                  <bpws:invoke name="HandleOtherFailures6" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="193">
+                    <wpc:script>
+                      <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                    </wpc:script>
+                  </bpws:invoke>
+                </bpws:catchAll>
+              </bpws:invoke>
+              <bpws:switch name="UCDCLError2" wpc:displayName="UCDCL Error?" wpc:id="325">
+                <bpws:case wpc:id="326">
+                  <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence15" wpc:id="327">
+                    <bpws:invoke name="LogUCDCLLogoutError1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout - Error]" wpc:id="422">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("Returning : UCDCL.LogOut- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);
+														
+
+
+
+																		]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                  </bpws:sequence>
+                </bpws:case>
+              </bpws:switch>
+              <bpws:invoke name="LogUCDCLLogoutSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout  -Success]" wpc:id="481">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Returning : UCDCL.LogOut -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+
+
+
+																		]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="Counter4" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Counter++" wpc:id="617">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[java.lang.Integer __result__1 = new java.lang.Integer(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(Counter, "Counter") + 1);
+Counter = __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Counter+1" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="Counter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:while>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="NeedRollBackIndexChangedUpdateOrder" wpc:displayName="Need RollBack Index Changed UpdateOrder?" wpc:id="50">
+      <bpws:case wpc:id="51">
+        <bpws:condition><![CDATA[try
+{
+	List lstAccountMailboxes = IndexChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+	return lstAccountMailboxes.size() > 0 ;
+}
+catch(NullPointerException e)
+{
+	SdpLoggerHelper.logMessage("AccountMailBox not found in IndexChangeUpdateState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+}
+ ]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence4" wpc:id="1073741877">
+          <bpws:assign name="Counter0" wpc:displayName="Counter = 0" wpc:id="85">
+            <bpws:copy>
+              <bpws:from>0</bpws:from>
+              <bpws:to variable="Counter"/>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:while name="LoopeachMailboxes" wpc:displayName="Loop each Mailboxes" wpc:id="236">
+            <bpws:condition><![CDATA[List lstMailboxes = null;
+lstMailboxes = IndexChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+
+return  Counter.intValue() < lstMailboxes.size();]]></bpws:condition>
+            <bpws:sequence name="HiddenSequence13" wpc:id="1073742061">
+              <bpws:switch name="IsnotNew" wpc:displayName="Is not New?" wpc:id="634">
+                <bpws:case wpc:id="635">
+                  <bpws:condition><![CDATA[boolean proceed = false;
+
+DataObject mailbox = null;
+DataObject tmpMailbox = null;
+List lstMailboxes = null;
+String strInvariantId = null;
+
+lstMailboxes = IndexChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+
+tmpMailbox = (DataObject)lstMailboxes.get(Counter.intValue());
+strInvariantId = tmpMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+
+mailbox = SdpHelper.getMailBox(CreateProvState,strInvariantId);
+
+if (mailbox != null)
+{
+	proceed = true;
+}
+
+return proceed;]]></bpws:condition>
+                  <bpws:sequence name="HiddenSequence12" wpc:id="1073742460">
+                    <bpws:assign name="PreInvokeAssigns6" wpc:displayName="Pre Invoke Assigns" wpc:id="233">
+                      <bpws:copy>
+                        <bpws:from variable="EmptyTransactionDetail"/>
+                        <bpws:to variable="TransactionDetailPort"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>MPS.UpdateComponent.request</bpws:from>
+                        <bpws:to variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>MPS</bpws:from>
+                        <bpws:to variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>UpdateComponent</bpws:from>
+                        <bpws:to variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from>MAILBOX</bpws:from>
+                        <bpws:to variable="TransactionDetailPort">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentProduct]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="IndexChangeUpdateState"/>
+                        <bpws:to variable="sdpOrderForUpdate"/>
+                      </bpws:copy>
+                      <bpws:copy>
+                        <bpws:from variable="TransactionDetailPort"/>
+                        <bpws:to variable="sdpOrderForUpdate">
+                          <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail]]></bpws:query>
+                        </bpws:to>
+                      </bpws:copy>
+                    </bpws:assign>
+                    <bpws:invoke name="SetsdpOrderForUpdate" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrderForUpdate" wpc:id="496">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[DataObject tmpMailbox = null;
+DataObject mailbox = null;
+List lstMailboxes = null;
+List lstAccountMailboxes = null;
+String strInvariantId = null;
+
+lstMailboxes = IndexChangeUpdateState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')); 
+tmpMailbox = (DataObject)lstMailboxes.get(Counter.intValue());
+
+strInvariantId = tmpMailbox.getString(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID);
+mailbox = SdpHelper.getMailBox(CreateProvState,strInvariantId);
+
+lstAccountMailboxes = sdpOrderForUpdate.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+lstAccountMailboxes.clear();
+lstAccountMailboxes.add(mailbox);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="SetMPSValues" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set MPS Values" wpc:id="498">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[/*
+SdpLoggerHelper.logMessage("Setting Values for MPS.UpdateComponent[Index Change updateorder]", PROCESS_NAME, processID,
+	SdpLoggerHelper.DEBUG);
+// R7 Filter Settings not required
+//Create WESM Content Filter 
+ContentFilterCreator filterCreator = new ContentFilterCreator();
+
+filterCreator.addSelectFilter(SdpHelper.PRODUCTTYPE, SdpHelper.CURRENT_PRODUCT_PATH);
+
+filterCreator.addSelectFilter(SdpHelper.ACCT_OBJID, SdpHelper.ACCT_OBJID_PATH);
+
+filterCreator.addSelectFilter(SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID, 
+	SdpHelper.CVOIP_MAILBOX_MAILBOXINVARIANTID_PATH);
+
+filterCreator.addUpdateFilter(SdpHelper.CVOIP_MAILBOX_INDEX, SdpHelper.CVOIP_MAILBOX_INDEX_PATH);
+		
+//Set the Content filter to the transaction detail object. 
+sdpOrderForUpdate.getDataObject("transactionDetail").setDataObject( "contentFilter", filterCreator.createFilters() );
+*/
+]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="LogMPScompensateUpdateComponent1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.compensateUpdateComponent ]" wpc:id="428">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : MPS.compensateUpdateComponent",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[sdpOrderForUpdate]",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+												
+SdpLoggerHelper.logBO(sdpOrderForUpdate,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                    <bpws:invoke name="InvokeMPScompensateUpdateComponent1" operation="compensateUpdateComponent" partnerLink="MPSCompensableService2_InterfacePartner" portType="ns18:MPSCompensableService2_Interface" wpc:displayName="Invoke MPS compensateUpdateComponent" wpc:id="52">
+                      <wpc:input>
+                        <wpc:parameter name="order" variable="sdpOrderForUpdate"/>
+                      </wpc:input>
+                    </bpws:invoke>
+                    <bpws:invoke name="LogMPScompensateUpdateComponentSuccess1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [MPS.compensateUpdateComponent -Success ]" wpc:id="484">
+                      <wpc:script>
+                        <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("MPS.compensateUpdateComponent :-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+]]></wpc:javaCode>
+                      </wpc:script>
+                    </bpws:invoke>
+                  </bpws:sequence>
+                </bpws:case>
+              </bpws:switch>
+              <bpws:invoke name="Counter1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Counter++" wpc:id="247">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[java.lang.Integer __result__1 = new java.lang.Integer(com.ibm.wbiservers.brules.core.codegen.NillableUtility.getInt(Counter, "Counter") + 1);
+Counter = __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="Counter+1" assignable="false">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" dataInputs="//@executableElements.0/@dataOutputs.0" value="Counter" variable="true">
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="int" namespace="http://www.w3.org/2001/XMLSchema"/>
+//  </executableElements>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:25,1]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:sequence>
+          </bpws:while>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="NeedRollBacksetGroupMailboxInfocall" wpc:displayName="Need RollBack setGroupMailboxInfo call?" wpc:id="499">
+      <bpws:case wpc:id="500">
+        <bpws:condition><![CDATA[try
+{
+	List lstAccountMailboxes = SDP_ORDER_GrpMBoxInfoPort.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/'));
+	return lstAccountMailboxes.size() > 0 ;
+}
+catch(NullPointerException e)
+{
+	SdpLoggerHelper.logMessage("AccountMailBox not found in SDP_ORDER_GrpMBoxInfoPort",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+} ]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence16" wpc:id="1073742354">
+          <bpws:invoke name="CreateloginId" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Create loginId" wpc:id="614">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[DataObject primaryMailbox = null;
+String tn = null;
+
+try
+{       
+	primaryMailbox = SdpHelper.getPrimaryMailBox(CreateProvState);
+	tn = ((DataObject)primaryMailbox.getList("mailBoxTNs").get(0)).getString("tn");
+	loginId = tn;
+	SdpLoggerHelper.logMessage("LoginId : " + loginId, PROCESS_NAME, processID, SdpLoggerHelper.INFO);
+	
+}
+catch(Exception ex)
+{
+	SdpLoggerHelper.logMessage("Exception Occured while create loginId for DelegatedLogin: " + ex, 
+		PROCESS_NAME, processID, SdpLoggerHelper.INFO);
+}]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:assign name="PreInvokeAssigns9" wpc:displayName="Pre Invoke Assigns" wpc:id="534">
+            <bpws:copy>
+              <bpws:from variable="EmptyTransactionDetail"/>
+              <bpws:to variable="TransactionDetailPort"/>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL.DelegatedLogin.request</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>DelegatedLogin</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="emptyOrder"/>
+              <bpws:to variable="processBO"/>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="loginId"/>
+              <bpws:to variable="processBO">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[order/ReqService/product/cvoipProduct/accountMailBoxes[1]/mailBoxInvariantId]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="processTransDetail">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[UMMessageCenterIP]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="processBO">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail/UMMessageCenterIP]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogUCDCLDelegatedLogin1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DelegatedLogin ]" wpc:id="537">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.DelegatedLogin",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("LoginId : " + loginId,PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="InvokeUDCDLDelegatedLogin" operation="delegatedLogin" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UDCDL.DelegatedLogin]" wpc:id="546">
+            <wpc:input>
+              <wpc:parameter name="order" variable="processBO"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="transactionDetail" variable="processTransDetail"/>
+            </wpc:output>
+            <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="705" wpc:variableId="547">
+              <bpws:invoke name="SetErrordetails" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="549">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+ 
+ 
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="706" wpc:variableId="553">
+              <bpws:invoke name="HandleRuntimeFailure1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="555">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"   UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catchAll wpc:id="704">
+              <bpws:invoke name="HandleOtherFailures4" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="557">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"   UCDCL.DelegatedLogin",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catchAll>
+          </bpws:invoke>
+          <bpws:switch name="UCDCLError1" wpc:displayName="UCDCL Error?" wpc:id="567">
+            <bpws:case wpc:id="568">
+              <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+              <bpws:sequence name="HiddenSequence15" wpc:id="569">
+                <bpws:invoke name="LogUCDCLDelegatedLoginError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.DelegatedLogin   - Error]" wpc:id="571">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("Returning : UCDCL.DelegatedLogin- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);
+														
+
+
+
+																		]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:assign name="PrepareGBOforlogging1" wpc:displayName="prepare GBO for logging" wpc:id="572">
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="STATE"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="SEVERITY"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="TARGET_SYSTEM_NAME"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="TARGET_OPERATION_NAME"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from>true</bpws:from>
+                    <bpws:to variable="MANUAL_INTERVENTION_FLAG"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="PinChangeUpdateState">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:to>
+                  </bpws:copy>
+                </bpws:assign>
+                <bpws:invoke name="LogCommonErrorLogger10" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ CommonErrorLogger]" wpc:id="574">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Invoking CommonErrorLogger:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+PinChangeUpdateState.setString(SdpHelper.TEMPSTRING1_PATH.replace('.','/'),processID);
+																		]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:invoke name="InvokeErrorLogger1" operation="logErrorDetails" partnerLink="FromSdp_CommonErrorLogger_Interface" portType="ns8:FromSdp_CommonErrorLogger_Interface" wpc:displayName="Invoke Error Logger" wpc:id="575">
+                  <wpc:input>
+                    <wpc:parameter name="transactionState" variable="STATE"/>
+                    <wpc:parameter name="targetOperation" variable="TARGET_OPERATION_NAME"/>
+                    <wpc:parameter name="parentProcessName" variable="PARENT_PROCESS_NAME"/>
+                    <wpc:parameter name="sdpOrder" variable="PinChangeUpdateState"/>
+                    <wpc:parameter name="manualInterventionInd" variable="MANUAL_INTERVENTION_FLAG"/>
+                    <wpc:parameter name="severity" variable="SEVERITY"/>
+                    <wpc:parameter name="targetSystem" variable="TARGET_SYSTEM_NAME"/>
+                    <wpc:parameter name="sdpErrorObjectMessage" variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                  </wpc:input>
+                  <wpc:output>
+                    <wpc:parameter name="response" variable="Transaction_Error"/>
+                  </wpc:output>
+                </bpws:invoke>
+                <bpws:invoke name="LogCommonErrorLogger11" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger ]" wpc:id="577">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" CommonErrorLogger",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:reply name="Reply6" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Reply" wpc:id="578">
+                  <wpc:input>
+                    <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+                    <wpc:parameter name="SdpOrderPort" variable="sdpOrder"/>
+                  </wpc:input>
+                </bpws:reply>
+              </bpws:sequence>
+            </bpws:case>
+          </bpws:switch>
+          <bpws:invoke name="LogUCDCLDelegatedLoginSuccess1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ UCDCL.DelegatedLogin -Success]" wpc:id="581">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Returning : UCDCL.DelegatedLogin -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+
+
+
+																		]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="SetUMSessionIDUMMessageCenterIP1" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Set UMSessionID &amp; UMMessageCenterIP" wpc:id="681">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[att.lightspeed.sdp.helper.WpsLogger logger = att.lightspeed.sdp.helper.WpsLogger.getLogger(processInstance());
+String UMSessionID = null;
+String UMMessageCenterIP = null;
+
+UMSessionID = processTransDetail.getString(SdpHelper.TRANSDETAIL_UMSESSIONID);
+UMMessageCenterIP = processTransDetail.getString(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP);
+
+logger.debug("UMSessionID from the DelegatedLogin Response: " + UMSessionID);
+logger.debug("UMMessageCenterIP from the DelegatedLogin Response: " + UMMessageCenterIP);
+
+SDP_ORDER_GrpMBoxInfoPort.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMSESSIONID_PATH),UMSessionID);
+
+SDP_ORDER_GrpMBoxInfoPort.setString(SdpHelper.xPathify(SdpHelper.TRANSDETAIL_UMMESSAGECENTERIP_PATH),UMMessageCenterIP);]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:assign name="PreInvokeAssigns7" wpc:displayName="Pre Invoke Assigns" wpc:id="501">
+            <bpws:copy>
+              <bpws:from variable="EmptyTransactionDetail"/>
+              <bpws:to variable="TransactionDetailPort"/>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL.setGroupMailBoxInfo.request</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>setGroupMailBoxInfo</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogUCDCLsetGroupMailBoxInfoPort" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.setGroupMailBoxInfoPort ]" wpc:id="503">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.setGroupMailBoxInfoPort",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[SDP_ORDER]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_GrpMBoxInfoPort:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(SDP_ORDER_GrpMBoxInfoPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="InvokeUCDCLsetGroupMailBoxInfo" operation="setGroupMailboxInfo" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Invoke [UCDCL.setGroupMailBoxInfo]" wpc:id="504">
+            <wpc:input>
+              <wpc:parameter name="order" variable="SDP_ORDER_GrpMBoxInfoPort"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="transactionDetail" variable="processTransDetail"/>
+            </wpc:output>
+            <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="708" wpc:variableId="505">
+              <bpws:invoke name="SetErrordetails4" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="507">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +" UCDCL.setGroupMailBoxInfoPort",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="709" wpc:variableId="511">
+              <bpws:invoke name="HandleRuntimeFailure5" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="513">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.setGroupMailBoxInfoPort",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catchAll wpc:id="707">
+              <bpws:invoke name="HandleOtherFailures8" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="515">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"  UCDCL.setGroupMailBoxInfoPort",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catchAll>
+          </bpws:invoke>
+          <bpws:switch name="UCDCLError" wpc:displayName="UCDCL Error?" wpc:id="516">
+            <bpws:case wpc:id="517">
+              <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+              <bpws:sequence name="HiddenSequence15" wpc:id="518">
+                <bpws:invoke name="LogUCDCLsetGroupMailBoxInfoPortError" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.setGroupMailBoxInfoPort   - Error]" wpc:id="520">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage(" UCDCL.setGroupMailBoxInfoPort- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:assign name="PrepareGBOforlogging1" wpc:displayName="prepare GBO for logging" wpc:id="521">
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="STATE"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="SEVERITY"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="TARGET_SYSTEM_NAME"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="TARGET_OPERATION_NAME"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from>true</bpws:from>
+                    <bpws:to variable="MANUAL_INTERVENTION_FLAG"/>
+                  </bpws:copy>
+                  <bpws:copy>
+                    <bpws:from variable="TransactionDetailPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:from>
+                    <bpws:to variable="SDP_ORDER_GrpMBoxInfoPort">
+                      <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+                    </bpws:to>
+                  </bpws:copy>
+                </bpws:assign>
+                <bpws:invoke name="LogCommonErrorLogger18" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger ]" wpc:id="523">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("Invoking CommonErrorLogger:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+
+SDP_ORDER_GrpMBoxInfoPort.setString(SdpHelper.TEMPSTRING1_PATH.replace('.','/'),processID);
+
+																		]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:invoke name="InvokeErrorLogger1" operation="logErrorDetails" partnerLink="FromSdp_CommonErrorLogger_Interface" portType="ns8:FromSdp_CommonErrorLogger_Interface" wpc:displayName="Invoke Error Logger" wpc:id="524">
+                  <wpc:input>
+                    <wpc:parameter name="transactionState" variable="STATE"/>
+                    <wpc:parameter name="targetOperation" variable="TARGET_OPERATION_NAME"/>
+                    <wpc:parameter name="parentProcessName" variable="PARENT_PROCESS_NAME"/>
+                    <wpc:parameter name="sdpOrder" variable="SDP_ORDER_GrpMBoxInfoPort"/>
+                    <wpc:parameter name="manualInterventionInd" variable="MANUAL_INTERVENTION_FLAG"/>
+                    <wpc:parameter name="severity" variable="SEVERITY"/>
+                    <wpc:parameter name="targetSystem" variable="TARGET_SYSTEM_NAME"/>
+                    <wpc:parameter name="sdpErrorObjectMessage" variable="SDP_ERROR_OBJECT_MESSAGE"/>
+                  </wpc:input>
+                  <wpc:output>
+                    <wpc:parameter name="response" variable="Transaction_Error"/>
+                  </wpc:output>
+                </bpws:invoke>
+                <bpws:invoke name="LogCommonErrorLogger19" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CommonErrorLogger ]" wpc:id="526">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" CommonErrorLogger",PROCESS_NAME,processID,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+                <bpws:reply name="Reply1" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Reply" wpc:id="527">
+                  <wpc:input>
+                    <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+                    <wpc:parameter name="SdpOrderPort" variable="sdpOrder"/>
+                  </wpc:input>
+                </bpws:reply>
+              </bpws:sequence>
+            </bpws:case>
+          </bpws:switch>
+          <bpws:invoke name="LogUCDCLsetGroupMailBoxInfoPortSuccess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ UCDCL.setGroupMailBoxInfoPort -Success]" wpc:id="529">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(" UCDCL.setGroupMailBoxInfoPort-"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:assign name="PreInvokeAssigns10" wpc:displayName="Pre Invoke Assigns" wpc:id="585">
+            <bpws:copy>
+              <bpws:from variable="EmptyTransactionDetail"/>
+              <bpws:to variable="TransactionDetailPort"/>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL.Logout.Request</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>UCDCL</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from>Logout</bpws:from>
+              <bpws:to variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogUCDCLLogout1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout ]" wpc:id="588">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" : UCDCL.Logout",
+	PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+														
+
+
+
+																		]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="Logout1" operation="subscriberServiceLogout" partnerLink="UcdclCompensableService_Interface" portType="ns19:UCDCLCompensableService_Interface" wpc:displayName="Logout" wpc:id="595">
+            <wpc:input>
+              <wpc:parameter name="transactionDetail" variable="processTransDetail"/>
+            </wpc:input>
+            <wpc:output/>
+            <bpws:catch faultName="ns19:serviceCallFault" faultVariable="scFault" wpc:faultType="java:ServiceCallFault" wpc:id="702" wpc:variableId="596">
+              <bpws:invoke name="SetErrordetails3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error details" wpc:id="598">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[TransactionDetailPort.setBoolean(SdpHelper.ERRORINDICATOR,true);
+
+new att.lightspeed.sdp.helper.TransactionDetail(TransactionDetailPort).setSDPErrorMessage(scFault);
+
+TransactionDetailPort.getDataObject("errorDetails").getDataObject("Error").setString("Severity",SdpErrorHelper.SEVERITY_FATAL);
+
+ SdpLoggerHelper.logMessage(SdpLoggerHelper.FAULT_FAILURE +"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL); 
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catch faultName="wpc:runtimeFailure" faultVariable="bpcFault" wpc:faultType="wpc:BPCStandardFaultType" wpc:id="703" wpc:variableId="599">
+              <bpws:invoke name="HandleRuntimeFailure3" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Runtime Failure" wpc:id="601">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,bpcFault,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.RUNTIME_FAILURE+"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catch>
+            <bpws:catchAll wpc:id="701">
+              <bpws:invoke name="HandleOtherFailures6" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Handle Other Failures" wpc:id="603">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[SdpErrorHelper.setErrDetInTransDet(TransactionDetailPort,null,SdpErrorHelper.SEVERITY_FATAL);
+SdpLoggerHelper.logMessage(SdpLoggerHelper.UNKNOWN_FAILURE+"  UCDCL.Logout",PROCESS_NAME,processID,SdpLoggerHelper.FATAL);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+            </bpws:catchAll>
+          </bpws:invoke>
+          <bpws:switch name="UCDCLError3" wpc:displayName="UCDCL Error?" wpc:id="608">
+            <bpws:case wpc:id="609">
+              <bpws:condition><![CDATA[boolean __result__1 = com.ibm.wbiservers.brules.core.codegen.NillableUtility.getBoolean(TransactionDetailPort, "errorIndicator", "TransactionDetailPort");
+return __result__1;
+
+//@generated:com.ibm.wbit.activity.ui
+//<?xml version="1.0" encoding="UTF-8"?>
+//<com.ibm.wbit.activity:CompositeActivity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.activity="http:///com/ibm/wbit/activity.ecore" name="ActivityMethod">
+//  <result name="Result">
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="boolean"/>
+//  </result>
+//  <exceptions>
+//    <type xsi:type="com.ibm.wbit.activity:JavaElementType" name="com.ibm.bpe.api.ProcessException"/>
+//  </exceptions>
+//  <executableElements xsi:type="com.ibm.wbit.activity:Expression" value="TransactionDetailPort.errorIndicator" field="true">
+//    <dataOutputs target="//@executableElements.1"/>
+//    <type xsi:type="com.ibm.wbit.activity:XSDElementType" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" nillable="false"/>
+//  </executableElements>
+//  <executableElements xsi:type="com.ibm.wbit.activity:ReturnElement" dataInputs="//@executableElements.0/@dataOutputs.0"/>
+//  <executableGroups executableElements="//@executableElements.0 //@executableElements.1"/>
+//</com.ibm.wbit.activity:CompositeActivity>
+//@generated:end
+//!SMAP!*S WBIACTDBG
+//!SMAP!*L
+//!SMAP!1:1,1
+//!SMAP!2:2,1
+//!SMAP!1000000:26,1]]></bpws:condition>
+              <bpws:sequence name="HiddenSequence15" wpc:id="610">
+                <bpws:invoke name="LogUCDCLLogoutError1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UCDCL.Logout - Error]" wpc:id="612">
+                  <wpc:script>
+                    <wpc:javaCode><![CDATA[String strSeverity =TransactionDetailPort.getString("errorDetails/Error/Severity");
+int logLevel = SdpHelper.getLogLevel(strSeverity);
+SdpLoggerHelper.logMessage("Returning : UCDCL.LogOut- "+SdpLoggerHelper.ERROR_STR+"["+strSeverity+"]",PROCESS_NAME,processID,logLevel);
+														
+
+
+
+																		]]></wpc:javaCode>
+                  </wpc:script>
+                </bpws:invoke>
+              </bpws:sequence>
+            </bpws:case>
+          </bpws:switch>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="UpdateMailBox_Compensation_Interface" wpc:displayName="UpdateMailBox_Compensation_Interface" wpc:id="13">
+      <bpws:case wpc:id="14">
+        <bpws:condition><![CDATA[List lstTempStore = null;
+
+try {
+	lstTempStore = UpdateRequestState.getList(SdpHelper.TEMP_STORE_LIST.replace('.','/'));
+	return lstTempStore.size() > 0;
+}
+catch (Exception ex) {
+	SdpLoggerHelper.logMessage("AccountMailBox not found in UpdateRequestState",
+		PROCESS_NAME,processID,SdpLoggerHelper.INFO);	
+	return false;
+}]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence1" wpc:id="1073741852">
+          <bpws:assign name="Preinvokesforcompensation" wpc:displayName="pre invokes for compensation" wpc:id="29">
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PARENT_PROCESS_NAME"/>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/parentProcessName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PROCESS_NAME"/>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/processName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="SOURCE_SYSTEM"/>
+              <bpws:to variable="UpdateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/SourceSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogUpdateMailBoxCompensation" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UpdateMailBoxCompensation ]" wpc:id="444">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" SubFlow : UpdateMailBoxCompensation",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[SDP_ORDER]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("UpdateRequestState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(UpdateRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("UpdateProvState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(UpdateProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+UpdateRequestState.setString(SdpHelper.TEMPSTRING2_PATH.replace('.','/'),processID);
+]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="UpdateMailBox_Compensation_Interface1" operation="compensateUpdateMailBox" partnerLink="UpdateMailBox_Compensation_Interface" portType="ns2:UpdateMailBox_Compensation_Interface" wpc:displayName="UpdateMailBox_Compensation_Interface" wpc:id="364">
+            <wpc:input>
+              <wpc:parameter name="SDP_ORDER_Prov" variable="UpdateProvState"/>
+              <wpc:parameter name="SDP_ORDER_Request" variable="UpdateRequestState"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="SDP_ORDER_ProvPort" variable="SDP_ORDER_ProvPort"/>
+              <wpc:parameter name="Transaction_Detail" variable="TransactionDetailPort"/>
+              <wpc:parameter name="SDP_ORDER_RequestPort" variable="SDP_ORDER_RequestPort"/>
+            </wpc:output>
+          </bpws:invoke>
+          <bpws:invoke name="LogUpdateMailBoxCompensation1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [UpdateMailBoxCompensation ]" wpc:id="446">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("SubFlow : UpdateMailBoxCompensation -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [TransactionDetailPort] ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("TransactionDetailPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);														
+SdpLoggerHelper.logBO(TransactionDetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_RequestPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);		
+SdpLoggerHelper.logBO(SDP_ORDER_RequestPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_ProvPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logBO(SDP_ORDER_ProvPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);																]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="DeleteMailBox_Compensation_Interface" wpc:displayName="DeleteMailBox_Compensation_Interface" wpc:id="15">
+      <bpws:case wpc:id="16">
+        <bpws:condition><![CDATA[try{
+	return DeleteRequestState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).size() > 0 ;
+	}
+catch(NullPointerException e)
+	{
+		SdpLoggerHelper.logMessage("AccountMailBox not found in DeleteRequestState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+		return false;
+	}
+	]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence2" wpc:id="1073741854">
+          <bpws:assign name="Preinvokesforcompensation1" wpc:displayName="pre invokes for compensation" wpc:id="34">
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Message]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Message]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PARENT_PROCESS_NAME"/>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/parentProcessName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PROCESS_NAME"/>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/processName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="SOURCE_SYSTEM"/>
+              <bpws:to variable="DeleteRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/SourceSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogDeleteMailBoxCompensation" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [DeleteMailBoxCompensation ]" wpc:id="448">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" SubFlow : DeleteMailBoxCompensation",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[SDP_ORDER]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("DeleteRequestState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(DeleteRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("DeleteProvState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(DeleteProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+DeleteRequestState.setString(SdpHelper.TEMPSTRING2_PATH.replace('.','/'),processID);
+]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="DeleteMailBox_Compensation_Interface1" operation="compensateDeleteMailBox" partnerLink="DeleteMailBox_Compensation_Interface" portType="ns3:DeleteMailBox_Compensation_Interface" wpc:displayName="DeleteMailBox_Compensation_Interface" wpc:id="20">
+            <wpc:input>
+              <wpc:parameter name="SDP_ORDER_Prov" variable="DeleteProvState"/>
+              <wpc:parameter name="SDP_ORDER_Request" variable="DeleteRequestState"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="SDP_ORDER_ProvPort" variable="SDP_ORDER_ProvPort"/>
+              <wpc:parameter name="Transaction_Detail" variable="TransactionDetailPort"/>
+              <wpc:parameter name="SDP_ORDER_RequestPort" variable="SDP_ORDER_RequestPort"/>
+            </wpc:output>
+          </bpws:invoke>
+          <bpws:invoke name="SetsdpOrder" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set sdpOrder" wpc:id="633">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[sdpOrder = SdpHelper.copySpecificBO(SDP_ORDER_RequestPort);]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="LogDeleteMailBoxCompensation1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [DeleteMailBoxCompensation ]" wpc:id="450">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("SubFlow  :DeleteMailBoxCompensation - Success ",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [TransactionDetail]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("TransactionDetailPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);														
+SdpLoggerHelper.logBO(TransactionDetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_RequestPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);		
+SdpLoggerHelper.logBO(SDP_ORDER_RequestPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_ProvPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logBO(SDP_ORDER_ProvPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);																]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:switch name="CreateNewMailBox_Compensation_Interface" wpc:displayName="CreateNewMailBox_Compensation_Interface" wpc:id="17">
+      <bpws:case wpc:id="18">
+        <bpws:condition><![CDATA[try 
+{
+	return CreateRequestState.getList(SdpHelper.VOIP_ACCOUNTMAILBOXES_PATH.replace('.','/')).size() > 0 ;
+}
+catch(NullPointerException e)
+{
+	SdpLoggerHelper.logMessage("AccountMailBox not found in CreateRequestState",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+	return false;
+}]]></bpws:condition>
+        <bpws:sequence name="HiddenSequence3" wpc:id="1073741856">
+          <bpws:assign name="Preinvokesforcompensation2" wpc:displayName="pre invokes for compensation" wpc:id="36">
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/State]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/State]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/Severity]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/currentTargetOperation]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/currentTargetOperation]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="TransactionDetailPort">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:from>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/TargetSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PARENT_PROCESS_NAME"/>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/parentProcessName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="PROCESS_NAME"/>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/processName]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="SOURCE_SYSTEM"/>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[/transactionDetail/errorDetails/Error/SourceSystem]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+            <bpws:copy>
+              <bpws:from variable="umMessageCenterIP"/>
+              <bpws:to variable="CreateRequestState">
+                <bpws:query queryLanguage="http://www.w3.org/TR/1999/REC-xpath-19991116"><![CDATA[transactionDetail/UMMessageCenterIP]]></bpws:query>
+              </bpws:to>
+            </bpws:copy>
+          </bpws:assign>
+          <bpws:invoke name="LogCreateNewMailBoxCompensation" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CreateNewMailBoxCompensation ]" wpc:id="452">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage(SdpLoggerHelper.INVOKE_STR +" SubFlow : CreateNewMailBoxCompensation",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+														
+SdpLoggerHelper.logMessage("Request BO:[SDP_ORDER]",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("CreateRequestState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(CreateRequestState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("CreateProvState:",PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+
+														
+SdpLoggerHelper.logBO(CreateProvState,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+CreateRequestState.setString(SdpHelper.TEMPSTRING2_PATH.replace('.','/'),processID);]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+          <bpws:invoke name="CreateNewMailBox_Compensation_Interface1" operation="compensateCreateNewMailBox" partnerLink="CreateNewMailBox_Compensation_Interface" portType="ns4:CreateNewMailBox_Compensation_Interface" wpc:displayName="CreateNewMailBox_Compensation_Interface" wpc:id="21">
+            <wpc:input>
+              <wpc:parameter name="SDP_ORDER_Prov" variable="CreateProvState"/>
+              <wpc:parameter name="SDP_ORDER_Request" variable="CreateRequestState"/>
+            </wpc:input>
+            <wpc:output>
+              <wpc:parameter name="SDP_ORDER_ProvPort" variable="SDP_ORDER_ProvPort"/>
+              <wpc:parameter name="Transaction_Detail" variable="TransactionDetailPort"/>
+              <wpc:parameter name="SDP_ORDER_RequestPort" variable="SDP_ORDER_RequestPort"/>
+            </wpc:output>
+          </bpws:invoke>
+          <bpws:invoke name="LogCreateNewMailBoxCompensation1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [CreateNewMailBoxCompensation ]" wpc:id="454">
+            <wpc:script>
+              <wpc:javaCode><![CDATA[SdpLoggerHelper.logMessage("SubFlow  :CreateNewMailBoxCompensation -"+SdpLoggerHelper.SUCCESS_STR,PROCESS_NAME,processID
+														,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("Response BO [TransactionDetail]",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("TransactionDetailPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);														
+SdpLoggerHelper.logBO(TransactionDetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_RequestPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);		
+SdpLoggerHelper.logBO(SDP_ORDER_RequestPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logMessage("SDP_ORDER_ProvPort:",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+SdpLoggerHelper.logBO(SDP_ORDER_ProvPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);																]]></wpc:javaCode>
+            </wpc:script>
+          </bpws:invoke>
+        </bpws:sequence>
+      </bpws:case>
+    </bpws:switch>
+    <bpws:invoke name="LogEndProcess" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Log - [ End Process] " wpc:id="456">
+      <wpc:script>
+        <wpc:javaCode><![CDATA[
+SdpLoggerHelper.logMessage("Returning the following GBO To MAM ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("TransactionDetailPort : ",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logBO(TransactionDetailPort,PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+
+SdpLoggerHelper.logMessage("End SubFlow: UpdateMailBoxConfigCompensation",PROCESS_NAME,processID,SdpLoggerHelper.INFO);
+]]></wpc:javaCode>
+      </wpc:script>
+    </bpws:invoke>
+    <bpws:reply name="Reply" operation="compensateUpdateMailBoxConfig" partnerLink="UpdateMailBoxConfig_Compensation_Interface" portType="ns5:UpdateMailBoxConfig_Compensation_Interface" wpc:displayName="Reply" wpc:id="5">
+      <wpc:input>
+        <wpc:parameter name="TransactionDetailPort" variable="TransactionDetailPort"/>
+        <wpc:parameter name="SdpOrderPort" variable="sdpOrder"/>
+      </wpc:input>
+    </bpws:reply>
+  </bpws:sequence>
+</bpws:process>

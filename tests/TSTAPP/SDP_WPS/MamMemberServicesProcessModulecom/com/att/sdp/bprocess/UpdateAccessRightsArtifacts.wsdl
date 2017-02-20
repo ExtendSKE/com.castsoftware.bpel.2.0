@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://SdpCommonLibrary/com/att/sdp/intf/ToWesm_WebServices_Interface" xmlns:ns0="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns1="http://SdpCommonLibrary/com/att/sdp/intf/ToSdp_ErrorLogger_Interface" xmlns:ns2="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_ErrorLogger_Interface" xmlns:ns3="http://SdpCommonLibrary/com/att/sdp/intf/CommonErrorLogger_Interface" xmlns:ns4="http://CommonErrorLoggerModule/com/att/sdp/intf/CommonErrorLogger_Interface" xmlns:ns5="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://UpdateAccessRightsModule/com/att/sdp/bprocess/UpdateAccessRightsArtifacts" xmlns:wsdl0="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface" xmlns:wsdl1="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UpdateAccessRights" targetNamespace="http://UpdateAccessRightsModule/com/att/sdp/bprocess/UpdateAccessRightsArtifacts">
+  <plnk:partnerLinkType name="FromMam_FeaturePermissionMailboxUpdate_InterfacePLT">
+    <plnk:role name="FromMam_FeaturePermissionMailboxUpdate_InterfaceRole">
+      <plnk:portType name="wsdl0:FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT2">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns5:FromSdp_CommonErrorLogger_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="MPSCompensableService2_InterfacePLT">
+    <plnk:role name="MPSCompensableService2_InterfaceRole">
+      <plnk:portType name="wsdl1:MPSCompensableService2_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <import location="../intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+    <import location="../../../../FromSdp_CommonErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface"/>
+    <import location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+</definitions>

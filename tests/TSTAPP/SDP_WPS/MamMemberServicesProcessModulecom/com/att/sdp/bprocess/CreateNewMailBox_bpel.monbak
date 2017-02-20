@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Monitor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ibm.com/xmlns/prod/websphere/monitoring/6.0.0/mon" xmlns:bpel="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process" xsi:schemaLocation="http://www.ibm.com/xmlns/prod/websphere/monitoring/6.0.0/mon monitor.xsd" kind="http://www.ibm.com/xmlns/prod/websphere/scdl/business-process/6.0.0" name="CreateNewMailBox" targetName="CreateNewMailBox" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess:CreateNewMailBox">
+  <EnableDefaultEvents>false</EnableDefaultEvents>
+  <Attributes>
+    <Entry key="IdentifyingAttribute" value="wpc:id"/>
+  </Attributes>
+</Monitor>

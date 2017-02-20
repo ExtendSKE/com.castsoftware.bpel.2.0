@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="UpdateMailBoxConfig_Compensation" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationArtifacts" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface" xmlns:ns0="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface" xmlns:ns1="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface" xmlns:ns2="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface" xmlns:ns3="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface" xmlns:ns4="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_ProvisioningService_Interface" xmlns:ns5="http://SdpCommonLibrary/com/att/sdp/intf/ToUCDCL_SubscriberService_Interface" xmlns:ns6="http://SdpCommonLibrary/com/att/sdp/intf/ToMps_MemberServices_Interface" xmlns:ns7="http://SdpCommonLibrary/com/att/sdp/intf/To_WESM" xmlns:ns8="http://SdpCommonLibrary/com/att/sdp/intf/UcdclOutputServiceWrapper_Interface" xmlns:ns9="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface" xmlns:plnk="http://schemas.xmlsoap.org/ws/2004/03/partner-link/" xmlns:tns="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationArtifacts" xmlns:wsdl0="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/UpdateMailBoxConfig_CompensationInterface" xmlns:wsdl1="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <plnk:partnerLinkType name="PartnerPLT">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns0:CreateNewMailBox_Compensation_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="Partner1PLT">
+    <plnk:role name="myRole">
+      <plnk:portType name="ns:UpdateMailBoxConfig_Compensation_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="Partner1PLT1">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns1:DeleteMailBox_Compensation_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT1">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns3:FromSdp_CommonErrorLogger_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT5">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns2:UpdateMailBox_Compensation_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="PartnerPLT7">
+    <plnk:role name="partnerRole">
+      <plnk:portType name="ns9:UCDCLCompensableService_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="MPSCompensableService2_InterfacePLT">
+    <plnk:role name="MPSCompensableService2_InterfaceRole">
+      <plnk:portType name="wsdl1:MPSCompensableService2_Interface"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+    <import location="../intf/CreateNewMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/CreateNewMailBox_Compensation_Interface"/>
+    <import location="../intf/UpdateMailBoxConfig_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBoxConfig_Compensation_Interface"/>
+    <import location="../intf/DeleteMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/DeleteMailBox_Compensation_Interface"/>
+    <import location="../../../../FromSdp_CommonErrorLogger_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromSdp_CommonErrorLogger_Interface"/>
+    <import location="../intf/UpdateMailBox_Compensation_Interface.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/intf/UpdateMailBox_Compensation_Interface"/>
+    <import location="../intf/UCDCLCompensableService_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/UCDCLCompensableService_Interface"/>
+    <import location="../intf/MPSCompensableService2_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/MPSCompensableService2_Interface"/>
+</definitions>

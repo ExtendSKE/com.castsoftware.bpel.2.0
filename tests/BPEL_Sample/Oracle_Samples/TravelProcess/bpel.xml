@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPELSuitcase>
+  <BPELProcess src="Travel.bpel" id="TravelProcess">
+    <partnerLinkBindings>
+      <partnerLinkBinding name="client">
+        <property name="wsdlLocation">Travel.wsdl</property>
+      </partnerLinkBinding>
+      <partnerLinkBinding name="employeeTravelStatus">
+        <property name="wsdlLocation">http://localhost:9700/orabpel/default/Employee/Employee?wsdl</property>
+      </partnerLinkBinding>
+      <partnerLinkBinding name="AmericanAirlines">
+        <property name="wsdlLocation">http://localhost:9700/orabpel/default/AmericanAirline/AmericanAirline?wsdl</property>
+      </partnerLinkBinding>
+      <partnerLinkBinding name="DeltaAirlines">
+        <property name="wsdlLocation">http://localhost:9700/orabpel/default/DeltaAirline/DeltaAirline?wsdl</property>
+      </partnerLinkBinding>
+    </partnerLinkBindings>
+  </BPELProcess>
+</BPELSuitcase>

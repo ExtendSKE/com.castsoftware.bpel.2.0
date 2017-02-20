@@ -1,0 +1,2537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.wbit.bpel.ui.uiextensionmodel="http:///com/ibm/wbit/bpel/ui/uiextensionmodel.ecore" xmlns:extensionmodel="http:///extensionmodel.ecore" xmlns:sb="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.bpel.ui/">
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.11"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.12"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.13"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.14"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.15"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.16"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.17"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.18"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.19"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.20"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.21"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.22"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.23"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.24"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.25"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.26"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.27"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.28"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.29"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.30"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.31"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.32"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.33"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.34"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.35"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.36"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.37"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.38"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.39"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.40"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.41"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.42"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.43"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.2/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.2/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.2/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.3/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.4/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.5/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="6" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.1/@from/@expression"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="6" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.8/@from/@expression"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="6" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.10/@from/@expression"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.11"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.12"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.13"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.14"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.7/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.0/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.4/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.6/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.7/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.8/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.3/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.6/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.8/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.9/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.10/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.10/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.11"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.11/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.12"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.12/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.13/@copy.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.14"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.14/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.16"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.16/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.19"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.19/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.20"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.20/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.22"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.22/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@cases.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.24/@otherwise/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.25"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.25/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.27"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.27/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.3/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.3/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.3/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.3/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.3/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.4/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.6/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.6/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.6/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.6/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.7/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@otherwise/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.31"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.31/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@otherwise/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@otherwise/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.34"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.34/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.0/@copy.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.3/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.6/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.3/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.36"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.36/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.37"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.37/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.38/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.39"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.39/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.0/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.0/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.0/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.2/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.2/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.2/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.2/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.41"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.41/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.0/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.0/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.0/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.44"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.44/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.45"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.45/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.3/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="5" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.4/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.0/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.0/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.0/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.2/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.2/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.2/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.2/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.6/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.47"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.47/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.48"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.48/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.48/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.48/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.48/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.49"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.49/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.0/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.0/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.1/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.1/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CaseExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@activity/@activities.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@activity/@activities.0/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@otherwise/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.4/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.9/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.9/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension" fromType="1" toType="1"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.11"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.11/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.12"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@faultHandlers/@catchAll/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@faultHandlers/@catchAll/@activity/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#/"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1423697114825" maxWpcId="1196" minWpcId="0"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.3/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.9/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.18/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.42/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.42"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.51/@cases.0/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension" collapsed="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension" collapsed="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension" collapsed="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension" collapsed="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CatchExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@faultHandlers"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:FaultHandlerExtension" collapsed="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.44"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.45"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.5/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.1/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.7/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.15"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.15/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.15/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.46"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.15"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.15/@from/@expression"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@otherwise/@activity"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648" implicit="true"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@otherwise/@activity/@activities.1/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.33/@otherwise/@activity/@activities.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.2/@copy.1"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.2/@copy.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.50/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.32/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.8/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.4/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.28/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.23/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.17/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.4"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.21/@copy.5"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@activity/@activities.4/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.2/@faultHandler/@catch.1/@faultVariable"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.15/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.5/@otherwise/@activity/@activities.1/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.2/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.17"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.47"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.6/@copy.16"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.9"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.48"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.29/@otherwise/@activity/@activities.2/@copy.6"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.49"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.26/@copy.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.7"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.2"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@activity/@activities.5/@cases.0/@activity/@activities.2/@copy.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@variables/@children.50"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:VariableExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.30/@copy.8"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.10"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.10/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.2/@eExtensibilityElements.0"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ActivityExtension" x="-2147483648"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.40/@faultHandler/@catch.0/@activity/@activities.0/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.43/@faultHandler/@catch.0/@activity/@activities.0/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.46/@cases.0/@activity/@activities.5/@faultHandler/@catch.0/@activity/@activities.0/@copy.3"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:CopyExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.35/@activity/@activities.1/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#//@activity/@activities.8/@activity/@activities.3/@cases.0/@activity/@activities.9/@activity/@activities.1/@cases.0/@condition"/>
+      <extensionObject xsi:type="com.ibm.wbit.bpel.ui.uiextensionmodel:ExpressionExtension"/>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+  <extensionmodel:ExtensionMap namespace="http://com.ibm.wbit.stickyboard.model/model/StickyBoard.xsd">
+    <extensions>
+      <extendedObject href="CreateNewMailBox.bpel#/"/>
+      <extensionObject xsi:type="sb:StickyDocument">
+        <stickyBoard id="default"/>
+      </extensionObject>
+    </extensions>
+  </extensionmodel:ExtensionMap>
+</xmi:XMI>

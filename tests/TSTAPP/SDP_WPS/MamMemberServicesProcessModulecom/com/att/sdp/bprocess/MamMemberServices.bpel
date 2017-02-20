@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><bpws:process xmlns:bpws="http://schemas.xmlsoap.org/ws/2004/03/business-process/" xmlns:ns="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/MamMemberServicesArtifacts" xmlns:ns0="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order" xmlns:ns1="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail" xmlns:ns2="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface" xmlns:ns3="http://SdpCommonLibrary" xmlns:wpc="http://www.ibm.com/xmlns/prod/websphere/business-process/6.0.0/" expressionLanguage="http://www.ibm.com/xmlns/prod/websphere/business-process/expression-lang/java/6.0.0/" name="MamMemberServices" suppressJoinFailure="yes" targetNamespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess" wpc:displayName="MamMemberServices" wpc:executionMode="microflow" wpc:id="1" wpc:validFrom="2006-08-25T18:25:19" wpc:version="IBM_7.0.300">
+  <wpc:javaGlobals>
+    <wpc:import packages="att.lightspeed.sdp.helper.SDO"/>
+    <wpc:import packages="att.lightspeed.sdp.helper.WpsLogger"/>
+  </wpc:javaGlobals>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="/resource/SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../../SdpCommonLibrary/SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="MamMemberServicesArtifacts.wsdl" namespace="http://MamMemberServicesProcessModule/com/att/sdp/bprocess/MamMemberServicesArtifacts"/>
+  <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" location="../intf/FromMam_FeaturePermissionMailboxUpdate_Interface.wsdl" namespace="http://SdpCommonLibrary/com/att/sdp/intf/FromMam_FeaturePermissionMailboxUpdate_Interface"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_TransactionDetail.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_TransactionDetail"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../SDP_Order.xsd" namespace="http://www.ibm.com/websphere/crossworlds/2002/BOSchema/SDP_Order"/>
+  <bpws:import importType="http://www.w3.org/2001/XMLSchema" location="../../../../ServiceCallFault.xsd" namespace="http://SdpCommonLibrary"/>
+  <bpws:partnerLinks>
+    <bpws:partnerLink myRole="FromMam_FeaturePermissionMailboxUpdate_InterfaceRole" name="FromMam_FeaturePermissionMailboxUpdate_Interface" partnerLinkType="ns:FromMam_FeaturePermissionMailboxUpdate_InterfacePLT" wpc:id="13"/>
+    <bpws:partnerLink name="UpdateMailboxConfig_Partner" partnerLinkType="ns:PartnerPLT" partnerRole="partnerRole" wpc:id="14"/>
+    <bpws:partnerLink name="UpdateAccessRights_Partner" partnerLinkType="ns:PartnerPLT1" partnerRole="partnerRole" wpc:id="15"/>
+  </bpws:partnerLinks>
+  <bpws:variables>
+    <bpws:variable name="sdpOrderRequest" type="ns0:SDP_Order" wpc:id="2"/>
+    <bpws:variable name="sdpOrderResponse" type="ns0:SDP_Order" wpc:id="3"/>
+    <bpws:variable name="transactionDetailResponse" type="ns1:SDP_TransactionDetail" wpc:id="8"/>
+    <bpws:variable name="serviceCallFault" type="ns3:ServiceCallFault" wpc:id="26"/>
+  </bpws:variables>
+  <bpws:pick createInstance="yes" name="MamMemberServices" wpc:displayName="MamMemberServices" wpc:id="4">
+    <bpws:onMessage operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:id="17">
+      <wpc:output>
+        <wpc:parameter name="mailboxConfigRequest" variable="sdpOrderRequest"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence" wpc:id="1073741833">
+        <bpws:invoke name="InvokeUpdateMailboxConfig" operation="UpdateMailboxConfig" partnerLink="UpdateMailboxConfig_Partner" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Invoke UpdateMailboxConfig" wpc:id="10">
+          <wpc:input>
+            <wpc:parameter name="mailboxConfigRequest" variable="sdpOrderRequest"/>
+          </wpc:input>
+          <wpc:output>
+            <wpc:parameter name="mailboxConfigResponse" variable="sdpOrderResponse"/>
+          </wpc:output>
+          <bpws:catch faultName="ns2:mailboxConfigFault" faultVariable="scFault" wpc:displayName="ServiceCallFault" wpc:faultType="ns3:ServiceCallFault" wpc:id="35" wpc:variableId="41">
+            <bpws:sequence name="HiddenSequence4" wpc:id="1073741861">
+              <bpws:invoke name="Snippet" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Log - Error" wpc:id="40">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+logger.error("Exception occured in UpdateMailboxConfig flow.Returning back serviceCallFault" );
+logger.error(scFault);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:reply faultName="ns2:mailboxConfigFault" name="Reply3" operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply Fault" wpc:id="38">
+                <wpc:input>
+                  <wpc:parameter name="UpdateMailboxConfig_mailboxConfigFault" variable="scFault"/>
+                </wpc:input>
+              </bpws:reply>
+              <bpws:terminate name="Terminate2" wpc:displayName="Terminate" wpc:id="39"/>
+            </bpws:sequence>
+          </bpws:catch>
+          <bpws:catchAll wpc:id="20">
+            <bpws:sequence name="HiddenSequence2" wpc:id="1073741845">
+              <bpws:invoke name="SetErrorDetails" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="22">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[serviceCallFault = SDO.createServiceCallFault();
+serviceCallFault.setString("messageType", getCurrentFaultAsException().getFaultName());
+serviceCallFault.setString("messageText", getCurrentFaultAsException().getMessage());
+serviceCallFault.setString("messageDetail", getCurrentFaultAsException().getMessage());
+serviceCallFault.setString("targetSystem","WPS");
+]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="LogError" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Log – Error" wpc:id="23">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+logger.error("Exception occured in UpdateMailboxConfig flow.Returning back serviceCallFault" );
+logger.error(serviceCallFault);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:reply faultName="ns2:mailboxConfigFault" name="ReplyFault" operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply Fault" wpc:id="33">
+                <wpc:input>
+                  <wpc:parameter name="UpdateMailboxConfig_mailboxConfigFault" variable="serviceCallFault"/>
+                </wpc:input>
+              </bpws:reply>
+              <bpws:terminate name="Terminate" wpc:displayName="Terminate" wpc:id="25"/>
+            </bpws:sequence>
+          </bpws:catchAll>
+        </bpws:invoke>
+        <bpws:reply name="Reply" operation="UpdateMailboxConfig" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply" wpc:id="5">
+          <wpc:input>
+            <wpc:parameter name="mailboxConfigResponse" variable="sdpOrderResponse"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+    <bpws:onMessage operation="UpdateAccessRights" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:id="18">
+      <wpc:output>
+        <wpc:parameter name="accessRightsRequest" variable="sdpOrderRequest"/>
+      </wpc:output>
+      <bpws:sequence name="HiddenSequence1" wpc:id="1073741835">
+        <bpws:invoke name="InvokeUpdateAccessRights" operation="UpdateAccessRights" partnerLink="UpdateAccessRights_Partner" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Invoke UpdateAccessRights" wpc:id="12">
+          <wpc:input>
+            <wpc:parameter name="accessRightsRequest" variable="sdpOrderRequest"/>
+          </wpc:input>
+          <wpc:output>
+            <wpc:parameter name="accessRightsResponse" variable="transactionDetailResponse"/>
+          </wpc:output>
+          <bpws:catchAll wpc:id="27">
+            <bpws:sequence name="HiddenSequence3" wpc:id="1073741852">
+              <bpws:invoke name="SetErrorDetails1" operation="null" partnerLink="null" portType="wpc:null" wpc:displayName="Set Error Details" wpc:id="29">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[serviceCallFault = SDO.createServiceCallFault();
+serviceCallFault.setString("messageType",        getCurrentFaultAsException().getFaultName());
+serviceCallFault.setString("messageText", getCurrentFaultAsException().getMessage());
+serviceCallFault.setString("targetSystem","WPS");]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:invoke name="LogError1" operation="null" partnerLink="null" portType="wpc:null" wpc:continueOnError="inherit" wpc:displayName="Log – Error" wpc:id="30">
+                <wpc:script>
+                  <wpc:javaCode><![CDATA[WpsLogger logger = WpsLogger.getLogger(processInstance());
+logger.error("Exception occured in UpdateAccessRights flow.Returning back serviceCallFault" );
+logger.error(serviceCallFault);]]></wpc:javaCode>
+                </wpc:script>
+              </bpws:invoke>
+              <bpws:reply faultName="ns2:accessRightsfault" name="Reply2" operation="UpdateAccessRights" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply Fault" wpc:id="34">
+                <wpc:input>
+                  <wpc:parameter name="UpdateAccessRights_accessRightsfault" variable="serviceCallFault"/>
+                </wpc:input>
+              </bpws:reply>
+              <bpws:terminate name="Terminate1" wpc:displayName="Terminate" wpc:id="32"/>
+            </bpws:sequence>
+          </bpws:catchAll>
+        </bpws:invoke>
+        <bpws:reply name="Reply1" operation="UpdateAccessRights" partnerLink="FromMam_FeaturePermissionMailboxUpdate_Interface" portType="ns2:FromMam_FeaturePermissionMailboxUpdate_Interface" wpc:displayName="Reply" wpc:id="6">
+          <wpc:input>
+            <wpc:parameter name="accessRightsResponse" variable="transactionDetailResponse"/>
+          </wpc:input>
+        </bpws:reply>
+      </bpws:sequence>
+    </bpws:onMessage>
+  </bpws:pick>
+</bpws:process>
