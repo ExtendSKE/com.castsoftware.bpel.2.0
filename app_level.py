@@ -3,6 +3,7 @@ import logging
 import ast
 import re
 
+
 class ExtensionApplication(cast.application.ApplicationLevelExtension):
 
     def end_application(self, application):

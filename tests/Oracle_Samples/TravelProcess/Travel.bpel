@@ -57,6 +57,7 @@
 
    <sequence>
 <invoke name="TestinvokewithJAvacode" operation="null" partnerLink="null" portType="null" >
+
     <script>
     <javaCode><![CDATA[Sample second = Sample();	
     second.name();

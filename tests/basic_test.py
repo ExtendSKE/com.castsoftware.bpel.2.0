@@ -8,6 +8,7 @@ class Test(unittest.TestCase):
         analysis = cast.analysers.test.UATestAnalysis('BPEL')
         # DotNet need a selection of a csproj or sln
         analysis.add_selection("Oracle_Samples")
+
         #analysis.result_file_path = 'C:\\Users\\ako\\Documents\\My Received Files\\com.castsoftware.bpel.1.0\\' + '_temp.uax'
         # analysis.add_database_table()
         analysis.set_verbose()
