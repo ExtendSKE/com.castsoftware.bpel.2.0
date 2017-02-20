@@ -20,10 +20,12 @@ class ExtensionApplication(cast.application.ApplicationLevelExtension):
                     for k in j :
                         #logging.debug("$$$$$$$$$$")
                         #logging.debug(j[k].find( i.get_name()))
-                        if j[k].find( i.get_name()) != -1 :
+                        #if j[k].find( i.get_name()) != -1 :
+                        if i.get_name() in j[k]:
                             for y in resourceReferences :
                                 #logging.debug( y.get_fullname())
-                                if y.get_fullname().find('--')!=-1:
+                                #if y.get_fullname().find('--')!=-1:
+                                if '--' in y.get_fullname():
                                     #logging.debug(str(k))
                                     if str(k) == y.get_fullname().split("--")[1] :
                                         #logging.debug("&&&&&&&&&&&&&&&&&&&&&&&&&&")

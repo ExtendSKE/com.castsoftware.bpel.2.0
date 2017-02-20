@@ -84,4 +84,5 @@ def cast_parser_bpel(filename):
     return tags,bpel_tag_data
 if __name__ == "__main__":
     #tags = tag_finder()
-    cast_parser_wsdl("C:\ProgramData\CAST\CAST\Extensions\com.castsoftware.bpel.0.1\\tests\BPEL_Sample\Oracle_Samples\TravelProcess\Travel.wsdl")
+    #cast_parser_wsdl("C:\ProgramData\CAST\CAST\Extensions\com.castsoftware.bpel.0.1\\tests\BPEL_Sample\Oracle_Samples\TravelProcess\Travel.wsdl")
+    pass
