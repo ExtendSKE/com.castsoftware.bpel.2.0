@@ -37,7 +37,7 @@ class MyExtension(cast.analysers.ua.Extension):
         for i in invokeList :
             #cast.analysers.log.debug(str(i))
             self.f.write(str(i) + '\n')
-        if filename.find(".wsdl") !=-1:
+        if filename.endswith(".wsdl"):
             self.index = filename.rfind('\\')
             if self.index != -1:
                 self.name = filename[self.index+1:]
@@ -61,7 +61,7 @@ class MyExtension(cast.analysers.ua.Extension):
                 wsdl_obj.save_property("File_Data.line_Code",self.list_file_data[0])
                 wsdl_obj.save_property("File_Data.commented_Line_Code",self.list_file_data[1])
                 dict_wsdl_data[wsdl_obj]=TC.cast_parser_wsdl(filename)
-        elif filename.find(".bpel")!=-1:
+        elif filename.endswith(".bpel"):
             self.tags,self.bpel_tag_data=TC.cast_parser_bpel(filename)
             #self.process_list_data = str(self.bpel_tag_data["process"]).split(",")
             self.name = str(self.bpel_tag_data["process"])
@@ -70,7 +70,8 @@ class MyExtension(cast.analysers.ua.Extension):
             self.name = re.sub("'",'',self.name)
             self.process_list_data = self.name.split(',')
             for j in self.process_list_data:
-                if j.find('name')!=-1 and j.find('targetNamespace') ==-1:
+                #if j.find('name')!=-1 and j.find('targetNamespace') ==-1:
+                if 'name' in j and not('targetNamespace' in j):
                     self.name = j[j.find(':')+1:]
             process_obj =CustomObject()
             bookmark = Bookmark(file,1,1,-1,-1)
@@ -97,23 +98,26 @@ class MyExtension(cast.analysers.ua.Extension):
             bpel_data =""
             bpel_name = ""
             for i in bpel_process_data[j]:
-                if i.find("targetNamespace")!=-1:
+                #if i.find("targetNamespace")!=-1:
+                if 'targetNamespace' in i:
                     bpel_data = i[i.find(':')+1:]
-                if i.find("name")!=-1 and i.find("targetNamespace") == -1:
+                if 'name' in i and not('targetNamespace' in i):
                     bpel_name = i[i.find(':')+1:]
             for i in dict_wsdl_data:
                 wsdl_data =""
                 wsdl_name =""
                 flag = 0
                 for k in dict_wsdl_data[i]:
-                    if k.find("targetNamespace")!=-1:
+                    #if k.find("targetNamespace")!=-1:
+                    if 'targetNamespace' in k:
                         for k1 in list(k.split(',')):
-                            if k1.find("targetNamespace")!=-1:
+                            if 'targetNamespace' in k1:
                                 wsdl_data = k1[k1.find(':')+1:]
                                 if wsdl_data == bpel_data:
                                     flag = 1
                                     break
-                            if k1.find("name")!=-1 and k1.find("targetNamespace") ==-1:
+                            #if k1.find("name")!=-1 and k1.find("targetNamespace") ==-1:
+                            if 'name' in k1 and not('targetNamespace' in k1):    
                                 wsdl_name = k1[k1.find(':')+1:]
                                 if wsdl_name == bpel_name:
                                     flag = 1
@@ -137,13 +141,15 @@ class MyExtension(cast.analysers.ua.Extension):
                 tmp_list = []
                 tmp_list = j.split(',')
                 for k in tmp_list:
-                    if k.find("portType")!=-1:
+                    #if k.find("portType")!=-1:
+                    if 'portType' in k:
                         port_type =k[k.find(':')+1:]
-                    if k.find("operation")!=-1:
+                    if 'operation' in k:
                         op_type = k[k.find(':')+1:]
-                    if k.find("name")!=-1:
+                    if 'name' in k:
                         invoke_name = k[k.find(':')+1:]
-                    if k.find("partnerLink")!=-1:
+                    #if k.find("partnerLink")!=-1:
+                    if 'partnerLink' in k:
                         partnerlink_name = k[k.find(':')+1:]
                 #X.debug(port_type+op_type)
                 file_name = i.parent.get_path()
@@ -173,9 +179,10 @@ class MyExtension(cast.analysers.ua.Extension):
                         port_type_1 = ""
                         op_type_1 = ""
                         for k2 in tmp_list_1:
-                            if k2.find("portType")!=-1:
+                            #if k2.find("portType")!=-1:
+                            if 'portType' in k2: 
                                 port_type_1 =k2[k2.find(':')+1:]
-                            if k2.find("operation")!=-1:
+                            if 'operation' in k2:
                                 op_type_1 = k2[k2.find(':')+1:]
                         if port_type ==port_type_1 and op_type == op_type_1:
                             '''
