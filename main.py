@@ -1,215 +1,184 @@
 import cast.analysers.ua
-import cast.analysers.log as X
+import cast.analysers.log as CAST
 import re
-#import sample as S
-from cast.analysers import CustomObject , Bookmark,create_link
-import tag_checker as TC
-import extractJavaCode as ST
-
-from basic_functions import Basic
-list_wsdl_file = []
-bpel_receive_data = {}
+from cast.analysers import CustomObject,Bookmark,create_link
+from Parser import CastOperation
+wsdl_file_data = {}
+bpel_process_data = {}
 bpel_invoke_data = {}
-dict_wsdl_data = {}
-#bpel_java_code = {}
-bpel_process_data ={}
+bpel_receive_data = {}
 wsdl_obj_reference = {}
-class MyExtension(cast.analysers.ua.Extension):
-    def __init__ (self):
+class BpelExtension(cast.analysers.ua.Extension):
+    def __init__(self):
+        self.filename = ""
         self.name = ""
-        self.index = -1
-        self.tags = []
-        self.bpel_tag_data = {}
-        self.list_file_data = []
-        self.process_list_data = []
+        self.invokeList = []
+        self.file_loc_data = []
+        self.file_checksum_data = []  
+        pass
     def start_analysis(self):
-        cast.analysers.log.debug('Processing..!!')
-        self.f = self.get_intermediate_file("file.txt")
-
-        #cast.analysers.log.debug(os.getcwd())
+        self.intermediate_file = self.get_intermediate_file("bpel.txt")
+        pass
     def start_file(self,file):
-        #cast.analysers.ua.Extension.start_file(self,file)
-        filename = file.get_path()
-        X.debug(filename)
-        invokeList = ST.getInvokeJavaCode(filename)
-        #cast.analysers.log.debug(str(len(invokeList)))
-
-        for i in invokeList :
-            #cast.analysers.log.debug(str(i))
-            self.f.write(str(i) + '\n')
-        if filename.endswith(".wsdl"):
-            self.index = filename.rfind('\\')
-            if self.index != -1:
-                self.name = filename[self.index+1:]
-            try:
-                self.index = list_wsdl_file.index(self.name)
-            except ValueError:
-                self.index = -1
-            if self.index ==-1:
-                list_wsdl_file.append(self.name)
-                wsdl_obj = CustomObject()
-                bookmark = Bookmark(file,1,1,-1,-1)
-                wsdl_obj.set_name(self.name)
-                wsdl_obj.set_fullname(filename)
-                wsdl_obj.set_type("WSDL_Process")
-                wsdl_obj.set_parent(file)
-                wsdl_obj.set_guid(filename+self.name)
-                wsdl_obj.save()
-                wsdl_obj.save_position(bookmark)
-                basic_operation = Basic()
-                self.list_file_data = basic_operation.cal_loc(filename)
-                wsdl_obj.save_property("File_Data.line_Code",self.list_file_data[0])
-                wsdl_obj.save_property("File_Data.commented_Line_Code",self.list_file_data[1])
-                dict_wsdl_data[wsdl_obj]=TC.cast_parser_wsdl(filename)
-        elif filename.endswith(".bpel"):
-            self.tags,self.bpel_tag_data=TC.cast_parser_bpel(filename)
-            #self.process_list_data = str(self.bpel_tag_data["process"]).split(",")
-            self.name = str(self.bpel_tag_data["process"])
-            self.name = re.sub('\[','',self.name)
-            self.name = re.sub('\]','',self.name)
-            self.name = re.sub("'",'',self.name)
-            self.process_list_data = self.name.split(',')
-            for j in self.process_list_data:
-                #if j.find('name')!=-1 and j.find('targetNamespace') ==-1:
-                if 'name' in j and not('targetNamespace' in j):
-                    self.name = j[j.find(':')+1:]
-            process_obj =CustomObject()
-            bookmark = Bookmark(file,1,1,-1,-1)
-            process_obj.set_name(self.name)
-            process_obj.set_fullname(filename)
-            process_obj.set_type("BPEL_Process")
-            process_obj.set_parent(file)
-            process_obj.set_guid(filename+self.name)
-            process_obj.save()
-            process_obj.save_position(bookmark)
-            basic_operation = Basic()
-            self.list_file_data = basic_operation.cal_loc(filename)
-            process_obj.save_property("File_Data.line_Code",self.list_file_data[0])
-            process_obj.save_property("File_Data.commented_Line_Code",self.list_file_data[1])
-            bpel_process_data[process_obj] = self.process_list_data
-            if len(self.bpel_tag_data["receive"])!=0:
-                bpel_receive_data[process_obj] = self.bpel_tag_data["receive"]
-            if len(self.bpel_tag_data["invoke"])!=0:
-                bpel_invoke_data[process_obj] = self.bpel_tag_data["invoke"]
+        self.filename = file.get_path()
+        parser = CastOperation()
+        if self.filename.endswith(".wsdl"):
+            try :
+                    index = self.filename.rfind('\\')
+                    self.name = self.filename[index+1:]
+            except:
+                    index =-1
+            wsdl_process = CustomObject()
+            self.saveObject(wsdl_process,self.name,self.filename,"WSDL_Process",file,self.filename+"WSDL_Process")
+            wsdl_process.save()
+            wsdl_process.save_position(Bookmark(file,1,1,-1,-1))
+            wsdl_file_data[wsdl_process] = parser.castParserWsdl(self.filename)   
+            self.file_loc_data = parser.fileLoc(self.filename)
+            self.file_checksum_data = parser.fileChecksum(self.filename)
+            wsdl_process.save_property("File_Data.line_Code",self.file_loc_data[0])
+            wsdl_process.save_property("File_Data.commented_Line_Code",self.file_loc_data[1])
+            wsdl_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
+            wsdl_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
+            #CAST.debug(self.name)
+        else:
+            self.invokeList = parser.getInvokeJavaCode(self.filename)
+            for child in self.invokeList:
+                self.intermediate_file.write(str(child)+'\n')
+            bpel_data = parser.castParserBpel(self.filename)
+            for child in bpel_data:
+                #attrib_data = re.sub('(\[)|(\])|(\')','',str(bpel_file_data[child]))
+                if "process" in child:
+                    for subchild in bpel_data[child]:
+                        if "name" in subchild:
+                            self.name = subchild[subchild.find(':')+1:]
+                            break
+            bpel_process =CustomObject()
+            self.saveObject(bpel_process,self.name,self.filename,"BPEL_Process",file,self.filename+"BPEL_Process")
+            bpel_process.save()
+            bpel_process.save_position(Bookmark(file,1,1,-1,-1))
+            bpel_process_data[bpel_process] = bpel_data["process"]
+            bpel_invoke_data[bpel_process] = bpel_data["invoke"]
+            bpel_receive_data[bpel_process] = bpel_data["receive"]
+            self.file_loc_data = parser.fileLoc(self.filename)
+            self.file_checksum_data = parser.fileChecksum(self.filename)
+            bpel_process.save_property("File_Data.line_Code",self.file_loc_data[0])
+            bpel_process.save_property("File_Data.commented_Line_Code",self.file_loc_data[1])
+            bpel_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
+            bpel_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
+            #CAST.debug(str(bpel_file_data[child]))
+            pass
+    def saveObject(self,obj_reference,name,fullname,type,parent,guid): 
+        obj_reference.set_name(name)
+        obj_reference.set_fullname(fullname)
+        obj_reference.set_type(type)
+        obj_reference.set_parent(parent)
+        obj_reference.set_guid(guid) 
+        pass
     def end_file(self,file):
         pass
     def end_analysis(self):
-        for j in bpel_process_data:
-            bpel_data =""
-            bpel_name = ""
-            for i in bpel_process_data[j]:
-                #if i.find("targetNamespace")!=-1:
-                if 'targetNamespace' in i:
-                    bpel_data = i[i.find(':')+1:]
-                if 'name' in i and not('targetNamespace' in i):
-                    bpel_name = i[i.find(':')+1:]
-            for i in dict_wsdl_data:
-                wsdl_data =""
-                wsdl_name =""
-                flag = 0
-                for k in dict_wsdl_data[i]:
-                    #if k.find("targetNamespace")!=-1:
-                    if 'targetNamespace' in k:
-                        for k1 in list(k.split(',')):
-                            if 'targetNamespace' in k1:
-                                wsdl_data = k1[k1.find(':')+1:]
-                                if wsdl_data == bpel_data:
-                                    flag = 1
-                                    break
-                            #if k1.find("name")!=-1 and k1.find("targetNamespace") ==-1:
-                            if 'name' in k1 and not('targetNamespace' in k1):    
-                                wsdl_name = k1[k1.find(':')+1:]
-                                if wsdl_name == bpel_name:
-                                    flag = 1
-                                    break
-
-                        if flag == 1:
-                            break
-                if flag == 1:
-                    #X.debug(bpel_name)
-                    #X.debug(wsdl_name)
-                    create_link('callLink',i,j,Bookmark(i.parent,1,1,-1,-1))
-                    wsdl_obj_reference[j] = i
-        count =0
-        countx =0
-        for i in bpel_invoke_data:
-            for j in bpel_invoke_data[i]:
-                port_type=""
-                op_type = ""
+        for child in bpel_process_data:
+            bpel_target_name = ""
+            bpel_name  = ""
+            for ele in bpel_process_data[child]:
+                if "targetNamespace:" in  ele:
+                    bpel_target_name = ele[ele.find(':')+1:]
+                elif "name:" in ele:
+                    bpel_name = ele[ele.find(':')+1:]
+                
+            for ele in wsdl_file_data:
+                wsdl_target_name = ""
+                wsdl_name = ""
+                for subele in wsdl_file_data[ele]["definitions"]:
+                    if "targetNamespace:" in subele:
+                        wsdl_target_name = subele[subele.find(':')+1:]
+                    elif "name:" in subele:
+                        wsdl_name = subele[subele.find(':')+1:]
+                #CAST.debug(wsdl_name)
+                if wsdl_target_name == bpel_target_name:
+                    create_link('callLink',ele,child,Bookmark(child.parent,1,1,-1,-1))
+                    wsdl_obj_reference[child] = ele
+                elif wsdl_name == bpel_name and len(wsdl_name)!=0 and len(bpel_name)!=0:
+                    #CAST.debug(bpel_name+wsdl_name)
+                    create_link('callLink',ele,child,Bookmark(child.parent,1,1,-1,-1))
+                    wsdl_obj_reference[child] = ele
+        invoke_count = 0
+        operation_count =0 
+        for child in bpel_invoke_data:
+            for ele in bpel_invoke_data[child]:
+                port_type = ""
+                operation_type = ""
                 invoke_name = "null"
-                partnerlink_name = ""
-                tmp_list = []
-                tmp_list = j.split(',')
-                for k in tmp_list:
-                    #if k.find("portType")!=-1:
-                    if 'portType' in k:
-                        port_type =k[k.find(':')+1:]
-                    if 'operation' in k:
-                        op_type = k[k.find(':')+1:]
-                    if 'name' in k:
-                        invoke_name = k[k.find(':')+1:]
-                    #if k.find("partnerLink")!=-1:
-                    if 'partnerLink' in k:
-                        partnerlink_name = k[k.find(':')+1:]
-                #X.debug(port_type+op_type)
-                file_name = i.parent.get_path()
-                tmp_obj = CustomObject()
-                tmp_obj.set_type("BPEL_Invoke")
-                tmp_obj.set_parent(i.parent)
-                if invoke_name == "null":
-                    tmp_obj.set_name(partnerlink_name)
-                    tmp_obj.set_fullname(file_name+'--'+"null")
-                    tmp_obj.set_guid(file_name+partnerlink_name+str(countx))
-                    #X.debug(partnerlink_name)
+                patnerlink_name = ""
+                ele_data = str(ele)
+                ele_data = re.sub('(\[)|(\])|(\')','',ele_data)
+                bpel_invoke_list = []
+                bpel_invoke_list = ele_data.split(',')
+                for subele in bpel_invoke_list:
+                    if 'portType:' in subele:
+                        port_type = subele[subele.find(':')+1:]
+                    elif 'operation:' in subele:
+                        operation_type = subele[subele.find(':')+1:]
+                    elif 'name:' in  subele:
+                        invoke_name = subele[subele.find(':')+1:]
+                    elif 'partnerLink' in subele:
+                        patnerlink_name = subele[subele.find(':')+1:]
+                filename = child.parent.get_path()
+                invoke_fullname = ''
+                if invoke_name == "null" :
+                    invoke_name = patnerlink_name
+                    invoke_fullname = filename+'--null'
                 else:
-                    tmp_obj.set_name(invoke_name)
-                    tmp_obj.set_fullname(file_name+'--'+invoke_name)
-                    tmp_obj.set_guid(file_name+invoke_name+str(countx))
-                    #X.debug(invoke_name)
-                countx =countx + 1
-                tmp_obj.save()
-                bookmark =Bookmark(i.parent,1,1,-1,-1)
-                tmp_obj.save_position(bookmark)
-                create_link('callLink',i,tmp_obj,bookmark)
-                flag = 0
-                for k in bpel_receive_data:
-                    for k1 in bpel_receive_data[k]:
-                        tmp_list_1 = []
-                        tmp_list_1 = k1.split(',')
-                        port_type_1 = ""
-                        op_type_1 = ""
-                        for k2 in tmp_list_1:
-                            #if k2.find("portType")!=-1:
-                            if 'portType' in k2: 
-                                port_type_1 =k2[k2.find(':')+1:]
-                            if 'operation' in k2:
-                                op_type_1 = k2[k2.find(':')+1:]
-                        if port_type ==port_type_1 and op_type == op_type_1:
-                            '''
-                            X.debug(str(i.parent))
-                            X.debug(str(k.parent))
-                            X.debug(port_type+op_type)
-                            X.debug(port_type_1+op_type_1)
-                            '''
-                            file_name = wsdl_obj_reference[k].parent.get_path()
-                            tmp_obj_1 =  CustomObject()
-                            bookmark =Bookmark(wsdl_obj_reference[k].parent,1,1,-1,-1)
-                            tmp_obj_1.set_name(op_type)
-                            tmp_obj_1.set_type("WSDL_Operation")
-                            tmp_obj_1.set_fullname(file_name+op_type)
-                            tmp_obj_1.set_parent(wsdl_obj_reference[k].parent)
-                            tmp_obj_1.set_guid(file_name+op_type+str(count))
-                            count = count + 1
-                            tmp_obj_1.save()
-                            tmp_obj_1.save_position(bookmark)
-                            create_link('callLink',tmp_obj,tmp_obj_1,bookmark)
-                            create_link('callLink',tmp_obj_1,wsdl_obj_reference[k],bookmark)
-                            #X.debug('S')
-                            flag = 1
+                    invoke_fullname = filename+'--'+invoke_name
+                    
+                bpel_invoke = CustomObject()
+                invoke_count =invoke_count+1
+                self.saveObject(bpel_invoke,invoke_name,invoke_fullname,"BPEL_Invoke",child.parent,filename+"BPEL_Invoke"+str(invoke_count))
+                bpel_invoke.save()
+                bpel_invoke.save_position(Bookmark(child.parent,1,1,-1,-1))
+                create_link('callLink',child,bpel_invoke,Bookmark(child.parent,1,1,-1,-1))
+                flag_link = 0
+                for subele in bpel_receive_data:
+                    for bpel_ele in bpel_receive_data[subele]:
+                        ele_data = str(bpel_ele)
+                        ele_data = re.sub('(\[)|(\])|(\')','',ele_data)
+                        bpel_receive_list = []
+                        bpel_receive_list = ele_data.split(',')
+                        receive_operation_type = ""
+                        receive_port_type = ""
+                        for receive_data in bpel_receive_list:
+                            if 'portType:' in receive_data:
+                                receive_port_type = receive_data[receive_data.find(':')+1:]
+                            elif 'operation:' in receive_data:
+                                receive_operation_type = receive_data[receive_data.find(':')+1:]
+                        if port_type == receive_port_type and operation_type == receive_operation_type:  
+                            file_name = wsdl_obj_reference[subele].parent.get_path()
+                            wsdl_operation = CustomObject()
+                            operation_count = operation_count+1
+                            self.saveObject(wsdl_operation,receive_operation_type,file_name+receive_operation_type,"WSDL_Operation",wsdl_obj_reference[subele].parent,file_name+"WSDL_Operation"+str(operation_count))
+                            wsdl_operation.save()
+                            wsdl_operation.save_position(Bookmark(subele.parent,1,1,-1,-1))
+                            create_link('callLink',bpel_invoke,wsdl_operation,Bookmark(subele.parent,1,1,-1,-1))
+                            create_link('callLink',wsdl_operation,wsdl_obj_reference[subele],Bookmark(subele.parent,1,1,-1,-1))
+                            flag_link =1
                             break
-                    if flag == 1:
+                    if flag_link == 1:
                         break
-
-    pass
+        CAST.debug('End!!')
+        '''               
+        for child in bpel_file_data:
+            for subchild in bpel_file_data[child]:
+                CAST.debug(subchild+"->")
+                for j in bpel_file_data[child][subchild]:
+                    CAST.debug(str(j))           
+        #for child in wsdl_file_data:
+            #for subchild in wsdl_file_data[child]:
+        #    CAST.debug(str(wsdl_file_data[child]))
+        '''
+        pass
 if __name__ == '__main__':
+    '''
+    bpel = BpelExtension()
+    bpel.start_analysis()
+    '''
     pass
