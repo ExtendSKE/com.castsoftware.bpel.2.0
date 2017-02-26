@@ -65,7 +65,6 @@ class BpelExtension(cast.analysers.ua.Extension):
             bpel_process.save_property("File_Data.commented_Line_Code",self.file_loc_data[1])
             bpel_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
             bpel_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
-            #CAST.debug(str(bpel_file_data[child]))
             pass
     def saveObject(self,obj_reference,name,fullname,type,parent,guid): 
         obj_reference.set_name(name)
@@ -108,10 +107,11 @@ class BpelExtension(cast.analysers.ua.Extension):
             for ele in bpel_invoke_data[child]:
                 port_type = ""
                 operation_type = ""
+                namespace_port = ""
                 invoke_name = "null"
                 patnerlink_name = ""
                 ele_data = str(ele)
-                ele_data = re.sub('(\[)|(\])|(\')','',ele_data)
+                ele_data = re.sub('(\[)|(\])|(\')|(\s+)','',ele_data)
                 bpel_invoke_list = []
                 bpel_invoke_list = ele_data.split(',')
                 for subele in bpel_invoke_list:
@@ -137,33 +137,77 @@ class BpelExtension(cast.analysers.ua.Extension):
                 bpel_invoke.save()
                 bpel_invoke.save_position(Bookmark(child.parent,1,1,-1,-1))
                 create_link('callLink',child,bpel_invoke,Bookmark(child.parent,1,1,-1,-1))
-                flag_link = 0
-                for subele in bpel_receive_data:
-                    for bpel_ele in bpel_receive_data[subele]:
-                        ele_data = str(bpel_ele)
-                        ele_data = re.sub('(\[)|(\])|(\')','',ele_data)
-                        bpel_receive_list = []
-                        bpel_receive_list = ele_data.split(',')
-                        receive_operation_type = ""
-                        receive_port_type = ""
-                        for receive_data in bpel_receive_list:
-                            if 'portType:' in receive_data:
-                                receive_port_type = receive_data[receive_data.find(':')+1:]
-                            elif 'operation:' in receive_data:
-                                receive_operation_type = receive_data[receive_data.find(':')+1:]
-                        if port_type == receive_port_type and operation_type == receive_operation_type:  
-                            file_name = wsdl_obj_reference[subele].parent.get_path()
-                            wsdl_operation = CustomObject()
-                            operation_count = operation_count+1
-                            self.saveObject(wsdl_operation,receive_operation_type,file_name+receive_operation_type,"WSDL_Operation",wsdl_obj_reference[subele].parent,file_name+"WSDL_Operation"+str(operation_count))
-                            wsdl_operation.save()
-                            wsdl_operation.save_position(Bookmark(subele.parent,1,1,-1,-1))
-                            create_link('callLink',bpel_invoke,wsdl_operation,Bookmark(subele.parent,1,1,-1,-1))
-                            create_link('callLink',wsdl_operation,wsdl_obj_reference[subele],Bookmark(subele.parent,1,1,-1,-1))
-                            flag_link =1
+                if not("null" in port_type and "null" in operation_type):      
+                    if ':' in port_type:
+                        namespace_port = port_type[:port_type.find(':')+1]
+                    ele_data = str(bpel_process_data[child])
+                    ele_data = re.sub('(\[)|(\])|(\')|(\s+)','',ele_data)
+                    ele_data = ele_data.replace('xmlns:map:','')
+                    #CAST.debug(ele_data)
+                    for invoke_data in list(ele_data.split(',')):
+                        if namespace_port in invoke_data:
+                            namespace_port = invoke_data[invoke_data.find(':')+1:]
+                            namespace_port = namespace_port+port_type[port_type.find(':')+1:]      
+                            break 
+                    flag_link = 0
+                    '''
+                    CAST.debug(ele_data)
+                    CAST.debug(operation_type+"--"+namespace_port)
+                    CAST.debug('--XD')
+                    '''
+                    for subele in bpel_receive_data:
+                        for bpel_ele in bpel_receive_data[subele]:
+                            ele_data = str(bpel_ele)
+                            ele_data = re.sub('(\[)|(\])|(\')|(\s+)','',ele_data)
+                            bpel_receive_list = []
+                            bpel_receive_list = ele_data.split(',')
+                            receive_port_type = "" 
+                            receive_operation_type = ""
+                            receive_namespace_port = ""
+                            for receive_data in bpel_receive_list:
+                                if 'portType:' in receive_data:
+                                    receive_port_type = receive_data[receive_data.find(':')+1:]
+                                elif 'operation:' in receive_data:
+                                    receive_operation_type = receive_data[receive_data.find(':')+1:]
+                            if ':' in receive_port_type:
+                                receive_namespace_port = receive_port_type[:receive_port_type.find(':')+1]
+                            ele_data = str(bpel_process_data[subele])
+                            ele_data = re.sub('(\[)|(\])|(\')|(\s+)','',ele_data)
+                            ele_data = ele_data.replace('xmlns:map:','')
+                            for receive_data in list(ele_data.split(',')):
+                                if  receive_namespace_port in receive_data:
+                                    receive_namespace_port = receive_data[receive_data.find(':')+1:]
+                                    receive_namespace_port= receive_namespace_port+receive_port_type[receive_port_type.find(':')+1:]
+                                    break
+                            '''
+                            for process_data in bpel_process_data[subele].split(','):
+                                CAST.debug(str(process_data))
+                            '''
+                            
+                            if namespace_port == receive_namespace_port and operation_type == receive_operation_type: 
+                                if subele in wsdl_obj_reference:
+                                    '''
+                                    CAST.debug('XC')
+                                    CAST.debug(filename)
+                                    CAST.debug(invoke_name)
+                                    CAST.debug(receive_namespace_operation+"--"+receive_namespace_port)
+                                    '''
+                                    file_name = wsdl_obj_reference[subele].parent.get_path()
+                                    wsdl_operation = CustomObject()
+                                    operation_count = operation_count+1
+                                    self.saveObject(wsdl_operation,receive_operation_type,file_name+receive_operation_type,"WSDL_Operation",wsdl_obj_reference[subele].parent,file_name+"WSDL_Operation"+str(operation_count))
+                                    wsdl_operation.save()
+                                    wsdl_operation.save_position(Bookmark(subele.parent,1,1,-1,-1))
+                                    create_link('callLink',bpel_invoke,wsdl_operation,Bookmark(subele.parent,1,1,-1,-1))
+                                    create_link('callLink',wsdl_operation,wsdl_obj_reference[subele],Bookmark(subele.parent,1,1,-1,-1))
+                                    flag_link =1
+                                    break
+                            else:
+                                pass
+                        if flag_link == 1:
                             break
-                    if flag_link == 1:
-                        break
+                else:
+                    pass
         CAST.debug('End!!')
         '''               
         for child in bpel_file_data:
