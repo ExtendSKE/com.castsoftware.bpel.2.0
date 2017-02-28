@@ -1,0 +1,366 @@
+<setup version="1.0.0.0" encoding="UTF-8">
+<associations version="1.0.0.0" encoding="UTF-8" date="Thu Sep 03 15:06:08 EDT 2015" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CAST-Sets.xsd">
+<association>
+ <set name = ".NET Inherited Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>NET_INHERITED_FORM</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = ".NET Inherited User Control" type = "Transaction entry points">
+  <argument name="type">
+   <value>NET_INHERITED_USER_CONTROL</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB Designer Files" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_DESIGNER</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "PB Window" type = "Transaction entry points">
+  <argument name="type">
+   <value>PB_WINDOW</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB Form - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_FORM</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = ".NET Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassExternalForm</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "C# User Control" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassCSharpUserControl</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB Property Page" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_PROPERTY_PAGE</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = ".NET Form - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>NET_FORM</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB User Control" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassVBUserControl</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB User Document" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_USER_DOC</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB User Control - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_USER_CONTROL</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Delphi Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>DELPHI_FORM</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB Custom Control - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassVBCustomControl</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB MDI Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>VB_MDI_FORM</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = ".NET Web Custom Control" type = "Transaction entry points">
+  <argument name="type">
+   <value>NET_WEB_CUSTOM_CONTROL</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "C# Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassCSharpForm</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = ".NET User Control - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>NET_USER_CONTROL</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Oracle Forms Module" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_Forms_Module</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "C# Custom Control - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassCSharpCustomControl</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "VB Form" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassVBForm</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Ascx Source File" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_AscxFile</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Oracle Report Module" type = "Transaction entry points">
+  <argument name="type">
+   <value>FORMS_RDF_MODULE</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "CICS Transaction" type = "Transaction entry points">
+  <argument name="type">
+   <value>CICS_TRANSACTION</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "SAP Transaction" type = "Transaction entry points">
+  <argument name="type">
+   <value>SAPTransaction</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Asmx Source File" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_AsmxFile</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "JCL Job - legacy" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_JCL_CatalogedJob</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Oracle Forms Module" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_Forms_Module</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "JSF Input Field" type = "Transaction entry points">
+  <argument name="type">
+   <value>JSF_INPUT_FIELD</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "BO Class" type = "Transaction entry points">
+  <argument name="type">
+   <value>BO_CLASS</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Aspx Source File" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_AspxFile</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Web service" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_DotNet_ClassCSharpWebService</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "eFile" type = "Transaction entry points">
+  <argument name="type">
+   <value>CAST_Web_File</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "Custom Entry Point PHP files" type = "Transaction entry points">
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <property name = "type" operator = "eq" >
+    <value>sourceFile</value>
+   </property>
+   <property name = "name" operator = "like" >
+    <value>%.php</value>
+   </property>
+  </selection-criteria>
+ </set>
+</association>
+<association>
+ <set name = "BPEL" type = "Transaction entry points">
+  <argument name="type">
+   <value>WSDL_Process</value>
+  </argument>
+  <selection-criteria subobjects="no" externalobjects="yes">
+   <member-of set ="By type"/>
+  </selection-criteria>
+ </set>
+</association>
+</associations>
+<prefixes version="1.0.0.0" encoding="UTF-8">
+</prefixes>
+<ignoredtables version="1.0.0.0" encoding="UTF-8">
+  <value description="Lookup entities">^(lkp_.+|.+types?|.+_t)$</value>
+  <value description="Status entities">^(.+status)$</value>
+  <value description="Translation extension entities">^(.+_l|.+_lang)$</value>
+  <value description="Temporary data entities">^(.+temp|.*session.*|.*error.*|.*search.*|.*login.*|.*logon.*|.*filter.*)$</value>
+  <value description="Template data entities">^(.*template.*)$</value>
+  <value description="Auditing data entities">^(.*history.*|.+_old|.*audit.*)$</value>
+</ignoredtables>
+</setup>
