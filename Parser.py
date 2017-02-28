@@ -9,7 +9,7 @@ class CastOperation():
         self.check_sum_with_commented_lines = ""
         self.check_sum_without_commented_lines = ""
     def defineTagNames(self):
-        self.tag_names = ["receive","invoke","process","partnerLink"]
+        self.tag_names = ["receive","invoke","process","partnerLink","onMessage"]
     def parseNsmap(self,filename,NS_MAP):
         def parseNsXml(root,tag):
             for child in list(root.iter()):

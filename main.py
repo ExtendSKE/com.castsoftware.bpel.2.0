@@ -8,6 +8,7 @@ bpel_process_data = {}
 bpel_invoke_data = {}
 bpel_receive_data = {}
 wsdl_obj_reference = {}
+bpel_onmessage_data = {}
 class BpelExtension(cast.analysers.ua.Extension):
     def __init__(self):
         self.filename = ""
@@ -59,6 +60,7 @@ class BpelExtension(cast.analysers.ua.Extension):
             bpel_process_data[bpel_process] = bpel_data["process"]
             bpel_invoke_data[bpel_process] = bpel_data["invoke"]
             bpel_receive_data[bpel_process] = bpel_data["receive"]
+            bpel_onmessage_data[bpel_process] = bpel_data["onMessage"]
             self.file_loc_data = parser.fileLoc(self.filename)
             self.file_checksum_data = parser.fileChecksum(self.filename)
             bpel_process.save_property("File_Data.line_Code",self.file_loc_data[0])
@@ -66,10 +68,10 @@ class BpelExtension(cast.analysers.ua.Extension):
             bpel_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
             bpel_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
             pass
-    def saveObject(self,obj_reference,name,fullname,type,parent,guid): 
+    def saveObject(self,obj_reference,name,fullname,obj_type,parent,guid): 
         obj_reference.set_name(name)
         obj_reference.set_fullname(fullname)
-        obj_reference.set_type(type)
+        obj_reference.set_type(obj_type)
         obj_reference.set_parent(parent)
         obj_reference.set_guid(guid) 
         pass
@@ -103,6 +105,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                     wsdl_obj_reference[child] = ele
         invoke_count = 0
         operation_count =0 
+        onmessage_count = 0
         for child in bpel_invoke_data:
             for ele in bpel_invoke_data[child]:
                 port_type = ""
@@ -186,6 +189,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                             
                             if namespace_port == receive_namespace_port and operation_type == receive_operation_type: 
                                 if subele in wsdl_obj_reference:
+                                    CAST.debug('XC')
                                     '''
                                     CAST.debug('XC')
                                     CAST.debug(filename)
@@ -200,12 +204,16 @@ class BpelExtension(cast.analysers.ua.Extension):
                                     wsdl_operation.save_position(Bookmark(subele.parent,1,1,-1,-1))
                                     create_link('callLink',bpel_invoke,wsdl_operation,Bookmark(subele.parent,1,1,-1,-1))
                                     create_link('callLink',wsdl_operation,wsdl_obj_reference[subele],Bookmark(subele.parent,1,1,-1,-1))
-                                    flag_link =1
+                                    flag_link = 1
                                     break
+                                else:
+                                    pass
                             else:
                                 pass
-                        if flag_link == 1:
+                        if flag_link ==1:
                             break
+                    if flag_link !=1:
+                        onmessage_count = self.checkOnmessage(bpel_invoke,operation_type,namespace_port,onmessage_count)
                 else:
                     pass
         CAST.debug('End!!')
@@ -220,6 +228,53 @@ class BpelExtension(cast.analysers.ua.Extension):
         #    CAST.debug(str(wsdl_file_data[child]))
         '''
         pass
+    def checkOnmessage(self,bpel_invoke,operation_type,namespace_port,onmessage_count):
+        flag_link =0
+        for reference in bpel_onmessage_data:
+            for data in bpel_onmessage_data[reference]:
+                onmessage_data = str(data)
+                onmessage_data = re.sub('(\[)|(\])|(\')|(\s+)','',onmessage_data)
+                onmessage_port_type =""
+                onmessage_operation_type = ""
+                onmessage_namespace_port = ""
+                process_data= ""
+                for ele in list(onmessage_data.split(',')):
+                    if "portType" in ele:
+                        onmessage_port_type = ele[ele.find(':')+1:]
+                    elif "operation:" in ele:
+                        onmessage_operation_type = ele[ele.find(':')+1:]
+                if ':' in onmessage_port_type:
+                    onmessage_namespace_port = onmessage_port_type[:onmessage_port_type.find(':')+1]
+                process_data =str(bpel_process_data[reference])
+                process_data = re.sub('(\[)|(\])|(\')|(\s+)','',process_data)
+                process_data = process_data.replace('xmlns:map:','')
+                for ele in list(process_data.split(',')):
+                    if onmessage_namespace_port in ele:
+                        onmessage_namespace_port = ele[ele.find(':')+1:]
+                        onmessage_namespace_port = onmessage_namespace_port+onmessage_port_type[onmessage_port_type.find(':')+1:]
+                        break
+                if operation_type == onmessage_operation_type and namespace_port == onmessage_namespace_port:
+                    if reference in wsdl_obj_reference:
+                        CAST.debug(onmessage_operation_type)
+                        file_name = wsdl_obj_reference[reference].parent.get_path()
+                        wsdl_operation = CustomObject()
+                        onmessage_count = onmessage_count +1
+                        self.saveObject(wsdl_operation,onmessage_operation_type,file_name+onmessage_operation_type,"WSDL_Operation",wsdl_obj_reference[reference].parent,file_name+"WSDL_Operation"+str(onmessage_count))
+                        wsdl_operation.save()
+                        wsdl_operation.save_position(Bookmark(reference.parent,1,1,-1,-1))
+                        create_link('callLink',bpel_invoke,wsdl_operation,Bookmark(reference.parent,1,1,-1,-1))
+                        create_link('callLink',wsdl_operation,wsdl_obj_reference[reference],Bookmark(reference.parent,1,1,-1,-1))
+                        flag_link =1
+                        break
+                    else:
+                        pass
+                else:
+                    pass
+            if flag_link ==1:
+                break
+        return onmessage_count
+        pass
+    
 if __name__ == '__main__':
     '''
     bpel = BpelExtension()
