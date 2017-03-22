@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='description'>
+    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='name'>
+    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='remediation'>
+    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+</root>

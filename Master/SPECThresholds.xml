@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' thresholdToGet1='50.0' thresholdToGet2='90.0' thresholdToGet3='95.0' thresholdToGet4='99.0' />
+</root>

@@ -3,13 +3,16 @@ import cast.analysers.log as CAST
 import re
 from cast.analysers import CustomObject,Bookmark,create_link
 from Parser import CastOperation
+
 wsdl_file_data = {}
 bpel_process_data = {}
 bpel_invoke_data = {}
 bpel_receive_data = {}
 wsdl_obj_reference = {}
 bpel_onmessage_data = {}
+
 class BpelExtension(cast.analysers.ua.Extension):
+    
     def __init__(self):
         self.filename = ""
         self.name = ""
@@ -17,9 +20,11 @@ class BpelExtension(cast.analysers.ua.Extension):
         self.file_loc_data = []
         self.file_checksum_data = []  
         pass
+    
     def start_analysis(self):
         self.intermediate_file = self.get_intermediate_file("bpel.txt")
         pass
+    
     def start_file(self,file):
         self.filename = file.get_path()
         parser = CastOperation()
@@ -34,18 +39,14 @@ class BpelExtension(cast.analysers.ua.Extension):
             wsdl_process.save()
             wsdl_process.save_position(Bookmark(file,1,1,-1,-1))
             wsdl_file_data[wsdl_process] = parser.castParserWsdl(self.filename)   
-            self.file_loc_data = parser.fileLoc(self.filename)
-            self.file_checksum_data = parser.fileChecksum(self.filename)
-            wsdl_process.save_property("File_Data.line_Code",self.file_loc_data[0])
-            wsdl_process.save_property("File_Data.commented_Line_Code",self.file_loc_data[1])
-            wsdl_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
-            wsdl_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
+            wsdl_process.save_violation("File_Data.invoke_count",Bookmark(file,1,1,-1,-1),additional_bookmarks=None)
             #CAST.debug(self.name)
         else:
             self.invokeList = parser.getInvokeJavaCode(self.filename)
             for child in self.invokeList:
                 self.intermediate_file.write(str(child)+'\n')
             bpel_data = parser.castParserBpel(self.filename)
+            CAST.debug(str(bpel_data['partnerLink']))
             for child in bpel_data:
                 #attrib_data = re.sub('(\[)|(\])|(\')','',str(bpel_file_data[child]))
                 if "process" in child:
@@ -63,11 +64,9 @@ class BpelExtension(cast.analysers.ua.Extension):
             bpel_onmessage_data[bpel_process] = bpel_data["onMessage"]
             self.file_loc_data = parser.fileLoc(self.filename)
             self.file_checksum_data = parser.fileChecksum(self.filename)
-            bpel_process.save_property("File_Data.line_Code",self.file_loc_data[0])
-            bpel_process.save_property("File_Data.commented_Line_Code",self.file_loc_data[1])
-            bpel_process.save_property("File_Data.check_sum_with_commented_lines",self.file_checksum_data[0])
-            bpel_process.save_property("File_Data.check_sum_without_commented_lines",self.file_checksum_data[1])
+            bpel_process.save_violation("File_Data.invoke_count",Bookmark(file,1,1,-1,-1),additional_bookmarks=None)
             pass
+        
     def saveObject(self,obj_reference,name,fullname,obj_type,parent,guid): 
         obj_reference.set_name(name)
         obj_reference.set_fullname(fullname)
@@ -75,8 +74,10 @@ class BpelExtension(cast.analysers.ua.Extension):
         obj_reference.set_parent(parent)
         obj_reference.set_guid(guid) 
         pass
+    
     def end_file(self,file):
         pass
+    
     def end_analysis(self):
         for child in bpel_process_data:
             bpel_target_name = ""
@@ -228,6 +229,7 @@ class BpelExtension(cast.analysers.ua.Extension):
         #    CAST.debug(str(wsdl_file_data[child]))
         '''
         pass
+    
     def checkOnmessage(self,bpel_invoke,operation_type,namespace_port,onmessage_count):
         flag_link =0
         for reference in bpel_onmessage_data:
@@ -274,6 +276,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                 break
         return onmessage_count
         pass
+    
     
 if __name__ == '__main__':
     '''

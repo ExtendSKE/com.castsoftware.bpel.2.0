@@ -33,38 +33,14 @@
     -->
      <category name = "File_Data" rid="2">
        <description>File Data</description>
-       <property name="line_Code" type="integer" rid="6">
-		  <description>File line Code</description>
+       <property name="invoke_count" type="integer" rid="96" merge ="sum">
+		  <description>invoke count</description>
 		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
 		  <attribute name="ACCESS_CVS" intValue="1"/>
 		  <attribute name="ACCESS_HTML" intValue="1"/>
 		  <attribute name="INF_TYPE" intValue="1008210"/>
 		  <attribute name="INF_SUB_TYPE" intValue="0"/>
 	   </property>
-	   <property name="commented_Line_Code" type="integer" rid="16" >
-		  <description>File commented Line Code</description>
-		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
-		  <attribute name="ACCESS_CVS" intValue="1"/>
-		  <attribute name="ACCESS_HTML" intValue="1"/>
-		  <attribute name="INF_TYPE" intValue="1008210"/>
-		  <attribute name="INF_SUB_TYPE" intValue="1"/>
-	   </property>
-	   <property name="check_sum_with_commented_lines" type="string" rid="20">
-	     <description>Check sum with commented lines</description>
-	     <attribute name="ACCESS_APPVIEW" intValue="1"/>
-	     <attribute name="ACCESS_CVS" intValue="1"/>
-	     <attribute name="ACCESS_HTML" intValue="1"/>
-	     <attribute name="INF_TYPE" intValue="1008210"/>
-	     <attribute name="INF_SUB_TYPE" intValue="2"/>
-      </property>
-      <property name="check_sum_without_commented_lines" type="string" rid="21">
-	     <description>Check sum without commented lines</description>
-	     <attribute name="ACCESS_APPVIEW" intValue="1"/>
-	     <attribute name="ACCESS_CVS" intValue="1"/>
-	     <attribute name="ACCESS_HTML" intValue="1"/>
-	     <attribute name="INF_TYPE" intValue="1008210"/>
-	     <attribute name="INF_SUB_TYPE" intValue="3"/>
-      </property>
     </category>
     <category name="BPEL" rid="3">
         <description>BPEL</description>

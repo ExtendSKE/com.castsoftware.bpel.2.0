@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <metric id='61019' type='technical-criterion' originalName='BPEL Quality Rule' contributorId='1187090' contributorType='quality-rule' contributorOriginalName ='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' critical='false' weight='4' />
+</root>

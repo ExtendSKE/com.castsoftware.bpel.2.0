@@ -2,19 +2,23 @@ import xml.etree.ElementTree as ET
 import re
 import hashlib
 class CastOperation():
+    
     def __init__(self):
         self.tag_names = []
         self.bpel_file_data = {}
         self.wsdl_file_data = {}
         self.check_sum_with_commented_lines = ""
         self.check_sum_without_commented_lines = ""
+        
     def defineTagNames(self):
         self.tag_names = ["receive","invoke","process","partnerLink","onMessage"]
+        
     def parseNsmap(self,filename,NS_MAP):
         def parseNsXml(root,tag):
             for child in list(root.iter()):
                 if tag in re.sub('{.*?}','',str(child.tag)) :
                     return(re.sub('({)|(})|(\')|(\s+)' ,'',str(child.attrib)).split(','))
+                
         self.events =["start","start-ns","end-ns"]
         self.root_ns = None
         self.ns_map = []
@@ -31,19 +35,23 @@ class CastOperation():
             return parseNsXml(ET.ElementTree(self.root_ns),"definitions")
         else:
             return parseNsXml(ET.ElementTree(self.root_ns),"process")
+        
     def getTagAttrib(self,root,tag):
         def getNamespace(ele):
             namespace = re.match('\{.*\}',ele.tag)
             return namespace.group(0) if namespace else ''
+        
         self.namespace = getNamespace(root)
         self.tag_attrib = []
         match = './/%s'+tag
         for child in root.findall(match % self.namespace):
             self.tag_attrib.append(re.sub('({)|(})|(\')|(\s+)' ,'',str(child.attrib)).split(','))
         return self.tag_attrib
+    
     def castParserWsdl(self,filename):
         self.wsdl_file_data["definitions"] = self.parseNsmap(filename,"xmlns:map")
         return self.wsdl_file_data
+    
     def castParserBpel(self,filename):
         self.defineTagNames()
         self.tree = ET.parse(filename)
@@ -54,6 +62,7 @@ class CastOperation():
             else:
                 self.bpel_file_data[child_tag] = self.getTagAttrib(self.root,child_tag)
         return self.bpel_file_data
+    
     def getInvokeJavaCode(self, filename) :
         tree = ET.parse(filename)
         root =tree.getroot()
@@ -66,6 +75,7 @@ class CastOperation():
                 dict = { invokeTag.attrib["name"] : child.text}
                 invokeJavaCodeList.append(dict)
         return invokeJavaCodeList
+    
     def fileLoc(self,filename):
         md5_data_with_commented_lines = hashlib.md5()
         md5_data_without_commented_lines = hashlib.md5()
@@ -98,9 +108,12 @@ class CastOperation():
         self.check_sum_with_commented_lines = str(md5_data_with_commented_lines.hexdigest())
         self.check_sum_without_commented_lines = str(md5_data_without_commented_lines.hexdigest())  
         return [line_of_comments,line_of_code]
+    
     def fileChecksum(self,filename):
         return [self.check_sum_with_commented_lines,self.check_sum_without_commented_lines]
     pass
+
+
 if __name__ == "__main__":
     '''
     operation = CastOperation()
