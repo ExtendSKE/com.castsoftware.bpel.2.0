@@ -1,25 +1,376 @@
 <?xml version='1.0' encoding='utf-8'?>
 <root>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='description'>
-    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='description'>
+    <english>The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.</english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='name'>
-    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='name'>
+    <english>The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.</english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='output'>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='output'>
     <english>Line and column for each violation 
 Associated value => number of violations found</english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='rationale'>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='rationale'>
     <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='remediation'>
-    <english>A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.</english>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='remediation'>
+    <english>The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope. </english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='sample'>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='sample'>
     <english>Code sample</english>
   </metric>
-  <metric id='1187090' type='quality-rule' originalName='A WS-BPEL processor MUST reject a WS-BPEL that refers to solicit-response or notification operations portTypes.' section='total'>
+  <metric id='1187402' type='quality-rule' originalName='The name of a variable MUST be unique among the names of all variables defined within the same immediately enclosing scope.' section='total'>
     <english>Number of BPEL Artifacts </english>
   </metric>  
+  
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='description'>
+    <english>The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.</english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='name'>
+    <english>The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.</english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='remediation'>
+    <english>The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope. </english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187404' type='quality-rule' originalName='The name of a partnerLink MUST be unique among the names of all partnerLinks defined within the same immediately enclosing scope.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+  
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='description'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element.</english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='name'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element.</english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='remediation'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element. </english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187406' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+  
+  
+   <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='description'>
+    <english>For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.</english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='name'>
+    <english>For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.</english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='remediation'>
+    <english>For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity. </english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187408' type='quality-rule' originalName='For reply, if toPart elements are used on a reply activity then the variable attribute MUST NOT be used on the same activity.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+	
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='description'>
+    <english>The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.</english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='name'>
+    <english>The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.</english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='remediation'>
+    <english>The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope. </english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187410' type='quality-rule' originalName='The name of a correlationSet MUST be unique among the names of all correlationSet defined within the same immediately enclosing scope.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+   
+   
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='description'>
+    <english>When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.</english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='name'>
+    <english>When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.</english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='remediation'>
+    <english>When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used. </english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187412' type='quality-rule' originalName='When the variable used in from or to is defined using XML Schema types (simple or complex) or element, the part attribute MUST NOT be used.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+   	
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='description'>
+    <english>Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.</english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='name'>
+    <english>Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.</english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='remediation'>
+    <english>Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character. </english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187414' type='quality-rule' originalName='Variable names are BPELVariableNames, that is, NCNames (as defined in XML Schema specification) but in addition they MUST NOT contain the “.” character.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>  
+   	
+  
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='description'>
+    <english>The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.</english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='name'>
+    <english>The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.</english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='remediation'>
+    <english>The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used. </english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187416' type='quality-rule' originalName='The messageType, type or element attributes are used to specify the type of a variable. Exactly one of these attributes MUST be used.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>    
+	
+   <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='description'>
+    <english>The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)</english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='name'>
+    <english>The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)</english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='remediation'>
+    <english>The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements) </english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187418' type='quality-rule' originalName='The rethrow activity MUST only be used within a faultHandler (i.e. catch and catchAll elements)' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>    
+	
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='description'>
+    <english>The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.</english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='name'>
+    <english>The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.</english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='remediation'>
+    <english>The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler. </english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187420' type='quality-rule' originalName='The compensateScope activity MUST only be used from within a faultHandler, another compensationHandler, or a terminationHandler.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>    	
+  
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='description'>
+    <english>A partnerLink MUST specify the myRole or the partnerRole, or both.</english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='name'>
+    <english>A partnerLink MUST specify the myRole or the partnerRole, or both.</english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='remediation'>
+    <english>A partnerLink MUST specify the myRole or the partnerRole, or both. </english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187422' type='quality-rule' originalName='A partnerLink MUST specify the myRole or the partnerRole, or both.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='description'>
+    <english>For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.</english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='name'>
+    <english>For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.</english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='remediation'>
+    <english>For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow. </english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187424' type='quality-rule' originalName='For flow, a declared link’s name MUST be unique among all link names defined within the same immediately enclosing flow.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='description'>
+    <english>There MUST be at least one catch or catchAll element within a faultHandlers element.</english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='name'>
+    <english>There MUST be at least one catch or catchAll element within a faultHandlers element.</english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='remediation'>
+    <english>There MUST be at least one catch or catchAll element within a faultHandlers element. </english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187426' type='quality-rule' originalName='There MUST be at least one catch or catchAll element within a faultHandlers element.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='description'>
+    <english>If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.</english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='name'>
+    <english>If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.</english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='remediation'>
+    <english>If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element. </english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187428' type='quality-rule' originalName='If the variable attribute is used in the onEvent element, either the messageType or the element attribute MUST be provided in the onEvent element.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='description'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element.</english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='name'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element.</english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='remediation'>
+    <english>An event handler MUST contain at least one onEvent or onAlarm element. </english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187430' type='quality-rule' originalName='An event handler MUST contain at least one onEvent or onAlarm element.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  
+   <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='description'>
+    <english>A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.</english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='name'>
+    <english>A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.</english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='output'>
+    <english>Line and column for each violation 
+Associated value => number of violations found</english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='rationale'>
+    <english>Compatible with CISQ 18 and especially ASCCSM-CWE-835</english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='remediation'>
+    <english>A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names. </english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='sample'>
+    <english>Code sample</english>
+  </metric>
+  <metric id='1187432' type='quality-rule' originalName='A WS-BPEL processor MUST reject any WSDL portType definition that includes overloaded operation names.' section='total'>
+    <english>Number of BPEL Artifacts </english>
+  </metric>
+  
+  
 </root>

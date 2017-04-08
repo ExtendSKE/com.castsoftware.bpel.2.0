@@ -11,13 +11,13 @@
         <description>BPEL Artifacts</description>
        <inheritedCategory name="APM Client Language Artifacts"/>
     </category>
-    <type name="BPEL Subset" rid="9">
+    <type name="BPEL Subset" rid="2">
       <description>BPEL Subset</description>
       <inheritedCategory name="PROJECT_SUBSET" />
       <inheritedCategory name="BPEL" />
       <inheritedCategory name="APM BPEL Module" />
    </type>
-   <type name="EnlightenBPEL" rid="10">
+   <type name="EnlightenBPEL" rid="3">
         <description>BPEL</description>
         <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
     </type>
@@ -31,31 +31,152 @@
     <!-- Define the new UA 'language'
             for all the platform (cms analyzer)
     -->
-     <category name = "File_Data" rid="2">
+     <category name = "File_Data" rid="11">
        <description>File Data</description>
-       <property name="invoke_count" type="integer" rid="96" merge ="sum">
-		  <description>invoke count</description>
+       <property name="variable_name_conflict" type="integer" rid="61" merge ="sum">
+		  <description>Variable Name Conflict</description>
 		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
 		  <attribute name="ACCESS_CVS" intValue="1"/>
 		  <attribute name="ACCESS_HTML" intValue="1"/>
 		  <attribute name="INF_TYPE" intValue="1008210"/>
 		  <attribute name="INF_SUB_TYPE" intValue="0"/>
 	   </property>
+	   <property name="patnerlink_name_conflict" type="integer" rid="62" merge ="sum">
+		  <description>Patnerlink Name Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008211"/>
+		  <attribute name="INF_SUB_TYPE" intValue="1"/>
+	   </property>
+	    <property name="eventhandler_conflict" type="integer" rid="63" merge ="sum">
+		  <description>Eventhandler Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008220"/>
+		  <attribute name="INF_SUB_TYPE" intValue="2"/>
+	   </property>
+	    <property name="forreply_conflict" type="integer" rid="64" merge ="sum">
+		  <description>Forreply Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008221"/>
+		  <attribute name="INF_SUB_TYPE" intValue="3"/>
+	   </property>
+	    <property name="correlationset_conflict" type="integer" rid="65" merge ="sum">
+		  <description>Correlation_Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008230"/>
+		  <attribute name="INF_SUB_TYPE" intValue="4"/>
+	   </property>
+	   
+	    <property name="from_to_conflict" type="integer" rid="66" merge ="sum">
+		  <description>From To Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008231"/>
+		  <attribute name="INF_SUB_TYPE" intValue="5"/>
+	   </property>
+	    <property name="variable_name_constraints" type="integer" rid="67" merge ="sum">
+		  <description>Variable Name Constraints</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008240"/>
+		  <attribute name="INF_SUB_TYPE" intValue="6"/>
+	   </property>
+	    <property name="variable_type_conflict" type="integer" rid="68" merge ="sum">
+		  <description>Variable Type Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008241"/>
+		  <attribute name="INF_SUB_TYPE" intValue="7"/>
+	   </property>
+	   <property name="faulthandler_conflict" type="integer" rid="69" merge ="sum">
+		  <description>Faulthandler Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008242"/>
+		  <attribute name="INF_SUB_TYPE" intValue="8"/>
+	   </property>
+	   <property name="compensate_conflict" type="integer" rid="70" merge ="sum">
+		  <description>Compensate Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008243"/>
+		  <attribute name="INF_SUB_TYPE" intValue="9"/>
+	   </property>
+	    <property name="patnerlink_role_conflict" type="integer" rid="71" merge ="sum">
+		  <description>Partnerlink Role Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008244"/>
+		  <attribute name="INF_SUB_TYPE" intValue="10"/>
+	   </property>
+	    <property name="flow_conflict" type="integer" rid="72" merge ="sum">
+		  <description>Flow Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008245"/>
+		  <attribute name="INF_SUB_TYPE" intValue="11"/>
+	   </property>
+	   <property name="faulthandler_constraints" type="integer" rid="73" merge ="sum">
+		  <description>Faulthandler Constraints</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008246"/>
+		  <attribute name="INF_SUB_TYPE" intValue="12"/>
+	   </property>
+	   <property name="onevent_conflict" type="integer" rid="74" merge ="sum">
+		  <description>Onevent Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008247"/>
+		  <attribute name="INF_SUB_TYPE" intValue="13"/>
+	   </property>
+	   <property name="Eventhandler_constraints" type="integer" rid="75" merge ="sum">
+		  <description>Eventhandler Constraints</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008248"/>
+		  <attribute name="INF_SUB_TYPE" intValue="14"/>
+	   </property>
+	   <property name="operation_name_conflict" type="integer" rid="76" merge ="sum">
+		  <description>Operation Conflict</description>
+		  <attribute name="ACCESS_APPVIEW" intValue="1"/>
+		  <attribute name="ACCESS_CVS" intValue="1"/>
+		  <attribute name="ACCESS_HTML" intValue="1"/>
+		  <attribute name="INF_TYPE" intValue="1008249"/>
+		  <attribute name="INF_SUB_TYPE" intValue="15"/>
+	   </property>
     </category>
-    <category name="BPEL" rid="3">
+    <category name="BPEL" rid="12">
         <description>BPEL</description>
         <attribute name="extensions" stringValue="*.bpel;*.wsdl" />
         <inheritedCategory name="UniversalLanguage" />
         <inheritedCategory name="CsvLanguage" />
     </category>
     <!-- BPEL project -->
-    <type name="BPEL Activity" rid="4">
+    <type name="BPEL Activity" rid="13">
         <description>BPEL Analyzer Project</description>
         <inheritedCategory name="UAProject" />
         <inheritedCategory name="BPEL" />
         <inheritedCategory name="APM BPEL Module" />
     </type>
-    <type name="BPEL_Process" rid="7">
+    <type name="BPEL_Process" rid="14">
          <description>BPEL Process</description>
          <inheritedCategory name="BPEL"/>
          <inheritedCategory name="File_Data" />
@@ -63,14 +184,14 @@
          <inheritedCategory name="APM All Artifacts"/>
          <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
    </type>
-   <type name="BPEL_Invoke" rid="17">
+   <type name="BPEL_Invoke" rid="15">
          <description>BPEL Invoke</description>
          <inheritedCategory name="BPEL"/>
          <inheritedCategory name="UAObject"/>
          <inheritedCategory name="APM All Artifacts"/>
          <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
    </type>
-   <type name="WSDL_Process" rid="8">
+   <type name="WSDL_Process" rid="16">
          <description>WSDL Process</description>
          <inheritedCategory name="BPEL"/>
          <inheritedCategory name="APM IFPUG Transaction" />
@@ -79,12 +200,13 @@
          <inheritedCategory name="APM All Artifacts"/>
          <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
    </type>
-   <type name="WSDL_Operation" rid="15">
+   <type name="WSDL_Operation" rid="17">
          <description>WSDL Operation</description>
          <inheritedCategory name="BPEL"/>
          <inheritedCategory name="UAObject"/>
          <inheritedCategory name="APM All Artifacts"/>
          <tree parent="EnlightenUniversalObjects" category="EnlightenTree" />
    </type>
+   
     <!-- Put your object  Types/categories bellow -->
 </metaModel>

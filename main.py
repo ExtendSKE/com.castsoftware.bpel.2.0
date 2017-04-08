@@ -3,6 +3,7 @@ import cast.analysers.log as CAST
 import re
 from cast.analysers import CustomObject,Bookmark,create_link
 from Parser import CastOperation
+from quality_rule import QualityRule
 
 wsdl_file_data = {}
 bpel_process_data = {}
@@ -10,6 +11,7 @@ bpel_invoke_data = {}
 bpel_receive_data = {}
 wsdl_obj_reference = {}
 bpel_onmessage_data = {}
+bpel_bookmark_data = {}
 
 class BpelExtension(cast.analysers.ua.Extension):
     
@@ -18,7 +20,7 @@ class BpelExtension(cast.analysers.ua.Extension):
         self.name = ""
         self.invokeList = []
         self.file_loc_data = []
-        self.file_checksum_data = []  
+        self.file_checksum_data = []
         pass
     
     def start_analysis(self):
@@ -27,6 +29,12 @@ class BpelExtension(cast.analysers.ua.Extension):
     
     def start_file(self,file):
         self.filename = file.get_path()
+        CAST.debug(self.filename)
+        file_ref = open(self.filename,'r')
+        file_data = []
+        for child in file_ref:
+            child=child.replace("\n","")
+            file_data.append(child)
         parser = CastOperation()
         if self.filename.endswith(".wsdl"):
             try :
@@ -39,17 +47,16 @@ class BpelExtension(cast.analysers.ua.Extension):
             wsdl_process.save()
             wsdl_process.save_position(Bookmark(file,1,1,-1,-1))
             wsdl_file_data[wsdl_process] = parser.castParserWsdl(self.filename)   
-            wsdl_process.save_violation("File_Data.invoke_count",Bookmark(file,1,1,-1,-1),additional_bookmarks=None)
             #CAST.debug(self.name)
         else:
             self.invokeList = parser.getInvokeJavaCode(self.filename)
             for child in self.invokeList:
                 self.intermediate_file.write(str(child)+'\n')
-            bpel_data = parser.castParserBpel(self.filename)
-            CAST.debug(str(bpel_data['partnerLink']))
+            bpel_data = parser.castParserBpel(file,self.filename)
+            #CAST.debug(str(bpel_data["link"]))
             for child in bpel_data:
                 #attrib_data = re.sub('(\[)|(\])|(\')','',str(bpel_file_data[child]))
-                if "process" in child:
+                if "process" in child and not "bookmark" in child:
                     for subchild in bpel_data[child]:
                         if "name" in subchild:
                             self.name = subchild[subchild.find(':')+1:]
@@ -57,14 +64,21 @@ class BpelExtension(cast.analysers.ua.Extension):
             bpel_process =CustomObject()
             self.saveObject(bpel_process,self.name,self.filename,"BPEL_Process",file,self.filename+"BPEL_Process")
             bpel_process.save()
-            bpel_process.save_position(Bookmark(file,1,1,-1,-1))
+            if bpel_data["process.bookmark"]:
+                bpel_process.save_position(bpel_data["process.bookmark"][0])
+            else:
+                bpel_process.save_position(Bookmark(file,1,1,-1,-1))
             bpel_process_data[bpel_process] = bpel_data["process"]
+            bpel_bookmark_data[str(bpel_process)+"invoke.bookmark"] = bpel_data["invoke.bookmark"]
             bpel_invoke_data[bpel_process] = bpel_data["invoke"]
+            bpel_bookmark_data[str(bpel_process)+"receive.bookmark"] = bpel_data["receive.bookmark"]
             bpel_receive_data[bpel_process] = bpel_data["receive"]
+            bpel_bookmark_data[str(bpel_process)+"onMessage.bookmark"] = bpel_data["onMessage.bookmark"]
             bpel_onmessage_data[bpel_process] = bpel_data["onMessage"]
             self.file_loc_data = parser.fileLoc(self.filename)
             self.file_checksum_data = parser.fileChecksum(self.filename)
-            bpel_process.save_violation("File_Data.invoke_count",Bookmark(file,1,1,-1,-1),additional_bookmarks=None)
+            qr_reference = QualityRule()
+            qr_reference.BpelQrImplementation(file,bpel_process,bpel_data,file_data)
             pass
         
     def saveObject(self,obj_reference,name,fullname,obj_type,parent,guid): 
@@ -108,6 +122,7 @@ class BpelExtension(cast.analysers.ua.Extension):
         operation_count =0 
         onmessage_count = 0
         for child in bpel_invoke_data:
+            invoke_index= 0
             for ele in bpel_invoke_data[child]:
                 port_type = ""
                 operation_type = ""
@@ -125,7 +140,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                         operation_type = subele[subele.find(':')+1:]
                     elif 'name:' in  subele:
                         invoke_name = subele[subele.find(':')+1:]
-                    elif 'partnerLink' in subele:
+                    elif 'partnerLink:' in subele:
                         patnerlink_name = subele[subele.find(':')+1:]
                 filename = child.parent.get_path()
                 invoke_fullname = ''
@@ -139,7 +154,11 @@ class BpelExtension(cast.analysers.ua.Extension):
                 invoke_count =invoke_count+1
                 self.saveObject(bpel_invoke,invoke_name,invoke_fullname,"BPEL_Invoke",child.parent,filename+"BPEL_Invoke"+str(invoke_count))
                 bpel_invoke.save()
-                bpel_invoke.save_position(Bookmark(child.parent,1,1,-1,-1))
+                try:
+                    bpel_invoke.save_position(bpel_bookmark_data[str(child)+"invoke.bookmark"][invoke_index])
+                except:
+                    bpel_invoke.save_position(Bookmark(child.parent,1,1,-1,-1))
+                invoke_index= invoke_index+1
                 create_link('callLink',child,bpel_invoke,Bookmark(child.parent,1,1,-1,-1))
                 if not("null" in port_type and "null" in operation_type):      
                     if ':' in port_type:
@@ -190,7 +209,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                             
                             if namespace_port == receive_namespace_port and operation_type == receive_operation_type: 
                                 if subele in wsdl_obj_reference:
-                                    CAST.debug('XC')
+                                    CAST.debug('Object linking.....')
                                     '''
                                     CAST.debug('XC')
                                     CAST.debug(filename)
@@ -241,7 +260,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                 onmessage_namespace_port = ""
                 process_data= ""
                 for ele in list(onmessage_data.split(',')):
-                    if "portType" in ele:
+                    if "portType:" in ele:
                         onmessage_port_type = ele[ele.find(':')+1:]
                     elif "operation:" in ele:
                         onmessage_operation_type = ele[ele.find(':')+1:]
@@ -257,7 +276,7 @@ class BpelExtension(cast.analysers.ua.Extension):
                         break
                 if operation_type == onmessage_operation_type and namespace_port == onmessage_namespace_port:
                     if reference in wsdl_obj_reference:
-                        CAST.debug(onmessage_operation_type)
+                        #CAST.debug(onmessage_operation_type)
                         file_name = wsdl_obj_reference[reference].parent.get_path()
                         wsdl_operation = CustomObject()
                         onmessage_count = onmessage_count +1
