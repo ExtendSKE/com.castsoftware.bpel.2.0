@@ -18,7 +18,10 @@
 
       <partnerLink name="employeeTravelStatus" 
                    partnerLinkType="emp:employeeLT"
-                   partnerRole="employeeTravelStatusService"/>
+                   />
+	  <partnerLink name="employeeTravelStatus" 
+			   partnerLinkType="emp:employeeLT"
+			   partnerRole="employeeTravelStatusService"/>		   
 
       <partnerLink name="AmericanAirlines" 
                    partnerLinkType="aln:flightLT"
@@ -40,7 +43,7 @@
    </invoke>
    <variables>
       <!-- input for this process -->      
-      <variable name="TravelRequest" messageType="trv:TravelRequestMessage"/>
+      <variable name="Travel.Request" messageType="trv:TravelRequestMessage" />
       <!-- input for the Employee Travel Status web service -->
       <variable name="EmployeeTravelStatusRequest" messageType="emp:EmployeeTravelStatusRequestMessage"/>
       <!-- output from the Employee Travel Status web service -->
@@ -53,6 +56,7 @@
       <variable name="FlightResponseDA" messageType="aln:TravelResponseMessage"/>
       <!-- output from BPEL process -->
       <variable name="TravelResponse" messageType="aln:TravelResponseMessage"/>
+	  <variable name="TravelResponse" messageType="aln:TravelResponseMessage"/>
    </variables>
 
    <sequence>
@@ -74,8 +78,8 @@
       <!-- Prepare the input for the Employee Travel Status Web Service -->
       <assign>
         <copy>
-          <from variable="TravelRequest" part="employee"/>
-          <to variable="EmployeeTravelStatusRequest" part="employee"/>
+          <from variable="Travel.Request" part="employee"/>
+          <to variable="EmployeeTravel.StatusRequest" part="employee"/>
         </copy>
       </assign>
       
@@ -85,11 +89,12 @@
               operation="EmployeeTravelStatus"
               inputVariable="EmployeeTravelStatusRequest" 
               outputVariable="EmployeeTravelStatusResponse" />
+	
 
       <!-- Prepare the input for AA and DA -->
       <assign>
         <copy>
-          <from variable="TravelRequest" part="flightData"/>
+          <from variable="Travel.Request" part="flightData"/>
           <to variable="FlightDetails" part="flightData"/>
         </copy>
         <copy>
@@ -155,5 +160,51 @@
               operation="ClientCallback"
               inputVariable="TravelResponse" />
    </sequence>
+   <eventHandlers>
+	<bpws:onAlarm>
+	<for>'PT5M'</for>
+	</bpws:onAlarm>
+	<bpws:onEvent variable ="TravelResponse" messageType="details">
+	<for>'PT5M'</for>
+	</bpws:onEvent>
+	<bpws:onEvent variable ="FlightDetails">
+	<for>'PT5M'</for>
+	</bpws:onEvent>
+	</eventHandlers>
+	<bpws:eventHandlers>
+	</bpws:eventHandlers>
+    <reply>
+		<bpws:input>
+		</bpws:input>
+		<bpws:toParts>
+		</bpws:toParts>
+	</reply>
+	<correlationSets>
+        <correlationSet name="claimNumber" operation="dosomething" />
+		<correlationSet name="claimNumber1" operation="donothing"/>
+		<correlationSet name="claimNumber1" operation="donothing"/>
+    </correlationSets>
+	<faultHandlers>
+     <catch faultName="services:NegativeCredit" faultVariable="crError">
+     </catch>
+	 <compensateScope name="CompensateStatistics" scope="UpdateStatistics"/>
+	 <catch faultName="services:NegativeCredit" faultVariable="crError">
+     </catch>
+	</faultHandlers>
+	<compensationHandler>
+	 <compensateScope name="CompensateStatistics" scope="UpdateStatistics"/>
+	</compensationHandler>
+	 <catch faultName="services:NegativeCredit" faultVariable="crError">
+     </catch>
+	 <compensateScope name="CompensateStatistics" scope="UpdateStatistics"/>
+	 <faultHandlers>
+	 </faultHandlers>
+	 <flow>
+	 <links>
+	  <link name="atob"/>
+	  <link name="btoc"/>
+	  <link name="btoc"/>
+	 </links>
+	 </flow>
 
 </process>

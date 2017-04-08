@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DATA model="OBJSET" version="1.0.0.0" scope="OBJSETINIT" export="OK">
+<SET_Definitions>
+	<SetId>1187000</SetId>
+	<SetName>BPELScope</SetName>
+	<SetType>DIAG_SCOPE</SetType>
+	<SetProcedure>SET_1187000</SetProcedure>
+</SET_Definitions>
+</DATA>

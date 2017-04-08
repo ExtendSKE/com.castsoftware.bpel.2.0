@@ -1,0 +1,35 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CAST_XMLDB_Format.xsd" 
+    name="OBJSET" version="1.0.0.0" >
+	<table name="SET_Definitions" description="List of object sets" >
+		<column name="SetId" type="int" nullable="false" description="" />
+		<column name="SetName" type="string" nullable="false" length="255" description="Name of the set" />
+		<column name="SetType" type="string" nullable="true" length="255" description="Type of set, DIAG_SCOPE by default" />
+		<column name="SetProcedure" type="string" nullable="false" length="30" description="Name of procedure that fill Set_content" />
+		<index name="IDX_SET_Definitions" type="index" >
+			<column name="SetId" sort="asc" />
+		</index>
+	</table>
+	<table name="SET_Contents" description="List of objects composing object sets" >
+		<column name="SetId" type="int" nullable="false" description="" />
+		<column name="ObjectId" type="int" nullable="false" description="" />
+		<index name="IDX_SET_Contents" type="index" >
+			<column name="SetId" sort="asc" />
+			<column name="ObjectId" sort="asc" />
+		</index>
+		<index name="IDX_SET_Contents_Obj" type="index" >
+			<column name="ObjectId" sort="asc" />
+			<column name="SetId" sort="asc" />
+		</index>
+	</table>
+
+	<scope name="OBJSET">
+		<scopetable name="SET_Definitions" />
+		<scopetable name="SET_Contents" />
+	</scope>
+
+	<scope name="OBJSETINIT">
+		<scopetable name="SET_Definitions" filter="(SetId between 1187000 and 1187999)" />
+	</scope>
+
+</config>
+

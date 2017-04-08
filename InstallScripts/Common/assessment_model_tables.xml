@@ -1,0 +1,119 @@
+<config name="Assessment Model" version="1.0.0.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CAST_XMLDB_Format.xsd">
+  <table name="COST_CONFIG" description="This table parametrizes the costs">
+    <column name="PROFILE_NAME" type="string" nullable="false" length="255" description="" />
+    <column name="TECHNO_ID" type="int" nullable="false" description="Technology Identifier" />
+    <column name="COST_VALUE_INDEX" type="int" nullable="false" description="Cost value index: 0: cost, 1: low rate, 2: average rate, 3: high, 4: very high" />
+    <column name="COST_NUM_VALUE" type="num" nullable="false" precision="53" description="Cost value" />
+  </table>
+  <table name="DSS_METRIC_TYPES" description="Definition of metrics">
+    <column name="METRIC_ID" type="int" nullable="false" description=" " />
+    <column name="METRIC_NAME" type="string" nullable="true" length="255" description=" " />
+    <column name="METRIC_DESCRIPTION" type="string" nullable="true" length="1500" description=" " />
+    <column name="METRIC_TYPE" type="int" nullable="false" description="0: not executed, 1: executed in central, 2: executed in local, 3: executed both in central &amp; local" />
+    <column name="METRIC_GROUP" type="int" nullable="false" description="0: standard, 1: diagnostic summary, 2: diagnostic detail, 3: folder, 4: category, 5: distribution, 6: user metric, 7: APM Summary, 8: Diag Aggregate, 9999: internal" />
+    <column name="METRIC_DEPENDS_ON" type="string" nullable="true" length="255" description="List of metrics whose results are needed to compute this one (comma separated list of metric IDs)." />
+    <column name="METRIC_OPTIONS" type="int" nullable="false" description="flag for XXL diags, or eventually other meaning" />
+    <column name="SCOPE_ID" type="int" nullable="false" default="0" description="When non zero, the scope dataset id" />
+    <column name="PROPERTY_ID" type="int" nullable="false" default="0" description="When non zero, the property id used to filter scope" />
+    <index name="DSS_METR_TYP_PK" type="primary key">
+      <column name="METRIC_ID" sort="asc" />
+    </index>
+    <index name="DSS_MET_TYP_IDX2" type="index">
+      <column name="METRIC_GROUP" sort="asc" />
+      <column name="METRIC_ID" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_TYPE_TREES" description="Definition of the Metrics hierarchy">
+    <column name="METRIC_PARENT_ID" type="int" nullable="false" description=" " />
+    <column name="METRIC_ID" type="int" nullable="false" description=" " />
+    <column name="METRIC_INDEX" type="int" nullable="false" default="1" description="Default Execution order. if the metric are independant, all values can be set to 1." />
+    <column name="AGGREGATE_WEIGHT" type="num" nullable="false" precision="126" description="Weight of the current metric in order to compute the parent value." />
+    <column name="METRIC_SCOPE_PROCEDURE_NAME" type="string" nullable="true" length="255" description="Scope procedure executed for the current (METRIC_PARENT_ID, METRIC_ID)" />
+    <column name="METRIC_SCOPE_PROCEDURE_NAME_2" type="string" nullable="true" length="255" description="Scope procedure executed for the current (METRIC_PARENT_ID, METRIC_ID)" />
+    <column name="METRIC_CRITICAL" type="int" nullable="false" default="0" description="1 when metric is a critical contribution for its parent" />
+    <index name="DSS_METR_TYP_IDX" type="index">
+      <column name="METRIC_PARENT_ID" sort="asc" />
+      <column name="METRIC_ID" sort="asc" />
+    </index>
+    <index name="DSS_METR_TYP_IDX2" type="index">
+      <column name="METRIC_ID" sort="asc" />
+    </index>
+    <index name="DSS_METR_TYP_IDX3" type="index">
+      <column name="METRIC_CRITICAL" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_VALUE_TYPES" description="Definition of the values for Metrics">
+    <column name="METRIC_ID" type="int" nullable="false" description=" " />
+    <column name="METRIC_VALUE_INDEX" type="int" nullable="false" description=" " />
+    <column name="METRIC_VALUE_NAME" type="string" nullable="true" length="255" description=" " />
+    <column name="METRIC_VALUE_DESCRIPTION" type="string" nullable="true" length="1000" description=" " />
+    <column name="METRIC_VALUE_PROCEDURE_NAME" type="string" nullable="true" length="255" description="procedure used to compute the current value" />
+    <column name="METRIC_AGGREGATE_OPERATOR" type="int" nullable="true" default="0" description="operator used to compute the current value. 0: none, 1: COUNT, 2: SUM, 3: AVG, 4: MIN, 5: MAX, 11: COUNT DISTINCT, ... " />
+    <column name="METRIC_VALUE_PROCEDURE_NAME_2" type="string" nullable="true" length="255" description="procedure used to compute the current value" />
+    <column name="METRIC_AGGREGATE_OPERATOR_2" type="int" nullable="true" default="0" description="operator used to compute the current value. 0: none, 1: COUNT, 2: SUM, 3: AVG, 4: MIN, 5: MAX, 11: COUNT DISTINCT, ... " />
+    <column name="METRIC_VALUE_TYPE" type="int" nullable="false" default="0" description="type of the value. 0: numeric, 1: numeric percentage, 2: character, 3: object, 4: character date, 5: numeric as integer, 6: no value" />
+    <index name="DSS_ME_VAL_TYP_PK" type="primary key">
+      <column name="METRIC_ID" sort="asc" />
+      <column name="METRIC_VALUE_INDEX" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_DESCRIPTIONS" description="Description of metrics, injected from JIRA">
+    <column name="METRIC_ID" type="int" nullable="false" description=" " />
+    <column name="DESCRIPTION_TYPE_ID" type="int" nullable="false" description="0: name, 1: rationale, 2: description, 3: remediation, 4: reference, 5: sample, 6: remediation sample, 7: output, 8: total" />
+    <column name="LANGUAGE" type="string" nullable="false" length="200" description="ENGLISH, FRENCH, DEUTCH, ITALIAN" />
+    <column name="METRIC_DESCRIPTION" type="string" nullable="true" length="3000" description="Description" />
+    <index name="IDX_DSS_METRIC_DESCRIPTION" type="index">
+      <column name="METRIC_ID" sort="asc" />
+      <column name="LANGUAGE" sort="asc" />
+      <column name="DESCRIPTION_TYPE_ID" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_PARAM_TYPES" description="Definition of User parameters">
+    <column name="METRIC_ID" type="int" nullable="false" description="NoDescription" />
+    <column name="PARAM_INDEX" type="int" nullable="false" description="NoDescription" />
+    <column name="OBJECT_TYPE_ID" type="int" nullable="true" description="NoDescription" />
+    <column name="PARAM_TYPE" type="int" nullable="false" description="NoDescription" />
+    <column name="PARAM_NAME" type="string" nullable="true" length="255" description="NoDescription" />
+    <column name="PARAM_DESCRIPTION" type="string" nullable="true" length="1000" description="NoDescription" />
+    <index name="DSS_ME_PAR_T_IDX" type="index">
+      <column name="METRIC_ID" sort="asc" />
+      <column name="PARAM_INDEX" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_PARAM_VALUES" description="Values for User parameters">
+    <column name="METRIC_ID" type="int" nullable="false" description="METRIC_ID of the parametrized metric" />
+    <column name="PARAM_INDEX" type="int" nullable="false" description="Parameter index. First parameter index is 1" />
+    <column name="OBJECT_TYPE_ID" type="int" nullable="true" description="OBJECT_TYPE implied for the parameter. 0 if ignored" />
+    <column name="PARAM_NUM_VALUE" type="num" nullable="true" precision="126" description="When the parameter type is numeric, this field contains the numeric value" />
+    <column name="PARAM_CHAR_VALUE" type="string" nullable="true" length="1000" description="When the parameter type is string, this field contains the string" />
+    <column name="PARAM_ORDER" type="int" nullable="false" default="0" description="Parameter order for list of values, first value equal to 0" />
+    <index name="DSS_ME_PAR_V_IDX" type="index">
+      <column name="METRIC_ID" sort="asc" />
+      <column name="PARAM_INDEX" sort="asc" />
+      <column name="OBJECT_TYPE_ID" sort="asc" />
+    </index>
+  </table>
+  <table name="DSS_METRIC_STATUS_THRESHOLDS" description="This table stores percentage thresholds for grade computing from status distribution">
+    <column name="METRIC_ID" type="int" nullable="false" description="Metric identifier for status distribution threshold" />
+    <column name="STATUS" type="int" nullable="false" description="Status (1-4 for metrics with full distributions, 0 for binary diagnostics)" />
+    <column name="THRESHOLD_1" type="num" nullable="false" precision="126" description="Percentage threshold between grades 1 and 2" />
+    <column name="THRESHOLD_2" type="num" nullable="false" precision="126" description="Percentage threshold between grades 2 and 3" />
+    <column name="THRESHOLD_3" type="num" nullable="false" precision="126" description="Percentage threshold between grades 3 and 4" />
+    <column name="THRESHOLD_4" type="num" nullable="false" precision="126" description="Percentage threshold after grade 4" />
+    <index name="DSS_METS_THR_IDX" type="index">
+      <column name="METRIC_ID" sort="asc" />
+      <column name="STATUS" sort="asc" />
+    </index>
+  </table>
+  
+  <scope name="BPELScope">
+  	<scopetable name="DSS_METRIC_TYPES" filter="(METRIC_ID BETWEEN 1187000 AND 1187999)"/>
+  	<scopetable name="DSS_METRIC_TYPE_TREES" filter="(METRIC_ID BETWEEN 10187000 AND 1187999)"/>
+  	<scopetable name="DSS_METRIC_VALUE_TYPES" filter="(METRIC_ID BETWEEN 1187000 AND 1187999)"/>
+  	<scopetable name="DSS_METRIC_DESCRIPTIONS" filter="(METRIC_ID BETWEEN 1187000 AND 1187999)"/>
+  	<scopetable name="DSS_METRIC_PARAM_TYPES" filter="(METRIC_ID BETWEEN 1187000 AND 1187999) OR (OBJECT_TYPE_ID=1187000)"/> <!-- OBJECT_TYPE_ID=... is needed for correct cleanup of parameters for distributions-->
+  	<scopetable name="DSS_METRIC_PARAM_VALUES" filter="(METRIC_ID BETWEEN 1187000 AND 1187999) OR (OBJECT_TYPE_ID=1187000)"/> <!-- OBJECT_TYPE_ID=... is needed for correct cleanup of parameters for distributions-->
+  	<scopetable name="DSS_METRIC_STATUS_THRESHOLDS" filter="(METRIC_ID BETWEEN 1187000 AND 1187999)"/>
+  </scope>
+
+ </config>
